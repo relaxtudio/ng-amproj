@@ -6,3 +6,42 @@
 	max-width: 1200px;
 	margin: auto;
 }
+
+.promo {
+	position: relative;
+}
+
+.promo .ctrl-btn {
+	position: absolute;
+	background-color: #f2ea52;
+	height: 60px;
+	width: 60px;
+	font-size: 40px;
+	text-align: center;
+	line-height: 60px;
+	top: 50%;
+	margin-top: -30px;
+}
+
+.promo .ctrl-btn.left {
+
+}
+
+.promo .ctrl-btn.right {
+	right: 0;
+}
+
+.promo .pr-img {
+	text-align: center;
+	background-color: #87c2f5;
+}
+
+.promo .pr-img img {
+	max-width: 100%;
+	height: auto;
+}
+
+.menu-list {
+	background-color: #F5F5F5;
+	height: 80px;
+}

@@ -8,3 +8,16 @@ body {
 ::-webkit-scrollbar {
 	display: none;
 }
+
+.animate-hide {
+	left: 0;
+	-webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    -moz-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    -o-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+    position: absolute;
+}
+
+.animate-hide.ng-hide {
+	left: -100%;
+}

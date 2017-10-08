@@ -1,6 +1,15 @@
-<div>
-	gambar
+<div class="promo">
+	<div class="ctrl-btn left">❮</div>
+    <div class="ctrl-btn right">❯</div>
+	<div class="pr-img">
+		<img ng-repeat="slide in slides" class="animate-hide" ng-hide="!isCurrentSlideIndex($index)" ng-src="/assets/img/{{slide.img}}">
+	</div>
 </div>
-<div>
-	list mobil
+
+<button ng-click="cl($index)">test</button>
+<div class="menu-list">
+	<div></div>
+</div>
+<div class="car-list">
+	<div></div>
 </div>

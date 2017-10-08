@@ -1,4 +1,4 @@
-var am = angular.module('am', ['ui.router']);
+var am = angular.module('am', ['ui.router', 'ngAnimate']);
 
 am.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 	$locationProvider.html5Mode(true);
