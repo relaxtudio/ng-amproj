@@ -1,0 +1,24 @@
+{
+  "name": "ng-amproj",
+  "version": "1.0.0",
+  "description": "Front End for Anugerah Motor with 360 slider",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-ui-router": "^0.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relaxtudio/ng-amproj.git"
+  },
+  "author": "relaxtudio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/relaxtudio/ng-amproj/issues"
+  },
+  "homepage": "https://github.com/relaxtudio/ng-amproj#readme"
+}
