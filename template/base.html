@@ -2,24 +2,16 @@
     <div class="container">
       <div id="promo" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#promo" data-slide-to="0" class="active"></li>
-            <li data-target="#promo" data-slide-to="1"></li>
-            <li data-target="#promo" data-slide-to="2"></li>
-            <li data-target="#promo" data-slide-to="3"></li>
+            <li  data-slide-to="0" class="active"></li>
+            <li  data-slide-to="1"></li>
+            <li  data-slide-to="2"></li>
+            <li  data-slide-to="3"></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-            <div class="item active">
-              <img src="assets/img/sample-1.jpg" alt="Mobil 1">
-            </div>
-
-            <div class="item">
-              <img src="assets/img/sample-2.jpg" alt="Mobil 2">
-            </div>
-          
-            <div class="item">
-              <img src="assets/img/sample-3.jpg" alt="Mobil 3">
+            <div ng-repeat="slide in slides" ng-class="$index == 0 ? 'item active' : 'item'">
+              <img src="assets/img/{{slide.img}}" alt="Mobil 1">
             </div>
           </div>
 

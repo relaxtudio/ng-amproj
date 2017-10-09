@@ -26,4 +26,14 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 				}
 			}
 		})
+
+		.state('sim', {
+			url: '/sim',
+			views: {
+				'content': {
+					templateUrl: 'template/sim.html',
+					controller: 'SimCtrl'
+				}
+			}
+		})
 })
