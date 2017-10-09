@@ -2,13 +2,16 @@
   "name": "ng-amproj",
   "version": "1.0.0",
   "description": "Front End for Anugerah Motor with 360 slider",
-  "main": "index.js",
+  "main": "index.html",
   "dependencies": {
     "angular": "^1.6.6",
     "angular-animate": "^1.6.6",
-    "angular-ui-router": "^0.4.3"
+    "angular-ui-router": "^0.4.3",
+    "connect-modrewrite": "^0.10.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "connect-modrewrite": "^0.10.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

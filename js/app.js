@@ -1,10 +1,12 @@
 var am = angular.module('am', ['ui.router', 'ngAnimate']);
 
+
+
 am.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
-	$locationProvider.html5Mode(true);
-	$locationProvider.hashPrefix('');
 	
 	$urlRouterProvider.otherwise('/');
+	// $locationProvider.html5Mode(true);
+	// $locationProvider.hashPrefix('');
 
 	$stateProvider
 		.state('base', {
@@ -23,6 +25,16 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
 				'content': {
 					templateUrl: 'template/car.html',
 					controller: 'CarCtrl'
+				}
+			}
+		})
+
+		.state('contact', {
+			url: '/contact',
+			views: {
+				'content': {
+					templateUrl: 'template/contact.html',
+					controller: 'ContactCtrl'
 				}
 			}
 		})
