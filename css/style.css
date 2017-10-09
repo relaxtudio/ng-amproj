@@ -36,6 +36,11 @@ body {
 	background-color: #5DADE2 !important;
 }
 
+#cari-m {
+	background-color: #d71631;
+	color: #e8e8e8 !important;
+}
+
 #promo {
 	margin: auto;
 	background-color: transparent;
@@ -154,6 +159,18 @@ body {
 
 #f-menu > a:hover {
 	color: #000;
+}
+
+#contact {
+	margin-top: 75px;
+}
+
+.gmaps {
+	width: 100%;
+}
+
+.gmaps img {
+	display: inline;
 }
 
 @media screen and (max-width: 478px){
