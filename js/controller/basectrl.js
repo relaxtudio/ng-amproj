@@ -12,9 +12,9 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 
 	$scope.slideShow = function() {
 		$scope.slides = [
-			{ name: 'image1', img: 'sample-1.jpg' },
-			{ name: 'image2', img: 'sample-2.jpg' },
-			{ name: 'image3', img: 'sample-3.jpg' },
+			{ id: '1', name: 'image1', img: 'sample-1.jpg' },
+			{ id: '2', name: 'image2', img: 'sample-2.jpg' },
+			{ id: '3', name: 'image3', img: 'sample-3.jpg' },
 		];
 	};
 

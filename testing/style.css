@@ -1,0 +1,174 @@
+@font-face {
+    font-family: Poppins;
+    src: url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
+}
+
+ html, html a {
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+ }
+
+* {
+	-webkit-font-smoothing: antialiased !important;
+	border-radius: 0 !important;
+	text-decoration: none;
+}
+
+body {
+	width: 100%;
+}
+
+.navbar-default {
+	background-color: #FFF;
+	border: none;
+}
+
+.navbar-brand {
+	margin-right: 100px;
+}
+
+.navbar-nav > li > a {
+	color: #797D7F !important;
+}
+
+.navbar-nav > li > a:hover {
+	color: #fff !important;
+	background-color: #5DADE2 !important;
+}
+
+.home-content {
+	margin-top:65px;
+}
+
+#promo {
+	margin: auto;
+	background-color: transparent;
+}
+
+.carousel-inner > .item > img {
+ 	margin: auto;
+ 	max-height: 535px;
+ 	width: 100%;
+ 	background-color: transparent !important;
+ }
+
+.banner-profits {
+ 	background-color: #e6e6e6;
+ 	width: 100%;
+ 	display: inline-block;
+ 	margin-top: 10px;
+ }
+
+.profit-det > i {
+	font-size: 2.5em;
+}
+
+.profit-det {
+ 	font-size: 1.2em;
+ 	margin-top: 10px;
+ 	margin-bottom: 10px;
+ 	text-align: center;
+ 	font-weight: 700;
+ 	color: #797D7F;
+ }
+
+ .recent-cars {
+ 	margin-top: 85px;
+
+ }
+
+ .rc-title {
+ 	text-align: center;
+ }
+
+.rc-title p {
+	font-size: 2.5em;
+	color: #797D7F;
+}
+
+.rc-title span {
+	font-size: 1.3em;
+	color: #CACFD2;
+}
+
+.rc-list {
+	margin-top: 75px;
+}
+
+.rc-prod {
+	background-color: #e6e6e6;
+	width: 100%;
+	margin: auto;
+}
+
+.rc-prod img {
+	width: 100%;
+	padding: 10px;
+	margin: auto !important;
+}
+
+.cars-det {
+	text-align: center;
+	display:block;
+}
+
+#btn-cars {
+	text-align: center;
+}
+
+.footer {
+	background-color: #f2f2f2;
+	display: block;
+	text-align: center;
+	border-top: 1px solid #cccccc;
+	margin-top: 50px;
+}
+
+.f-wrap {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#fb-btn {
+	width: 40px;
+	height:40px;
+	border-radius: 50% !important;
+	font-size: 1.3em;
+	margin-right: 10px;
+}
+
+#ig-btn {
+	width: 43px;
+	height:43px;
+	border-radius: 50% !important;
+	font-size: 1.3em;
+	margin-left: 10px;	
+}
+
+#f-menu {
+	margin-bottom: 15px;
+}
+
+#f-menu > a {
+	text-decoration: none !important;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #666666;
+}
+
+#f-menu > a:hover {
+	color: #000;
+}
+
+@media screen and (max-width: 478px){
+	.carousel-inner > .item > img {
+ 	margin: auto;
+ 	height: 150px;
+ 	width: 100%;
+ 	background-position: center;
+ 	}
+
+ 	.profit-det {
+ 		font-size: 0.91em;
+ 	}
+
+ }
