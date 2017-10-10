@@ -44,6 +44,8 @@ body {
 	background-color: #5DADE2 !important;
 }
 
+/*-----Home Section-----*/
+
 #cari-m {
 	background-color: #d71631;
 	color: #e8e8e8 !important;
@@ -52,6 +54,10 @@ body {
 #promo {
 	margin: auto;
 	background-color: transparent;
+}
+
+.carousel-indicators {
+	color: #e6e6e6;
 }
 
 .carousel-inner > .item > img {
@@ -125,6 +131,8 @@ body {
 	text-align: center;
 }
 
+/*-----Footer Section-----*/
+
 .footer {
 	background-color: #f2f2f2;
 	display: block;
@@ -169,8 +177,19 @@ body {
 	color: #000;
 }
 
+/*-----Contact & Showroom Section-----*/
 #contact {
 	margin-top: 75px;
+	color: #666666;
+}
+
+#contact > .row {
+	margin-left:15%;
+	margin-right: 15%;
+}
+
+#dh-69, #kj-158, #bj-28, #jg-60, #nj-33, #kj-97, #dtc-wk, #bg-jt {
+	margin-left: 25%;	
 }
 
 .gmaps {
@@ -182,10 +201,11 @@ body {
 }
 
 @media screen and (max-width: 478px){
+	/*
 	.navbar-toggle {
 		margin-right: 41%;
 	}
-
+	
 	.navbar-brand {
 		margin-left: 15px;
 		margin-top: 2px;
@@ -198,7 +218,7 @@ body {
 		margin-top: -50px;
 		margin-right: 20px;
 	}
-
+	*/
 	.home-content {
 		margin-top: 65px;
 	}
@@ -212,6 +232,16 @@ body {
 
  	.profit-det {
  		font-size: 0.91em;
+ 	}
+
+ 	#contact > .row {
+ 		margin-left: 0;
+ 		margin-right: 0;
+ 	}
+
+ 	.modal-title {
+ 		font-size: 1em;
+ 		font-weight: 700;
  	}
 
 }

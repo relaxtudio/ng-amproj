@@ -1,17 +1,16 @@
-<section class="home-content">
-    <div class="container">
-      <div id="promo" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li  data-slide-to="0" class="active"></li>
-            <li  data-slide-to="1"></li>
-            <li  data-slide-to="2"></li>
-            <li  data-slide-to="3"></li>
+  <section class="home-content">
+      <div class="container">
+        <div id="promo" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-slide-to="0" class="active"></li>
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div ng-repeat="slide in slides" ng-class="$index == 0 ? 'item active' : 'item'">
-              <img src="assets/img/{{slide.img}}" alt="Mobil 1">
+              <img ng-src="assets/img/{{slide.img}}" alt="Mobil 1">
             </div>
           </div>
 
@@ -186,18 +185,4 @@
       </div>
     </div>
   </section>
-  <section class="footer">
-    <div class="f-wrap">
-      <div id="f-menu">
-        <a href="#"><i class="fa fa-home"></i> Home</a>
-        <a href="#"><i class="fa fa-users"></i> Tentang Kami</a>
-        <a href="#"><i class="fa fa-building-o"></i> Showroom</a>
-      </div>
-      <a id="fb-btn" href="#" class="btn btn-primary"><i class="fa fa-facebook"></i></a>
-      <a id="ig-btn" href="#" class="btn btn-default"><i class="fa fa-instagram"></i></a>
-    </div>
-    <div id="f-notation">
-      <span>&copy; 2017. Anugerah Motor. All rights reserved.</span><br>
-      <span>Powered by Relaxtudio</span>
-    </div>
-  </section>
+  
