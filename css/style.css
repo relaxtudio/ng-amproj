@@ -188,21 +188,16 @@ body {
 	width: 100%;
 }
 
-#contact > .row {
-	margin-left:15%;
-	margin-right: 15%;
-}
-
-#dh-69, #kj-158, #bj-28, #jg-60, #nj-33, #kj-97, #dtc-wk, #bg-jt {
-	margin-left: 25%;	
-}
-
-.gmaps {
+.list-lk {
 	width: 100%;
+	overflow: hidden;
+	clear: both;
 }
 
-.gmaps img {
-	display: inline;
+.kshow {
+	float: left;
+	width: 50%;
+	padding-left: 13%;
 }
 
 #map {
@@ -252,6 +247,17 @@ body {
  		max-height: 300px;
  	}
 
+ 	.list-lk {
+ 		height: auto;
+		width: 100%;
+		overflow: show;
+	}
+
+ 	.kshow {
+		float: unset;
+		width: 100%;
+		padding-left: 10px;
+	}
 }
 
 @media screen and (max-width: 320px){
@@ -264,4 +270,19 @@ body {
 		width: 100px;
 	}
 
+	.list-lk {
+ 		height: auto !important;
+		width: 100%;
+		overflow: show;
+	}
+
+ 	.kshow {
+		float: unset !important;
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.kshow h4 {
+		font-size: 1.2em;
+	}
 }

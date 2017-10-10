@@ -51,6 +51,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
                 lng : 112.7337643
             }
         ];
+
         $scope.map = {
             lat: $scope.locations[0].lat,
             lng: $scope.locations[0].lng,
@@ -81,5 +82,5 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
     $scope.$on('$routeChangeSuccess', function() {
         $scope.initFunction();
     });
-
+    
 }])

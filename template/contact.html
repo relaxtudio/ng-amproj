@@ -10,23 +10,21 @@
 
 	<br>
 	<legend style="background-color: #e6e6e6;color: #666666; text-align: center;"><i class="fa fa-phone"></i> Kontak & <i class="fa fa-building-o"></i> Showroom</legend>
-	<div class="row">
-		<div class="col-md-6">
-			<div id="dh-69" ng-repeat="d in locations">
-				<h4><i class="fa fa-building-o"></i>{{d.lks}}</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl. Dharmawangsa No. 69
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 031-5017171
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info" ng-click="selectLocation($index, d)">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
+	<div class="list-lk">
+		<div class="kshow" ng-repeat="d in locations">
+			<h4><i class="fa fa-building-o"></i> {{d.lks}}</h4>
+			<span>
+				<i class="fa fa-map-marker"></i> Jl. Dharmawangsa No. 69
+			</span><br>
+			<span>
+				<i class="fa fa-phone"></i> 031-5017171
+			</span><br>
+			<span>
+				<i class="fa fa-map"></i> Surabaya
+			</span><br>
+			<a class="btn btn-info" ng-click="selectLocation($index, d)">
+				<i class="fa fa-map-o"></i> Tampilkan Map
+			</a>
 		</div>
 	</div>
 </section>
