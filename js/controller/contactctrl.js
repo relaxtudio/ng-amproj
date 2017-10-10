@@ -83,4 +83,10 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
         $scope.initFunction();
     });
     
+    $scope.scrollToTop = function($var) {
+      $('html, body').animate({
+          scrollTop: 0
+      }, 'fast');
+    };
+
 }])
