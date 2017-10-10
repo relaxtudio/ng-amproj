@@ -44,6 +44,10 @@ body {
 	background-color: #5DADE2 !important;
 }
 
+.navbar-right {
+	margin-right: 0px !important;
+}
+
 /*-----Home Section-----*/
 
 #cari-m {
@@ -179,8 +183,9 @@ body {
 
 /*-----Contact & Showroom Section-----*/
 #contact {
-	margin-top: 75px;
+	margin-top: 55px;
 	color: #666666;
+	width: 100%;
 }
 
 #contact > .row {
