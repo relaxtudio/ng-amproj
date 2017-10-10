@@ -72,7 +72,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
     $scope.selectLocation = function(index, map) {
         console.log(index, map);
         $scope.map.locations = [map];
-        $scope.map.zoom = 15;
+        $scope.map.zoom = 18;
         $scope.map.lat = map.lat;
         $scope.map.lng = map.lng;
         $scope.map.index = index;
