@@ -2,8 +2,8 @@ var am = angular.module('am', ['ui.router', 'ngAnimate', 'ngMap']);
 
 
 
-am.config(function($locationProvider, $stateProvider, $urlRouterProvider) {
-	
+am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProvider) {
+	$qProvider.errorOnUnhandledRejections(false);
 	$urlRouterProvider.otherwise('/');
 	// $locationProvider.html5Mode(true);
 	// $locationProvider.hashPrefix('');

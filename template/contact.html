@@ -3,8 +3,8 @@
 	
 </section> -->
 <section id="contact">
-	<ng-map id="map" zoom="11" center="{{locations[0].pos}}" default-style="true">
-		<marker id="marker-{{$index}}" ng-repeat="m in locations" position="{{m.pos}}" title="{{m.lks}}">
+	<ng-map id="map" zoom="{{map.zoom}}" center="[{{map.lat}}, {{map.lng}}]" default-style="true">
+		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="[{{m.lat}}, {{m.lng}}]" title="{{m.lks}}">
 		</marker>
 	</ng-map>
 
@@ -12,8 +12,8 @@
 	<legend style="background-color: #e6e6e6;color: #666666; text-align: center;"><i class="fa fa-phone"></i> Kontak & <i class="fa fa-building-o"></i> Showroom</legend>
 	<div class="row">
 		<div class="col-md-6">
-			<div id="dh-69">
-				<h4><i class="fa fa-building-o"></i> Dharmawangsa 69</h4>
+			<div id="dh-69" ng-repeat="d in locations">
+				<h4><i class="fa fa-building-o"></i>{{d.lks}}</h4>
 				<span>
 					<i class="fa fa-map-marker"></i> Jl. Dharmawangsa No. 69
 				</span><br>
@@ -23,125 +23,10 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info">
+				<a class="btn btn-info" ng-click="selectLocation($index, d)">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
 			</div>
-			<hr>
-			<div id="kj-158">
-				<h4><i class="fa fa-building-o"></i> Kertajaya 158</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl. Kertajaya No. 158
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 031-5047171
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
-			<div id="bj-28">
-				<h4><i class="fa fa-building-o"></i> Barata Jaya XIX / 28</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl. Barata Jaya XIX No. 28
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 031-5045455
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
-			<div id="jg-60">
-				<h4><i class="fa fa-building-o"></i> Jenggolo 60</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl. Jenggolo No. 60
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 031-895717
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Sidoarjo
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
-		</div>
-		<div class="col-md-6">
-			<div id="nj-33">
-				<h4><i class="fa fa-building-o"></i> Ngagel Jaya 33</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl. Ngagel Jaya No. 33
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 031-5027171
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
-			<div id="kj-97">
-				<h4><i class="fa fa-building-o"></i> Kertajaya 97</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl. Kertajaya No. 97
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 031-5057171
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
-			<div id="dtc-wk">
-				<h4><i class="fa fa-building-o"></i> DTC Wonokromo</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> DTC Wonokromo Lt. 6
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 087851758333
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
-			<div id="bg-jt">
-				<h4><i class="fa fa-building-o"></i> Anugerah BG Junction</h4>
-				<span>
-					<i class="fa fa-map-marker"></i> Jl Bubutan I No. 7
-				</span><br>
-				<span>
-					<i class="fa fa-phone"></i> 08315884747
-				</span><br>
-				<span>
-					<i class="fa fa-map"></i> Surabaya
-				</span><br>
-				<a class="btn btn-info">
-					<i class="fa fa-map-o"></i> Tampilkan Map
-				</a>
-			</div>
-			<hr>
 		</div>
 	</div>
 </section>
