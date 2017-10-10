@@ -205,6 +205,10 @@ body {
 	display: inline;
 }
 
+#map {
+    height: 500px !important;
+}
+
 @media screen and (max-width: 478px){
 	/*
 	.navbar-toggle {
@@ -244,9 +248,8 @@ body {
  		margin-right: 0;
  	}
 
- 	.modal-title {
- 		font-size: 1em;
- 		font-weight: 700;
+ 	#map {
+ 		max-height: 300px;
  	}
 
 }

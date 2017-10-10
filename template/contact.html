@@ -1,7 +1,15 @@
 <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize"></script>
 <section id="contact">
+	
+</section> -->
+<section id="contact">
+	<ng-map id="map" zoom="11" center="{{locations[0].pos}}" default-style="true">
+		<marker id="marker-{{$index}}" ng-repeat="m in locations" position="{{m.pos}}" title="{{m.lks}}">
+		</marker>
+	</ng-map>
+
+	<br>
 	<legend style="background-color: #e6e6e6;color: #666666; text-align: center;"><i class="fa fa-phone"></i> Kontak & <i class="fa fa-building-o"></i> Showroom</legend>
-	<div id="map"></div>
 	<div class="row">
 		<div class="col-md-6">
 			<div id="dh-69">
@@ -15,25 +23,9 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map1">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map1" class="modal fade">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-        						<h4 class="modal-title" align="center">Peta Anugerah Motor  - Dharmawangsa 69</h4>
-							</div>
-							<div class="modal-body">
-								<div align="center">Klik atau tap pada peta untuk membuka pada Google Maps</div>
-								<a href="https://goo.gl/chjSfG" target="_blank" class="gmaps">
-									<img src="https://maps.googleapis.com/maps/api/staticmap?center=Jl+Dharmawangsa+No.+69&zoom=18&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7CJl+Dharmawangsa+No.+69" alt="Google Map of Anugerah Motor Jl Dharmawangsa No. 69" class="img-responsive">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 			<hr>
 			<div id="kj-158">
@@ -47,14 +39,9 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map0">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map0" class="modal fade">
-					<a href="https://goo.gl/2WLbn6" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=anugerah+motor+Jl.+Kertajaya+No.158,+Kertajaya,+Gubeng,+Kota+SBY,+Jawa+Timur+60282,+Indonesia&zoom=20&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:2%7Canugerah+motor+Jl.+Kertajaya+No.158,+Kertajaya,+Gubeng,+Kota+SBY,+Jawa+Timur+60282,+Indonesia" alt="Google Map of Anugerah Motor Jl. Kertajaya No.158, Kertajaya, Gubeng, Kota SBY, Jawa Timur 60282" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 			<div id="bj-28">
@@ -68,14 +55,9 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map2">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map2" class="modal fade">
-					<a href="https://goo.gl/gEie1j" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=-7.30123239,112.75917991&zoom=19&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:3%7C-7.30123239,112.75917991" alt="Google Map of Anugerah Motor Jl. Barata Jaya XIX No. 28" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 			<div id="jg-60">
@@ -89,14 +71,9 @@
 				<span>
 					<i class="fa fa-map"></i> Sidoarjo
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map3">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map3" class="modal fade">
-					<a href="https://goo.gl/KVX8TY" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=-7.4415895,112.7197847&zoom=18&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:4%7C-7.4415895,112.7197847" alt="Google Map of Anugerah Motor Jl. Jenggolo No. 60" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 		</div>
@@ -112,14 +89,9 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map4">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map4" class="modal fade">
-					<a href="https://goo.gl/rKCey3" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=Jl.+Raya+Ngagel+Jaya+No.33+Pucang+Sewu+Gubeng+Kota+SBY,+Jawa+Timur+60283+Indonesia&zoom=18&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:5%7CJl.+Raya+Ngagel+Jaya+No.33+Pucang+Sewu+Gubeng+Kota+SBY,+Jawa+Timur+60283+Indonesia" alt="Google Map of Anugerah Motor Jl. Ngagel Jaya No.33" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 			<div id="kj-97">
@@ -133,14 +105,9 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map5">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map5" class="modal fade">
-					<a href="https://goo.gl/ca5RDf" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=Anugerah+Motor,+Jalan+Kertajaya,+Airlangga,+Kota+Surabaya,+Jawa+Timur,+Indonesia&zoom=20&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:6%7CAnugerah+Motor,+Jalan+Kertajaya,+Airlangga,+Kota+Surabaya,+Jawa+Timur,+Indonesia" alt="Google Map of Anugerah Motor Jl. Kertajaya No. 97" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 			<div id="dtc-wk">
@@ -154,14 +121,9 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map6">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map6" class="modal fade">
-					<a href="https://goo.gl/fMhsq8" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=Darmo+Trade+Centre+(DTC),+Jl.+Raya+Wonokromo,+Jagir,+Wonokromo,+Kota+SBY,+Jawa+Timur+60244,+Indonesia&zoom=19&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:7%7CDarmo+Trade+Centre+(DTC),+Jl.+Raya+Wonokromo,+Jagir,+Wonokromo,+Kota+SBY,+Jawa+Timur+60244,+Indonesia" alt="Google Map of Anugerah Motor DTC Wonokromo Lt. 6" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 			<div id="bg-jt">
@@ -175,23 +137,11 @@
 				<span>
 					<i class="fa fa-map"></i> Surabaya
 				</span><br>
-				<a class="btn btn-info" data-toggle="modal" data-target="#map7">
+				<a class="btn btn-info">
 					<i class="fa fa-map-o"></i> Tampilkan Map
 				</a>
-				<div id="map7" class="modal fade">
-					<a href="https://goo.gl/ReagV5" class="gmaps">
-						<img src="https://maps.googleapis.com/maps/api/staticmap?center=Anugerah+Motor,+Jalan+Bubutan+I,+Alun-alun+Contong,+Bubutan,+Kota+Surabaya,+Jawa+Timur,+Indonesia&zoom=20&scale=false&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7CAnugerah+Motor,+Jalan+Bubutan+I,+Alun-alun+Contong,+Bubutan,+Kota+Surabaya,+Jawa+Timur,+Indonesia" alt="Google Map of Anugerah Motor Jl. Bubutan I No. 7" class="img-responsive">
-					</a>
-				</div>
 			</div>
 			<hr>
 		</div>
 	</div>
-</section> -->
-<section id="contact">
-	<ng-map id="map" zoom="15" center="{{locations[0].pos}}" default-style="true">
-		<custom-marker id="custom-marker-{{$index}}" ng-repeat="m in locations" position="{{m.pos}}">
-			<div>{{m.lks}}</div>
-		</custom-marker>
-	</ng-map>
 </section>
