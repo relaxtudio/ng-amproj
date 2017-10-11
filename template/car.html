@@ -11,21 +11,104 @@
 			</div>
 		</div>
 	</div>
-	<div id="sort-dt" class="form-inline">
-		<div class="form-group">
-			<div class="col-xs-4">
-				<label for="sorting"><i class="fa fa-sort"></i> Urutkan</label>
-			</div>
-			<div class="col-xs-8">
-				<select class="form-control" id="sorting">
-					<option>---Pilih---</option>
-					<option>Terbaru</option>
-					<option>Termahal</option>
-					<option>Termurah</option>
-				</select>
+	<div id="sort-dt">
+		<div class="form-inline">
+			<div class="form-group">
+				<div class="col-xs-5">
+					<label for="sorting"><i class="fa fa-sort"></i> Urutkan</label>
+				</div>
+				<div class="col-xs-7">
+					<select class="form-control" id="sorting">
+						<option>---Pilih---</option>
+						<option>Terbaru</option>
+						<option>Termahal</option>
+						<option>Termurah</option>
+					</select>
+				</div>
 			</div>
 		</div>
 	</div>
+	<div class="clearfix"></div>
+
+	<div id="cars-wrap">
+		<div class="list-cars col-md-3">
+			<div class="panel panel-default">
+				<div class="rc-prod">
+                  <img src="assets/img/1.jpg">
+                  <div class="cars-det">
+                    <div class="rc-nama">
+                      <b>Mobil 1</b>
+                    </div>
+                    <div class="rc-info">
+                      <i class="fa fa-calendar"></i> Tahun 2015 &emsp;
+                      <i class="fa fa-road"></i> KM 123456
+                    </div>
+                    <div class="rc-loc">
+                      <i class="fa fa-map-marker"></i> Anugerah Motor - Dharmawangsa
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+		<div class="list-cars col-md-3">
+			<div class="panel panel-default">
+				<div class="rc-prod">
+                  <img src="assets/img/2.jpg">
+                  <div class="cars-det">
+                    <div class="rc-nama">
+                      <b>Mobil 1</b>
+                    </div>
+                    <div class="rc-info">
+                      <i class="fa fa-calendar"></i> Tahun 2015 &emsp;
+                      <i class="fa fa-road"></i> KM 123456
+                    </div>
+                    <div class="rc-loc">
+                      <i class="fa fa-map-marker"></i> Anugerah Motor - Dharmawangsa
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+		<div class="list-cars col-md-3">
+			<div class="panel panel-default">
+				<div class="rc-prod">
+                  <img src="assets/img/3.jpg">
+                  <div class="cars-det">
+                    <div class="rc-nama">
+                      <b>Mobil 1</b>
+                    </div>
+                    <div class="rc-info">
+                      <i class="fa fa-calendar"></i> Tahun 2015 &emsp;
+                      <i class="fa fa-road"></i> KM 123456
+                    </div>
+                    <div class="rc-loc">
+                      <i class="fa fa-map-marker"></i> Anugerah Motor - Dharmawangsa
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+		<div class="list-cars col-md-3">
+			<div class="panel panel-default">
+				<div class="rc-prod">
+                  <img src="assets/img/4.jpg">
+                  <div class="cars-det">
+                    <div class="rc-nama">
+                      <b>Mobil 1</b>
+                    </div>
+                    <div class="rc-info">
+                      <i class="fa fa-calendar"></i> Tahun 2015 &emsp;
+                      <i class="fa fa-road"></i> KM 123456
+                    </div>
+                    <div class="rc-loc">
+                      <i class="fa fa-map-marker"></i> Anugerah Motor - Dharmawangsa
+                    </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
 
 	<div id="filter-modal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -37,7 +120,72 @@
 	        		<h4 class="modal-title">Filter Mobil</h4>
 				</div>
 				<div class="modal-body">
-					List Filter
+					<div class="brand-c col-md-12">
+						<div><b>Brand Mobil</b></div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="all-brand" checked="true">Semua</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="Toyota">Toyota</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="Honda">Honda</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="Honda">Nissan</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="Honda">Ford</label>
+							</div>
+						</div>
+					</div>
+					<div class="tahun-c col-md-12">
+						<div><b>Tahun</b></div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="all-years" checked="true">Semua</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="2017">2017</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="2016">2016</label>
+							</div>
+						</div>
+					</div>
+					<div class="tipe-c col-md-12">
+						<div><b>Tipe</b></div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="all-tipe" checked="true">Semua</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="SUV">SUV</label>
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-3">
+							<div class="checkbox">
+								<label><input type="checkbox" value="Sedan">Sedan</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="clearfix"></div>
 				</div>
 				<div class="modal-footer">
 					<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>

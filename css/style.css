@@ -168,10 +168,10 @@ body {
 .c-head{
 	width: 100%;
 	border-bottom: 1px solid #cccccc;
-	background-color: #99d6ff;
+	background-color: #e6e6e6;
 	padding: 8px;
 	overflow: hidden;
-	clear: both;
+	color: #666666;
 }
 
 #c-total {
@@ -181,10 +181,28 @@ body {
 #sort-dt {
 	float: right;
 	clear: both;
-	margin-right: 8px;
+	margin-top: 10px;
+	margin-right: -10px;
+	display: inline-block;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#cars-wrap {
 	margin-top: 10px;
 	display: inline-block;
 }
+
+.brand-c, .tahun-c, .tipe-c {
+	width: 100%;
+	display: inline-block;
+}
+
+
 /*-----Contact & Showroom Section-----*/
 #contact {
 	margin-top: 55px;
@@ -266,7 +284,8 @@ body {
 	#sort-dt {
 		float: none;
 		width: 100%;
-		margin-left: 12px; 
+		margin-left: 12px;
+		margin-top: 0; 
 	}
 }
 
