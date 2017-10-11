@@ -122,7 +122,7 @@ body {
 
 .rc-prod img {
 	width: 100%;
-	padding: 10px;
+	padding: 0px;
 	margin: auto !important;
 }
 
@@ -133,52 +133,6 @@ body {
 
 #btn-cars {
 	text-align: center;
-}
-
-/*-----Footer Section-----*/
-
-.footer {
-	background-color: #f2f2f2;
-	display: block;
-	text-align: center;
-	border-top: 1px solid #cccccc;
-	margin-top: 50px;
-}
-
-.f-wrap {
-	margin-top: 15px;
-	margin-bottom: 15px;
-}
-
-#fb-btn {
-	width: 40px;
-	height:40px;
-	border-radius: 50% !important;
-	font-size: 1.3em;
-	margin-right: 10px;
-}
-
-#ig-btn {
-	width: 43px;
-	height:43px;
-	border-radius: 50% !important;
-	font-size: 1.3em;
-	margin-left: 10px;	
-}
-
-#f-menu {
-	margin-bottom: 15px;
-}
-
-#f-menu > a {
-	text-decoration: none !important;
-	margin-left: 10px;
-	margin-right: 10px;
-	color: #666666;
-}
-
-#f-menu > a:hover {
-	color: #000;
 }
 
 /*-----Contact & Showroom Section-----*/
@@ -286,4 +240,50 @@ body {
 	.kshow h4 {
 		font-size: 1.2em;
 	}
+}
+
+/*-----Footer Section-----*/
+
+.footer {
+	background-color: #f2f2f2;
+	display: block;
+	text-align: center;
+	border-top: 1px solid #cccccc;
+	margin-top: 50px;
+}
+
+.f-wrap {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#fb-btn {
+	width: 40px;
+	height:40px;
+	border-radius: 50% !important;
+	font-size: 1.3em;
+	margin-right: 10px;
+}
+
+#ig-btn {
+	width: 43px;
+	height:43px;
+	border-radius: 50% !important;
+	font-size: 1.3em;
+	margin-left: 10px;	
+}
+
+#f-menu {
+	margin-bottom: 15px;
+}
+
+#f-menu > a {
+	text-decoration: none !important;
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #666666;
+}
+
+#f-menu > a:hover {
+	color: #000;
 }

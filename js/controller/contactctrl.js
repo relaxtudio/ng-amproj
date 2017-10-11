@@ -76,7 +76,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
         $scope.map.lat = map.lat;
         $scope.map.lng = map.lng;
         $scope.map.index = index;
-    }
+    };
 
     $scope.init();
     $scope.$on('$routeChangeSuccess', function() {
