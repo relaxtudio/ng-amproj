@@ -1,4 +1,4 @@
-am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $state, NgMap){
+am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($scope, $state, NgMap, $timeout){
     
     $scope.init = function() {
         $scope.status = {
@@ -54,23 +54,31 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
                 lng : 112.7337643
             }
         ];
+        $scope.loadMap();
+    };
 
+    $scope.initFunction = function() {
         $scope.map = {
             lat: $scope.locations[0].lat,
             lng: $scope.locations[0].lng,
             zoom: 11,
-            locations : $scope.locations
+            locations : []
         };
-    };
-
-    $scope.initFunction = function() {
         $scope.status.load = true;
-        $scope.loadMap();
     };
 
     $scope.loadMap = function() {
         NgMap.getMap().then(function(map){
         })
+    };
+
+    $scope.loadAllMarker = function() {
+        $scope.map.locations = $scope.locations;
+    };
+
+    $scope.loadBigMap = function() {
+        $scope.initFunction();
+        $scope.loadAllMarker();
     };
 
     $scope.selectLocation = function(index, map) {
@@ -85,6 +93,13 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
     $scope.init();
     $scope.$on('$viewContentLoaded', function() {
         $scope.initFunction();
+        $timeout(function() {
+            $scope.loadAllMarker();
+        }, 500);
+    });
+
+    $scope.$on('$destroy', function() {
+        $scope.map.locations = [];
     });
     
     $scope.scrollToTop = function($var) {
