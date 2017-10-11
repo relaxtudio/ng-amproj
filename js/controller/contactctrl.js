@@ -1,6 +1,9 @@
 am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $state, NgMap){
     
     $scope.init = function() {
+        $scope.status = {
+            load: false
+        };
         $scope.locations = [
             {
                 lks : 'Anugerah Motor - Dharmawangsa 69',
@@ -60,6 +63,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
     };
 
     $scope.initFunction = function() {
+        $scope.status.load = true;
         $scope.loadMap();
     };
 
@@ -78,7 +82,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
     }
 
     $scope.init();
-    $scope.$on('$routeChangeSuccess', function() {
+    $scope.$on('$viewContentLoaded', function() {
         $scope.initFunction();
     });
 

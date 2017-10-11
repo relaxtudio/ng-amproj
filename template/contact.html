@@ -2,7 +2,7 @@
 <section id="contact">
 	
 </section> -->
-<section id="contact">
+<section id="contact" ng-show="status.load">
 	<ng-map id="map" zoom="{{map.zoom}}" center="[{{map.lat}}, {{map.lng}}]" default-style="true">
 		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="[{{m.lat}}, {{m.lng}}]" title="{{m.lks}}">
 		</marker>
