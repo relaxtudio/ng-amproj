@@ -202,7 +202,7 @@ body {
 }
 
 #map {
-    height: 500px !important;
+    height: 575px !important;
 }
 
 @media screen and (max-width: 478px){
