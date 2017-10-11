@@ -122,7 +122,7 @@ body {
 
 .rc-prod img {
 	width: 100%;
-	padding: 10px;
+	padding: 0px;
 	margin: auto !important;
 }
 
@@ -133,6 +133,113 @@ body {
 
 #btn-cars {
 	text-align: center;
+}
+
+/*-----Contact & Showroom Section-----*/
+#contact {
+	margin-top: 55px;
+	color: #666666;
+	width: 100%;
+}
+
+.list-lk {
+	width: 100%;
+	overflow: hidden;
+	clear: both;
+}
+
+.kshow {
+	float: left;
+	width: 50%;
+	padding-left: 13%;
+	margin-top: 10px;
+}
+
+#map {
+    height: 575px !important;
+}
+
+@media screen and (max-width: 478px){
+	/*
+	.navbar-toggle {
+		margin-right: 41%;
+	}
+	
+	.navbar-brand {
+		margin-left: 15px;
+		margin-top: 2px;
+	}
+
+	#logo2 {
+		float: right;
+		display: inline-block;
+		position: relative;
+		margin-top: -50px;
+		margin-right: 20px;
+	}
+	*/
+	.home-content {
+		margin-top: 65px;
+	}
+
+	.carousel-inner > .item > img {
+	 	margin: auto;
+	 	height: 150px;
+	 	width: 100%;
+	 	background-position: center;
+ 	}
+
+ 	.profit-det {
+ 		font-size: 0.91em;
+ 	}
+
+ 	#contact > .row {
+ 		margin-left: 0;
+ 		margin-right: 0;
+ 	}
+
+ 	#map {
+ 		max-height: 300px;
+ 	}
+
+ 	.list-lk {
+ 		height: auto;
+		width: 100%;
+		overflow: show;
+	}
+
+ 	.kshow {
+		float: unset;
+		width: 100%;
+		padding-left: 10px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.navbar-brand img {
+		width: 105px;
+		margin-top: -17px;
+	}
+
+	#logo2 img {
+		width: 100px;
+	}
+
+	.list-lk {
+ 		height: auto !important;
+		width: 100%;
+		overflow: show;
+	}
+
+ 	.kshow {
+		float: unset !important;
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.kshow h4 {
+		font-size: 1.2em;
+	}
 }
 
 /*-----Footer Section-----*/
@@ -179,89 +286,4 @@ body {
 
 #f-menu > a:hover {
 	color: #000;
-}
-
-/*-----Contact & Showroom Section-----*/
-#contact {
-	margin-top: 55px;
-	color: #666666;
-	width: 100%;
-}
-
-#contact > .row {
-	margin-left:15%;
-	margin-right: 15%;
-}
-
-#dh-69, #kj-158, #bj-28, #jg-60, #nj-33, #kj-97, #dtc-wk, #bg-jt {
-	margin-left: 25%;	
-}
-
-.gmaps {
-	width: 100%;
-}
-
-.gmaps img {
-	display: inline;
-}
-
-#map {
-    height: 500px !important;
-}
-
-@media screen and (max-width: 478px){
-	/*
-	.navbar-toggle {
-		margin-right: 41%;
-	}
-	
-	.navbar-brand {
-		margin-left: 15px;
-		margin-top: 2px;
-	}
-
-	#logo2 {
-		float: right;
-		display: inline-block;
-		position: relative;
-		margin-top: -50px;
-		margin-right: 20px;
-	}
-	*/
-	.home-content {
-		margin-top: 65px;
-	}
-
-	.carousel-inner > .item > img {
-	 	margin: auto;
-	 	height: 150px;
-	 	width: 100%;
-	 	background-position: center;
- 	}
-
- 	.profit-det {
- 		font-size: 0.91em;
- 	}
-
- 	#contact > .row {
- 		margin-left: 0;
- 		margin-right: 0;
- 	}
-
- 	#map {
- 		max-height: 300px;
- 	}
-
-}
-
-@media screen and (max-width: 320px){
-	.navbar-brand img {
-		width: 105px;
-		margin-top: -17px;
-	}
-
-	#logo2 img {
-		width: 100px;
-	}
-
 }
