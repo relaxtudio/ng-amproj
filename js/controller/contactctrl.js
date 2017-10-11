@@ -41,8 +41,8 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', function($scope, $sta
             {
                 lks : 'Anugerah Motor - DTC Wonokromo',
                 desc : 'Test',
-                lat : -7.302322, 
-                lng : 112.7373842
+                lat : -7.3023274, 
+                lng : 112.7375112
             },
             {
                 lks : 'Anugerah Motor - BG Junction',

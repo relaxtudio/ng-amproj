@@ -4,7 +4,7 @@
 </section> -->
 <section id="contact">
 	<ng-map id="map" zoom="{{map.zoom}}" center="[{{map.lat}}, {{map.lng}}]" default-style="true">
-		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="[{{m.lat}}, {{m.lng}}]" title="{{m.lks}}">
+		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="[{{m.lat}}, {{m.lng}}]" title="{{m.lks}}" animation="DROP">
 		</marker>
 	</ng-map>
 
