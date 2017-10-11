@@ -1,1 +1,49 @@
-car
+<section id="cars-content">
+	<div class="c-head">
+		<div id="bt-fil" class="col-md-9 col-xs-6">
+			<a class="btn btn-default" id="filter" data-toggle="modal" data-target="#filter-modal">
+				<i class="fa fa-filter"></i> Filter
+			</a>
+		</div>
+		<div id="c-total" class="col-xs-6 col-md-3">
+			<div class="pull-right">
+				Total : <b>xxx</b> Mobil
+			</div>
+		</div>
+	</div>
+	<div id="sort-dt" class="form-inline">
+		<div class="form-group">
+			<div class="col-xs-4">
+				<label for="sorting"><i class="fa fa-sort"></i> Urutkan</label>
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control" id="sorting">
+					<option>---Pilih---</option>
+					<option>Terbaru</option>
+					<option>Termahal</option>
+					<option>Termurah</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div id="filter-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+	        		<h4 class="modal-title">Filter Mobil</h4>
+				</div>
+				<div class="modal-body">
+					List Filter
+				</div>
+				<div class="modal-footer">
+					<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
+					<a class="btn btn-info" href="#">Ok</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
