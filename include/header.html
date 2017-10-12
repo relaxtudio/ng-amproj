@@ -1,16 +1,20 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
+      <button id="search-clp" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search"><i class="fa fa-search" style="font-size: 1.25em;"></i>
+      </button>
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
       </button>
+      
       <a class="navbar-brand" href="#!/"><img src="/assets/img/logo1.png"></a>
       <!--<a id="logo2" href="#!"><img src="/assets/img/logo2.png"></a>-->
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+
+      <ul class="nav navbar-nav collapse navbar-collapse" id="myNavbar">
         <li>
           <a href="#!/" data-toggle="collapse" data-target=".navbar-collapse.in">
             <i class="fa fa-home" style="font-size: 0.92em;"></i>&nbsp;&nbsp;<b>Home</b>
@@ -25,20 +29,23 @@
           <a href="#!/contact" data-toggle="collapse" data-target=".navbar-collapse.in">
             <i class="fa fa-phone" style="font-size: 0.9em;"></i>&nbsp;&nbsp;<b>Kontak & Showroom</b>
           </a>
-        </li> 
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+        </li>
         <li>
           <a href="#!/sim" data-toggle="collapse" data-target=".navbar-collapse.in">
             <i class="fa fa-calculator" style="font-size: 0.85em;"></i>&nbsp;&nbsp;<b>Simulasi Kredit</b>
           </a>
-        </li>
-        <li>
-          <a id="cari-m" data-toggle="collapse" data-target=".navbar-collapse.in">
-            <i class="fa fa-search" style="font-size: 0.85em;"></i>&nbsp;&nbsp;<b>Cari</b>
-          </a>
-        </li>
+        </li> 
       </ul>
+    <div class="collapse navbar-collapse" id="search">
+        <form class="navbar-form navbar-right" role="search">
+          <div class="search-container">
+            <input type="text" id="s-mobil" class="form-control" placeholder="Cari mobil">
+            <button id="s-btn" type="submit" class="btn btn-default" data-toggle="collapse" data-target="#search.in">
+              <i class="fa fa-search" style="font-size: 1.25em;"></i>
+            </button>
+          </div>
+        </form>
     </div>
+
   </div>
 </nav>
