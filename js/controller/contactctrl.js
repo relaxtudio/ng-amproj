@@ -95,7 +95,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
         $scope.initFunction();
         $timeout(function() {
             $scope.loadAllMarker();
-        }, 500);
+        }, 450);
     });
 
     $scope.$on('$destroy', function() {

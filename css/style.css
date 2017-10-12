@@ -1,3 +1,8 @@
+/*
+	* Author: Relaxtudio
+	* Description: Anugerah Motor web style
+*/
+
 @font-face {
     font-family: Poppins;
     src: url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
@@ -10,12 +15,14 @@
 * {
 	-webkit-font-smoothing: antialiased !important;
 	border-radius: 0 !important;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 body {
 	width: 100%;
 }
+
+/*-----NAVBAR-----*/
 
 .navbar-default {
 	background-color: #FFF;
@@ -48,7 +55,10 @@ body {
 	margin-right: 0px !important;
 }
 
-/*-----Home Section-----*/
+/*-----HOME SECTION-----*/
+.home-content {
+	margin-top:52px;
+}
 
 #cari-m {
 	background-color: #d71631;
@@ -129,20 +139,19 @@ body {
 
 .cars-det {
 	display:block;
-	padding: 10px;
 }
 
 .rc-nama {
 	font-size: 1.3em;
 	text-align: center;
+	padding-top: 5px;
 }
 
-.rc-info {
+.rc-info, .rc-loc {
 	text-align: center;
-}
-
-.rc-loc {
-	text-align: center;
+	font-size: 0.9em;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 #btn-cars {
@@ -159,8 +168,8 @@ body {
 	-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/*-----Cars Section-----*/
-#cars-content {
+/*-----CARS SECTION-----*/
+.cars-content {
 	margin-top: 52px;
 	color: #666666;
 }
@@ -186,6 +195,10 @@ body {
 	display: inline-block;
 }
 
+#sorting-lbl {
+	margin-top: 5px;
+}
+
 .clearfix::after {
     content: "";
     clear: both;
@@ -203,17 +216,22 @@ body {
 }
 
 
-/*-----Contact & Showroom Section-----*/
-#contact {
-	margin-top: 55px;
+/*-----CONTACT & SHOWROOM SECTION-----*/
+.contact {
+	margin-top: 52px;
 	color: #666666;
 	width: 100%;
+}
+
+#all-loc {
+	margin-top: 25px;
 }
 
 .list-lk {
 	width: 100%;
 	overflow: hidden;
 	clear: both;
+	margin-top: 50px;
 }
 
 .kshow {
@@ -227,6 +245,12 @@ body {
     height: 575px !important;
 }
 
+/*-----SIMULASI KREDIT SECTION-----*/
+.simkred {
+	margin-top: 52px;
+}
+
+/*-----MOBILE SCREEN-----*/
 @media screen and (max-width: 478px){
 	/*
 	.navbar-toggle {
@@ -316,8 +340,25 @@ body {
 	}
 }
 
+/*-------ANIMATION-------*/
+[ui-view].ng-enter, [ui-view].ng-leave {
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+[ui-view].ng-enter {
+	opacity: 0;
+}
+[ui-view].ng-enter.ng-enter-active {
+	opacity: 1;
+}
+[ui-view].ng-leave {
+	opacity: 1;
+}
+[ui-view].ng-leave.ng-leave-active {
+	opacity: 0;
+}
 
-/*-----Footer Section-----*/
+/*-----FOOTER SECTION-----*/
 .footer {
 	background-color: #f2f2f2;
 	display: block;
