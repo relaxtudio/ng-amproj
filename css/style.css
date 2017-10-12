@@ -3,10 +3,7 @@
 	* Description: Anugerah Motor web style
 */
 
-@font-face {
-    font-family: Poppins;
-    src: url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
-}
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
 
  html, html a {
       text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
@@ -29,18 +26,16 @@ body {
 	border: none;
 }
 
-.navbar-brand {
-	margin-left: 5px !important;
-}
-
 .navbar-brand img{
 	width: 130px;
-	margin-top: -18px;
+	margin-top: -15px;
 }
 
+/*
 #logo2 img {
 	width: 120px;
 }
+*/
 
 .navbar-nav > li > a {
 	color: #797D7F !important;
