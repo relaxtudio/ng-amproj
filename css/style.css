@@ -495,10 +495,6 @@ body {
 	opacity: 0;
 }
 
-.blink-txt {
-  animation: blinker 1.5s linear infinite;
-}
-
 @keyframes blinker {  
   50% { opacity: 0; }
 }
