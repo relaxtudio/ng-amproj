@@ -4,7 +4,7 @@
 */
 
 @import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
-
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
  html, html a {
       text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
  }
@@ -118,24 +118,32 @@ body {
  }
 
 .banner-profits {
- 	background-color: #e6e6e6;
+ 	background-color: rgba(230, 230, 230,0.4);
  	width: 100%;
  	display: inline-block;
  	margin-top: 10px;
+ 	min-height: 75px;
+ 	font-family: 'Lato', sans-serif;
+ 	font-size: 2em;
+ 	font-weight: 700;
+ 	text-align: justify;
  }
 
-.profit-det > i {
-	font-size: 2.5em;
+.banner-profits > .col-md-8 {
+ 	margin-top: 15px;
 }
 
-.profit-det {
- 	font-size: 1.2em;
- 	margin-top: 10px;
- 	margin-bottom: 10px;
- 	text-align: center;
- 	font-weight: 700;
- 	color: #797D7F;
- }
+#slogan > p {
+	color: #ee1b24;
+}
+
+#logo1, #logo2 {
+	margin-top: 8px;
+}
+
+#logo1 > img, #logo2 > img {
+	width: auto;
+}
 
  .recent-cars {
  	margin-top: 85px;
@@ -213,14 +221,18 @@ body {
 .c-head{
 	width: 100%;
 	border-bottom: 1px solid #cccccc;
-	background-color: #e6e6e6;
+	background-color: rgba(230,230,230,0.2);
 	padding: 8px;
 	overflow: hidden;
 	color: #666666;
 }
 
-#c-total {
+#bt-fil {
 	margin-top: 5px;
+}
+
+#c-total {
+	margin-top: 12px;
 }
 
 #sort-dt {
@@ -286,8 +298,20 @@ body {
 	margin-top: 52px;
 }
 
-/*-----MOBILE SCREEN-----*/
-@media screen and (max-width: 736px){
+/*-----RESPONSIVE SCREEN-----*/
+
+@media screen and (max-width: 1200px){
+	.carousel-inner > .item > img {
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 768px){
+
+	.content > section {
+		margin-top: 110px;
+	}
+
 	#search, .search-container {
 		background-color: #d9d9d9;
 	}
@@ -295,6 +319,11 @@ body {
 	#search {
 		margin-right: 0;
 		margin-left: 0;
+		background-color: #fff;
+	}
+
+	#search, .search-container {
+		background-color: #fff;
 	}
 
 	#s-mobil {
@@ -310,6 +339,31 @@ body {
 		height: auto;
 	}
 
+	.banner-profits {
+		font-size: 1.7em;
+	}
+
+	.banner-profits > div {
+		text-align: center;
+		margin-top: 8px;
+		margin-bottom: 20px;
+	}
+
+	#logo1 > img, #logo2 > img {
+		max-width: 150px;
+		margin: auto;
+	}
+
+}
+
+@media screen and (max-width: 736px){
+	.content > section {
+		margin-top: 52px;
+	}
+
+	#search, .search-container {
+		background-color: #d9d9d9;
+	}
 }
 
 @media screen and (max-width: 478px){
@@ -331,6 +385,10 @@ body {
 		margin-right: 20px;
 	}
 	*/
+	.content > section {
+		margin-top: 52px;
+	}
+
 	.navbar-brand {
 		margin-right: 0;
 	}
@@ -401,10 +459,6 @@ body {
 		margin-top: -17px;
 	}
 
-	#logo2 img {
-		width: 100px;
-	}
-
 	.list-lk {
  		height: auto !important;
 		width: 100%;
@@ -456,19 +510,29 @@ body {
 }
 
 #fb-btn {
-	width: 40px;
-	height:40px;
-	border-radius: 50% !important;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	margin-right: 10px;
+	border: 0;
+	outline: none;
+	background-color: transparent;
+	color: #666666;
 }
 
 #ig-btn {
-	width: 43px;
-	height:43px;
-	border-radius: 50% !important;
-	font-size: 1.4em;
-	margin-left: 10px;	
+	font-size: 1.5em;
+	margin-left: 10px;
+	border: 0;
+	outline: none;
+	background-color: transparent;
+	color: #666666;	
+}
+
+#fb-btn:hover {
+	color:#3b5998;
+}
+
+#ig-btn:hover {
+	color: orange;
 }
 
 #f-menu {
