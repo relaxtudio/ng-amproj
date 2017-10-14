@@ -2,16 +2,16 @@
 <section id="contact">
 	
 </section> -->
-<section id="contact" ng-show="status.load">
+<section class="contact" ng-show="status.load">
 	<ng-map id="map" zoom="{{map.zoom}}" center="[{{map.lat}}, {{map.lng}}]" default-style="true">
 		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="{{m.lat}}, {{m.lng}}" title="{{m.lks}}, {{m.desc}}" animation="DROP">
 		</marker>
 	</ng-map>
 	<br>
-	<legend style="background-color: #e6e6e6;color: #666666; text-align: center;"><i class="fa fa-phone"></i> Kontak & Showroom
+	<legend>Daftar Kontak & Showroom Kami <i class="fa fa-arrow-down"></i>
 	</legend>
 	<div align="center">
-		<a id="all-Loc" class="btn btn-primary" ng-click="loadBigMap(); scrollToTop()">
+		<a id="all-loc" class="btn btn-primary btn-lg" ng-click="loadBigMap(); scrollToTop()">
 			<i class="fa fa-map-o"></i> Tampilkan Semua Lokasi
 		</a>
 	</div>
@@ -19,13 +19,13 @@
 		<div class="kshow col-md-6" ng-repeat="d in locations">
 			<h4><i class="fa fa-building-o"></i> {{d.lks}}</h4>
 			<span>
-				<i class="fa fa-map-marker"></i> Jl. Dharmawangsa No. 69
+				<i class="fa fa-map-marker"></i> {{d.desc}}
 			</span><br>
 			<span>
-				<i class="fa fa-phone"></i> 031-5017171
+				<i class="fa fa-phone"></i> {{d.tlp}}
 			</span><br>
 			<span>
-				<i class="fa fa-map"></i> Surabaya
+				<i class="fa fa-map"></i> {{d.kota}}
 			</span><br>
 			<a id="tomap" class="btn btn-info" ng-click="selectLocation($index, d); scrollToTop()">
 				<i class="fa fa-map-o"></i> Tampilkan Map
