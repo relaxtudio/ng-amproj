@@ -35,4 +35,10 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 		$scope.init();
 		$interval($scope.nextSlide, $scope.interval);
 	});
+
+	$scope.scrollToTop = function($var) {
+      $('html, body').animate({
+          scrollTop: 0
+      }, 'fast');
+    };
 }])
