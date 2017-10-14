@@ -19,13 +19,13 @@
 		<div class="kshow col-md-6" ng-repeat="d in locations">
 			<h4><i class="fa fa-building-o"></i> {{d.lks}}</h4>
 			<span>
-				<i class="fa fa-map-marker"></i> Jl. Dharmawangsa No. 69
+				<i class="fa fa-map-marker"></i> {{d.desc}}
 			</span><br>
 			<span>
-				<i class="fa fa-phone"></i> 031-5017171
+				<i class="fa fa-phone"></i> {{d.tlp}}
 			</span><br>
 			<span>
-				<i class="fa fa-map"></i> Surabaya
+				<i class="fa fa-map"></i> {{d.kota}}
 			</span><br>
 			<a id="tomap" class="btn btn-info" ng-click="selectLocation($index, d); scrollToTop()">
 				<i class="fa fa-map-o"></i> Tampilkan Map

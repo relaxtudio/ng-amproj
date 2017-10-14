@@ -8,48 +8,64 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
             {
                 lks : 'Anugerah Motor - Dharmawangsa 69',
                 desc : 'Jl. Dharmawangsa No. 69',
+                tlp : '031-5017171',
+                kota: 'Surabaya',
                 lat : -7.276557, 
                 lng : 112.756154
             },
             {
                 lks : 'Anugerah Motor - Kertajaya 158',
                 desc : 'Jl. Kertajaya No.158',
+                tlp : '031-5047171',
+                kota: 'Surabaya',
                 lat : -7.2789629, 
                 lng : 112.757262
             },
             {
                 lks : 'Anugerah Motor - Barata Jaya 19 / 28',
                 desc : 'Jl. Barata Jaya XIX No. 28',
+                tlp : '031-5045455',
+                kota : 'Surabaya',
                 lat : -7.30123239, 
                 lng : 112.75917991
             },
             {
                 lks : 'Anugerah Motor - Jenggolo 60',
                 desc : 'Jl. Jenggolo No. 60',
+                tlp : '031-8957171',
+                kota: 'Sidoarjo',
                 lat : -7.4415895, 
                 lng : 112.7197847
             },
             {
                 lks : 'Anugerah Motor - Ngagel Jaya 33',
                 desc : 'Jl Ngagel Jaya No. 33',
+                tlp : '031-5027171',
+                kota : 'Surabaya',
                 lat : -7.289509, 
                 lng : 112.7539402
             },    
             {
                 lks : 'Anugerah Motor - Kertajaya 97',
                 desc : 'Jl. Kertajaya No. 97',
+                tlp : '031-5057171',
+                kota : 'Surabaya',
                 lat : -7.2782748, 
                 lng : 112.756492
             },
             {
                 lks : 'Anugerah Motor - DTC Wonokromo',
                 desc : 'DTC Wonokromo Lt6',
+                tlp : '087851758333',
+                kota : 'Surabaya',
                 lat : -7.3023274, 
                 lng : 112.7375112
             },
             {
                 lks : 'Anugerah Motor - BG Junction',
                 desc : 'Jl Bubutan I No. 7',
+                tlp : '08315884747',
+                kota : 'Surabaya',
                 lat : -7.251574, 
                 lng : 112.7337643
             }
