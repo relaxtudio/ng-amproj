@@ -1,4 +1,4 @@
-var am = angular.module('am', ['ui.router', 'ngAnimate', 'ngMap']);
+var am = angular.module('am', ['ui.router', 'ngAnimate', 'ngMap', 'angular-timeline']);
 
 
 
@@ -45,6 +45,26 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 				'content': {
 					templateUrl: 'template/sim.html',
 					controller: 'SimCtrl'
+				}
+			}
+		})
+
+		.state('cardetail', {
+			url: '/cardetail',
+			views: {
+				'content': {
+					templateUrl: 'template/cardetail.html',
+					controller: 'CardetCtrl'
+				}
+			}
+		})
+
+		.state('about', {
+			url: '/about',
+			views: {
+				'content': {
+					templateUrl: 'template/about.html',
+					controller: 'AboutCtrl'
 				}
 			}
 		})
