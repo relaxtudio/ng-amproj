@@ -330,8 +330,24 @@ body {
 	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	color: #666666;
+	height: 50px;
+	display: block;
 }
 
+#ab-title > h3 {
+	padding-top: 12px;
+}
+
+.ab-logo {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+.ab-logo img {
+	max-width: 135px;
+	margin-bottom: 10px;
+}
 
 /*-----RESPONSIVE SCREEN-----*/
 
