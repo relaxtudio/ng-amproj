@@ -8,7 +8,9 @@
     "angular-animate": "^1.6.6",
     "angular-ui-router": "^0.4.3",
     "connect-modrewrite": "^0.10.1",
-    "ngmap": "^1.18.4"
+    "ngmap": "^1.18.4",
+    "panolens.js": "0.0.0",
+    "three.js": "^0.77.1"
   },
   "devDependencies": {
     "connect-modrewrite": "^0.10.1"
