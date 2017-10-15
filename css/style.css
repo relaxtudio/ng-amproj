@@ -471,7 +471,11 @@ body {
 	}
 
 	.threesixty.car {
-		height: 200px;
+		height: 275px !important;
+	}
+
+	.spinner {
+		margin-top: 95px !important;
 	}
 }
 
