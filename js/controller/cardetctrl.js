@@ -1,5 +1,13 @@
 am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
-	$scope.initSlider = function() {
+	$scope.carDetail = {
+		image: 'assets/ext/civic-2017/',
+		interior: 'assets/int/civic-interior.jpg'
+	};
+
+	$scope.init = function() {
+		$scope.initSlider($scope.carDetail.image);
+	};
+	$scope.initSlider = function(image) {
 		var car;
 		$(function(){
 			$scope.$car =  $('.car').ThreeSixty({
@@ -8,7 +16,7 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 		        currentFrame: 1, // This the start frame for auto spin
 		        imgList: '.threesixty_images', // selector for image list
 		        progress: '.spinner', // selector to show the loading progress
-		        imagePath:'assets/ext/civic-2017/', // path of the image assets
+		        imagePath: image, // path of the image assets
 		        filePrefix: '', // file prefix if any
 		        ext: '.png', // extention for the assets
 		        height: '315',
@@ -34,6 +42,7 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 
 		});
 	};
+<<<<<<< HEAD
 	$scope.initSlider();
 
 	$scope.interiorView = function() {
@@ -45,4 +54,26 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 		$scope.viewer.add( $scope.panorama );		
 	}
 	$scope.interiorView();	
+=======
+
+	$scope.panolens = function() {
+		console.log('panolens');
+		var panorama, viewer, container;
+
+		container = document.querySelector('#panolens-container');
+
+		panorama = new PANOLENS.ImagePanorama( 'assets/int/civic-interior.jpg' );
+
+		viewer = new PANOLENS.Viewer({
+			container: container
+		});
+		viewer.add( panorama );
+	}
+
+	$scope.$on('$viewContentLoaded', function() {
+		$scope.init();
+		window.scrollTo(0, 0);
+	});
+
+>>>>>>> 643c4268dcfb0ecf47f468b134a62e841e8b163d
 }])
