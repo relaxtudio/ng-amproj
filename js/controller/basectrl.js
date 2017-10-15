@@ -34,6 +34,7 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 	$scope.$on('$viewContentLoaded', function() {
 		$scope.init();
 		$interval($scope.nextSlide, $scope.interval);
+		window.scrollTo(0, 0);
 	});
 
 	$scope.scrollToTop = function($var) {

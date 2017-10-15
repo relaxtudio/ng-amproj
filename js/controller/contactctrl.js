@@ -111,6 +111,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
         $timeout(function() {
             $scope.loadAllMarker();
         }, 450);
+        window.scrollTo(0, 0);
     });
 
     $scope.$on('$destroy', function() {

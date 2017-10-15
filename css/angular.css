@@ -1,4 +1,9 @@
 @font-face {
+	font-family: Aller;
+	src: url(aller.regular.ttf);
+}
+
+@font-face {
     font-family: Poppins;
     src: url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700);
 }
