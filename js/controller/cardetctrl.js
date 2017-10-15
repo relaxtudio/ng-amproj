@@ -44,6 +44,7 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 	};
 <<<<<<< HEAD
 	$scope.initSlider();
+<<<<<<< HEAD
 
 	$scope.interiorView = function() {
 		var panorama, viewer;
@@ -76,4 +77,6 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 	});
 
 >>>>>>> 643c4268dcfb0ecf47f468b134a62e841e8b163d
+=======
+>>>>>>> parent of cc128e9... mixmix
 }])
