@@ -278,6 +278,51 @@ body {
 	display: inline-block;
 }
 
+/*-----CAR DETAIL SECTION-----*/
+.cardetail {
+	margin-top: 60px;
+}
+
+.cardetail * {
+	color: #666666;
+}
+
+#prod-toggle {
+	margin-bottom: 20px;
+}
+
+#cars-product {
+	display: block;
+	margin-bottom: 50px;
+}
+
+#cars-info-wrap {
+	display: block;
+}
+
+#cars-title {
+	background-color: #f2f2f2;
+	font-size: 1.3em;
+	line-height: 25px;
+}
+
+#cars-title > p {
+	padding-top: 8px;
+}
+
+#cars-info {
+	border: 1px solid #f2f2f2;
+}
+
+#cars-info > div {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.video-int {
+	max-height: 300px;
+	display: block;
+}
 
 /*-----CONTACT & SHOWROOM SECTION-----*/
 .contact {
@@ -410,6 +455,10 @@ body {
 		margin: auto;
 	}
 
+	.threesixty.car {
+		height: 205px !important;
+	}
+
 }
 
 @media screen and (max-width: 736px){
@@ -419,6 +468,30 @@ body {
 
 	#search, .search-container {
 		background-color: #d9d9d9;
+	}
+
+	.threesixty.car {
+		height: 200px;
+	}
+}
+
+@media screen and (max-width: 667px) {
+	.threesixty.car {
+		height: 250px !important;
+	}
+
+	.spinner {
+		margin-top: 75px !important;
+	}
+}
+
+@media screen and (max-width: 568px){
+	.threesixty.car {
+		height: 205px !important;
+	}
+
+	.spinner {
+		margin-top: 70px !important;
 	}
 }
 
@@ -477,10 +550,6 @@ body {
 	 	background-position: center;
  	}
 
- 	.profit-det {
- 		font-size: 0.91em;
- 	}
-
  	#contact > .row {
  		margin-left: 0;
  		margin-right: 0;
@@ -507,6 +576,14 @@ body {
 		margin-left: 12px;
 		margin-top: 0; 
 	}
+
+	.threesixty.car {
+		height: 150px !important;
+	}
+
+	.spinner {
+		margin-top: 50px !important;
+	}
 }
 
 @media screen and (max-width: 320px){
@@ -531,6 +608,14 @@ body {
 		font-size: 1.2em;
 	}
 
+	.threesixty.car {
+		height: 130px !important;
+	}
+
+	.spinner {
+		margin-top: 40px !important;
+	}
+
 }
 
 /*-------ANIMATION-------*/
@@ -549,6 +634,15 @@ body {
 }
 [ui-view].ng-leave.ng-leave-active {
 	opacity: 0;
+}
+
+.animate-show-hide.ng-hide {
+  	opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  	transition: all linear 0.5s;
 }
 
 @keyframes blinker {  

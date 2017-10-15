@@ -1,0 +1,62 @@
+<section class="cardetail">
+	<div id="prod-toggle">
+		<a ng-click="mobil = false" class="btn btn-default"><i class="fa fa-car"></i> Exterior</a>
+		<a ng-click="mobil = true" class="btn btn-default"><img src="assets/img/360_icon.png" width="30"> Interior</a>
+	</div>
+	<div id="cars-product" class="col-md-8 col-sm-8">
+		<div id="exterior" ng-hide="mobil" class="animate-show-hide">
+			<div class="threesixty car" car>
+			    <div class="spinner">
+			        <span>0%</span>
+			    </div>
+			    <ol class="threesixty_images"></ol>
+			</div>
+			<div id="navigation-prod" class="pull-right">
+				<a class="btn btn-default custom_previous" custom_previous><i class="fa fa-backward"></i></a>
+				<a class="btn btn-default custom_play" custom_play><i class="fa fa-play"></i></a>
+			    <a class="btn btn-default custom_stop" custom_stop><i class="fa fa-pause"></i></a>
+			    <a class="btn btn-default custom_next" custom_next><i class="fa fa-forward"></i></a>
+			</div>
+		</div>
+		<div id="interior" ng-show="mobil" class="animate-show-hide">
+			<div class="video-int">
+				VIDEO
+			</div>
+		</div>
+	</div>
+
+	<div id="cars-info-wrap" class="col-md-4 col-sm-4">
+		<div id="cars-title" class="col-md-12">
+			<p><b>Honda Civic Tipe R</b></p>
+		</div>
+		<div id="cars-info" class="col-md-12">
+			<div>
+				<i class="fa fa-calendar"></i> Tahun : 2017
+			</div>
+			<div>
+				<i class="fa fa-dashboard"></i> Kilometer : 123456
+			</div>
+			<div>
+				<i class="fa fa-paint-brush"></i> Warna : Putih Metalik
+			</div>
+			<div>
+				<i class="fa fa-cogs"></i> Transimisi : Manual
+			</div>
+			<div>
+				<i class="fa fa-gavel"></i> Silinder : 2.0
+			</div>
+			<div>
+				 <i class="fa fa-building-o"></i> Showroom : Dharmawangsa 69
+			</div>
+			<div style="font-size: 1.3em">
+				<i class="fa fa-tag"></i> <b>Rp 1.200.000.000,-</b>
+			</div>
+			<div align="center">
+				<a href="#" class="btn btn-info" style="color: #fff;">
+					<i class="fa fa-calculator" style="color: #fff;"></i> Kalkulasi Kredit
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</section>

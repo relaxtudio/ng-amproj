@@ -6,7 +6,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
         };
         $scope.locations = [
             {
-                lks : 'Anugerah Motor - Dharmawangsa 69',
+                lks : 'Dharmawangsa 69',
                 desc : 'Jl. Dharmawangsa No. 69',
                 tlp : '031-5017171',
                 kota: 'Surabaya',
@@ -14,7 +14,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.756154
             },
             {
-                lks : 'Anugerah Motor - Kertajaya 158',
+                lks : 'Kertajaya 158',
                 desc : 'Jl. Kertajaya No.158',
                 tlp : '031-5047171',
                 kota: 'Surabaya',
@@ -22,7 +22,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.757262
             },
             {
-                lks : 'Anugerah Motor - Barata Jaya 19 / 28',
+                lks : 'Barata Jaya 19 / 28',
                 desc : 'Jl. Barata Jaya XIX No. 28',
                 tlp : '031-5045455',
                 kota : 'Surabaya',
@@ -30,7 +30,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.75917991
             },
             {
-                lks : 'Anugerah Motor - Jenggolo 60',
+                lks : 'Jenggolo 60',
                 desc : 'Jl. Jenggolo No. 60',
                 tlp : '031-8957171',
                 kota: 'Sidoarjo',
@@ -38,7 +38,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.7197847
             },
             {
-                lks : 'Anugerah Motor - Ngagel Jaya 33',
+                lks : 'Ngagel Jaya 33',
                 desc : 'Jl Ngagel Jaya No. 33',
                 tlp : '031-5027171',
                 kota : 'Surabaya',
@@ -46,7 +46,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.7539402
             },    
             {
-                lks : 'Anugerah Motor - Kertajaya 97',
+                lks : 'Kertajaya 97',
                 desc : 'Jl. Kertajaya No. 97',
                 tlp : '031-5057171',
                 kota : 'Surabaya',
@@ -54,7 +54,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.756492
             },
             {
-                lks : 'Anugerah Motor - DTC Wonokromo',
+                lks : 'DTC Wonokromo',
                 desc : 'DTC Wonokromo Lt6',
                 tlp : '087851758333',
                 kota : 'Surabaya',
@@ -62,7 +62,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 lng : 112.7375112
             },
             {
-                lks : 'Anugerah Motor - BG Junction',
+                lks : 'BG Junction',
                 desc : 'Jl Bubutan I No. 7',
                 tlp : '08315884747',
                 kota : 'Surabaya',
