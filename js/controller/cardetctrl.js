@@ -35,4 +35,14 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 		});
 	};
 	$scope.initSlider();
+
+	$scope.interiorView = function() {
+		var panorama, viewer;
+		$scope.interior = interior;
+		$scope.panorama = new PANOLENS.ImagePanorama( 'assets/int/civic-interior.jpg' );
+
+		$scope.viewer = new PANOLENS.Viewer( { container: document.querySelector('#interior') } );
+		$scope.viewer.add( $scope.panorama );		
+	}
+	$scope.interiorView();	
 }])

@@ -328,9 +328,11 @@ body {
 	padding-bottom: 5px;
 }
 
-#interior img {
+#interior, #interior > canvas {
 	width: 100%;
-	max-height: 350px;
+	height: 365px;
+	margin: auto;
+	left:0;
 }
 /*-----CONTACT & SHOWROOM SECTION-----*/
 .contact {
@@ -487,7 +489,7 @@ body {
 		margin-top: 95px !important;
 	}
 
-	#cars-product {
+	#cars-product, #interior, #interior > canvas {
 		height: 365px;
 	}
 }
@@ -501,7 +503,7 @@ body {
 		margin-top: 75px !important;
 	}
 
-	#cars-product {
+	#cars-product, #interior, #interior > canvas {
 		height: 330px;
 	}
 }
@@ -515,7 +517,7 @@ body {
 		margin-top: 70px !important;
 	}
 
-	#cars-product {
+	#cars-product, #interior, #interior > canvas {
 		height: 285px;
 	}
 }
@@ -610,7 +612,7 @@ body {
 		margin-top: 50px !important;
 	}
 
-	#cars-product {
+	#cars-product, #interior, #interior > canvas {
 		height: 235px;
 	}
 }
@@ -645,10 +647,9 @@ body {
 		margin-top: 40px !important;
 	}
 
-	#cars-product {
+	#cars-product, #interior, #interior > canvas {
 		height: 190px;
 	}
-
 }
 
 /*-------ANIMATION-------*/
