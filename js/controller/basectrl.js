@@ -37,6 +37,37 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 		window.scrollTo(0, 0);
 	});
 
+	$scope.responSlider = function() {
+		var owl;
+		$(function(){
+			$scope.$owl = $('.owl-carousel').owlCarousel({
+				loop: true,
+				responsiveClass: false,
+				autoplay: true,
+				responsive:{
+			        0:{
+			            items:1,
+			            nav:false
+			        },
+			        500:{
+			            items:2,
+			            nav:false
+			        },
+			        700:{
+			        	items:3,
+			        	nav: false
+			        },
+			        1000:{
+			            items:4,
+			            nav: false
+			        }
+			    }
+			});
+		});
+	}
+
+	$scope.responSlider();
+
 	$scope.scrollToTop = function($var) {
       $('html, body').animate({
           scrollTop: 0

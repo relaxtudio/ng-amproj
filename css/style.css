@@ -19,6 +19,9 @@ body {
 	width: 100%;
 }
 
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background: #5bc0de;
+}
 /*-----NAVBAR-----*/
 
 .navbar-default {
