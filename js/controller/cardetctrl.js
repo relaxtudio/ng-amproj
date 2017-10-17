@@ -1,4 +1,4 @@
-am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
+am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', function($scope, $state, NgMap){
 	$scope.initSlider = function() {
 		var car;
 		$(function(){
@@ -44,5 +44,10 @@ am.controller('CardetCtrl', ['$scope', '$state', function($scope, $state){
 		$scope.viewer = new PANOLENS.Viewer( { container: document.querySelector('#interior') } );
 		$scope.viewer.add( $scope.panorama );		
 	}
-	$scope.interiorView();	
+	$scope.interiorView();
+
+	$scope.loadMap = function(){
+		NgMap.getMap();
+	}
+
 }])

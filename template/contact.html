@@ -4,8 +4,14 @@
 </section> -->
 <section class="contact" ng-show="status.load">
 	<ng-map id="map" zoom="{{map.zoom}}" center="[{{map.lat}}, {{map.lng}}]" default-style="true">
-		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="{{m.lat}}, {{m.lng}}" title="{{m.lks}}, {{m.desc}}" animation="DROP">
+		<marker id="marker-{{$index}}" ng-repeat="m in map.locations" position="{{m.lat}}, {{m.lng}}" title="{{m.lks}}, {{m.desc}}" animation="DROP" on-click="showInfoWindow('det')">
 		</marker>
+		<info-window id="det">
+			<div ng-non-bindable>
+				<b>Lokasi Showroom</b><br>
+			</div>
+			</div>
+		</info-window>
 	</ng-map>
 	<br>
 	<legend>Daftar Kontak & Showroom Kami <i class="fa fa-arrow-down"></i>

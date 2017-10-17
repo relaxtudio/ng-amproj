@@ -42,9 +42,6 @@
 			<div>
 				<i class="fa fa-gavel"></i> Silinder : 2.0
 			</div>
-			<div>
-				 <i class="fa fa-building-o"></i> Showroom : Dharmawangsa 69
-			</div>
 			<div style="font-size: 1.3em">
 				<i class="fa fa-tag"></i> <b>Rp 1.200.000.000,-</b>
 			</div>
@@ -55,6 +52,21 @@
 			</div>
 			<br>
 		</div>
+	</div>
+	<div class="clearfix"></div>
+	<hr>
+	<div class="col-md-6">
+		<h4><b>Lokasi Mobil</b></h4>
+		<ng-map id="map-loc" zoom="18" center="[-7.276557, 112.756154]" default-style="true" style="height: 200px;">
+			<marker id="marker1" position="-7.276557, 112.756154" title="Anugerah Motor - Dharmawangsa 69" animation="DROP" on-click="map.showInfoWindow('info-loc')">
+			</marker>
+			<info-window id="info-loc">
+				<div ng-non-bindable>
+					<b>Alamat Showroom : </b><br>
+					Jl. Dharmawangsa No.69, Surabaya
+				</div>
+			</info-window>
+		</ng-map>
 	</div>
 	<div class="clearfix"></div>
 </section>
