@@ -44,6 +44,7 @@ am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', function($scope, $stat
 		$scope.viewer = new PANOLENS.Viewer( { container: document.querySelector('#interior') } );
 		$scope.viewer.add( $scope.panorama );		
 	}
+	
 	$scope.interiorView();
 
 	$scope.loadMap = function(){

@@ -68,9 +68,7 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 
 	$scope.responSlider();
 
-	$scope.scrollToTop = function($var) {
-      $('html, body').animate({
-          scrollTop: 0
-      }, 'fast');
+	$scope.scrollToTop = function() {
+      window.scrollTo(0, 0);
     };
 }])

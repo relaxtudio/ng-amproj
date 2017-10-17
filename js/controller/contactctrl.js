@@ -50,8 +50,8 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 desc : 'Jl. Kertajaya No. 97',
                 tlp : '031-5057171',
                 kota : 'Surabaya',
-                lat : -7.2782748, 
-                lng : 112.756492
+                lat : -7.2781743,
+                lng : 112.7565125
             },
             {
                 lks : 'DTC Wonokromo',
@@ -67,7 +67,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
                 tlp : '08315884747',
                 kota : 'Surabaya',
                 lat : -7.251574, 
-                lng : 112.7337643
+                lng : 112.735953
             }
         ];
         $scope.loadMap();
@@ -85,6 +85,7 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
 
     $scope.loadMap = function() {
         NgMap.getMap().then(function(map){
+            $scope.map = map;
         })
     };
 
@@ -99,10 +100,14 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
 
     $scope.selectLocation = function(index, map) {
         $scope.map.locations = [map];
-        $scope.map.zoom = 15;
+        $scope.map.zoom = 17;
         $scope.map.lat = map.lat;
         $scope.map.lng = map.lng;
         $scope.map.index = index;
+        $scope.map.lks = map.lks;
+        $scope.map.desc = map.desc;
+        $scope.map.tlp = map.tlp;
+        $scope.map.tlp = map.kota;
     };
 
     $scope.init();
