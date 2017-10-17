@@ -196,20 +196,19 @@ body {
 }
 
 .cars-det {
-	display:block;
+	display: block;
 }
 
 .rc-nama {
 	font-size: 1.3em;
 	text-align: center;
-	padding-top: 5px;
+	font-weight: 700;
 }
 
-.rc-info, .rc-loc {
+.rc-info div, .rc-loc {
 	text-align: center;
 	font-size: 0.9em;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-bottom: 8px;
 }
 
 #btn-cars {
