@@ -380,16 +380,23 @@ body {
 
 .list-lk {
 	width: 100%;
-	overflow: hidden;
-	clear: both;
 	margin-top: 50px;
+	display: block;
+}
+
+.list-lk > div {
+	text-align: center !important;
+	line-height: 20px;
 }
 
 .kshow {
-	float: left;
-	width: 50%;
-	padding-left: 13%;
-	margin-top: 10px;
+	width: 100%;
+	margin: auto;
+	border: 1px solid #f2f2f2;
+}
+
+.kshow * {
+	padding: 5px;
 }
 
 #map {
@@ -515,6 +522,11 @@ body {
 	#cars-product, #interior, #interior > canvas {
 		height: 365px;
 	}
+
+	.list-lk > .col-md-4 {
+		width: 50%;
+		display: inline-block;
+	}
 }
 
 @media screen and (max-width: 667px) {
@@ -528,6 +540,11 @@ body {
 
 	#cars-product, #interior, #interior > canvas {
 		height: 330px;
+	}
+
+	.list-lk > .col-md-4 {
+		width: 50%;
+		display: inline-block;
 	}
 }
 
@@ -546,6 +563,11 @@ body {
 
 	#slogan > p {
 		line-height: 30px;
+	}
+
+	.list-lk > .col-md-4 {
+		width: 50%;
+		display: inline-block;
 	}
 }
 
@@ -613,11 +635,6 @@ body {
 		color: #797D7F;
 	}
 
- 	#contact > .row {
- 		margin-left: 0;
- 		margin-right: 0;
- 	}
-
  	#map {
  		max-height: 300px;
  	}
@@ -625,13 +642,18 @@ body {
  	.list-lk {
  		height: auto;
 		width: 100%;
-		overflow: show;
+		margin: auto;
+	}
+
+	.list-lk > .col-md-4 {
+		width: 100%;
+		display: block;
 	}
 
  	.kshow {
-		float: unset;
-		width: 100%;
-		padding-left: 10px;
+		padding: 0;
+		margin-top: 20px;
+
 	}
 	#sort-dt {
 		float: none;
@@ -659,12 +681,6 @@ body {
 		margin-top: -17px;
 	}
 
-	.list-lk {
- 		height: auto !important;
-		width: 100%;
-		overflow: show;
-	}
-
 	#slogan > p {
 		line-height: 30px;
 	}
@@ -674,10 +690,15 @@ body {
 		color: #797D7F;
 	}
 
- 	.kshow {
-		float: unset !important;
+	.list-lk {
+ 		height: auto !important;
 		width: 100%;
-		padding-left: 0;
+		margin: auto;
+	}
+
+ 	.kshow {
+		width: 100%;
+		margin-top: 20px;
 	}
 
 	.kshow h4 {
