@@ -120,6 +120,10 @@ body {
  	background-color: transparent !important;
  }
 
+ .carousel-control {
+ 	width: 7% !important;
+ }
+
 .banner-profits {
 	/*background: rgb(255,255,255);  Old browsers */
 	/*background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); FF3.6-15 */
@@ -157,6 +161,15 @@ body {
 	width: auto;
 	max-width: 150px;
 	margin: auto;
+}
+
+.brands-lg {
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.brands-lg div {
+	text-align: center;
 }
 
  .recent-cars {
@@ -586,7 +599,7 @@ body {
 
 	.carousel-inner > .item > img {
 	 	margin: auto;
-	 	height: 150px;
+	 	height: 175px;
 	 	width: 100%;
 	 	background-position: center;
  	}

@@ -12,7 +12,7 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 
 	$scope.slideShow = function() {
 		$scope.slides = [
-			{ id: '1', name: 'image1', img: 'sample-1.jpg' },
+			{ id: '1', name: 'image1', img: 'poster1.jpg' },
 			{ id: '2', name: 'image2', img: 'sample-2.jpg' },
 			{ id: '3', name: 'image3', img: 'sample-3.jpg' },
 		];
@@ -71,4 +71,5 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
 	$scope.scrollToTop = function() {
       window.scrollTo(0, 0);
     };
+
 }])
