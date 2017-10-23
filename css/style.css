@@ -357,6 +357,11 @@ body {
 	margin: auto;
 	left:0;
 }
+
+#map-loc {
+	width: 100%;
+}
+
 /*-----CONTACT & SHOWROOM SECTION-----*/
 .contact {
 	margin-top: 52px;
@@ -406,6 +411,64 @@ body {
 /*-----SIMULASI KREDIT SECTION-----*/
 .simkred {
 	margin-top: 52px;
+}
+
+.simkred * {
+	color: #666666;
+}
+
+#sim-title > .jumbotron {
+	display: block;
+	background: 
+		linear-gradient(
+      		rgba(41, 55, 144, 0.65), 
+     		rgba(41, 55, 144, 0.65)
+    	),
+		url(../assets/img/am-office.jpg) no-repeat 50% 82%;
+	background-size: 100%;
+	color: #f2f2f2;
+	width: 100%;
+	font-family: Poppins;
+}
+
+#cred-partner {
+	display: inline-block;
+	background-color: #f2f2f2;
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 50px; 
+}
+
+.calc-wrapper {
+	display: block;
+	width: 100%;
+}
+
+#form-simkred1 .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#form-simkred1 > input[type="text"]:focus,
+select.form-control:focus, #c_harga:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.calc-wrapper > .col-sm-6 {
+	padding: 0;
+}
+
+#calc-btn {
+	color: #f2f2f2;
+}
+
+#detail-calc1 td, #detail-calc2 td {
+	padding: 3px;
 }
 
 /*-----ABOUT SECTION-----*/
@@ -756,6 +819,23 @@ body {
 }
 .animate-show-hide.ng-hide-remove.ng-hide-remove-active { 
    opacity: 1;
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.jumbotron > h1 {
+	animation: 2s ease-out 0s 1 slideInLeft;
+}
+
+.jumbotron > h2 {
+	animation: 2s ease-out 0s 1 slideInLeft;	
 }
 
 /*-----FOOTER SECTION-----*/

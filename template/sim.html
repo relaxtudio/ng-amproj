@@ -1,3 +1,241 @@
 <section class="simkred">
-	<img src="assets/img/page-uc.jpg" class="img-responsive" style="margin:auto;" ">
+	<div id="sim-title">
+		<div class="jumbotron" align="center">
+			<h1 style="color: #f2f2f2;">Mau Hitung Kredit Mobil?</h1>
+			<h2 style="color: #f2f2f2;">Simulasikan Aja</h2>
+		</div>
+	</div>
+<!--
+	<div id="cred-partner" align="center">
+		<h4><b>Mitra Kredit Kami</b></h4>
+			<img src="assets/img/bcaf.png" width="150">&emsp;
+			<img src="assets/img/otomobil.png" width="130">
+	</div>
+
+	<div id="credit-btn">
+		<a data-toggle="collapse" data-target="#simkred-bcaf">
+			<legend>
+				Simulasi Kredit Dengan <img src="assets/img/bcaf.png" width="130">
+				<i class="fa fa-caret-down pull-right"></i>
+			</legend>
+		</a>
+	</div>
+-->	
+	<div class="calc-wrapper">
+		<div class="col-sm-6 col-sm-offset-3">
+			<div  id="simkred-bcaf" class="panel panel-default">
+				<div class="panel-heading">
+					<i class="fa fa-calculator"></i> <b>Simulasi Kredit Mobil </b>
+						<span class="pull-right">
+							<img src="assets/img/bcaf.png" width="130">
+						</span>
+				</div>
+				<div class="panel-body">
+					<form id="form-simkred1" class="form-horizontal" method="POST" action="#">
+						<div class="form-group">
+							<label for="brand_id" class="control-label col-md-4 col-xs-2">Brand</label>
+							<div class="col-md-5 col-xs-9 col-xs-offset-1">
+								<select id="brand_id" class="form-control">
+									<option>-Brand Mobil-</option>
+									<option>Toyota</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="c_model" class="control-label col-md-4 col-xs-2">Tipe</label>
+							<div class="col-md-5 col-xs-9 col-xs-offset-1">
+								<select id="c_model" class="form-control">
+									<option>-Merk Mobil-</option>
+									<option>Alphard C | Putih | 2014</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-4 col-xs-2" for="c_harga">Harga</label>
+							<div class="col-md-6 col-xs-9 col-xs-offset-1">
+								<div class="input-group">
+									<span class="input-group-addon" style="background-color: transparent; border-bottom: 1px solid #ccc; border-left: 0; border-top: 0">Rp</span>
+									<input type="text" name="c_harga" id="c_harga" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group has-feedback">
+							<label class="control-label col-md-4 col-xs-2" for="c_dp">DP</label>
+							<div class="col-md-3 col-xs-4 col-xs-offset-1">
+								<input type="text" name="c_dp" min="30" id="c_dp" class="form-control">
+								<span class="form-control-feedback">%</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-4 col-xs-2" for="bunga_thn">
+								Tenor
+							</label>
+							<div class="col-md-4 col-xs-6 col-xs-offset-1">
+								<select id="bunga_thn" class="form-control">
+									<option value="1">1 Tahun</option>
+									<option value="2">2 Tahun</option>
+									<option value="3">3 Tahun</option>
+									<option value="4">4 Tahun</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-4 col-xs-2" for="jenis_as">
+								Asuransi
+							</label>
+							<div class="col-md-4 col-xs-6 col-xs-offset-1">
+								<select id="jenis_as" class="form-control">
+									<option value="allrisk">All Risk</option>
+									<option value="kombinasi">Kombinasi</option>
+									<option value="tlo">TLO</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-md-4 col-xs-2" for="thn_as">Masa Asuransi</label>
+							<div class="col-md-4 col-xs-6 col-xs-offset-1">
+								<select id="thn_as" class="form-control">
+									<option value="1">1 Tahun</option>
+									<option value="2">2 Tahun</option>
+									<option value="3">3 Tahun</option>
+									<option value="4">4 Tahun</option>
+									<option value="5">5 Tahun</option>
+									<option value="6">6 Tahun</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label"></label>
+							<div align="center">
+								<button id="calc-btn" class="btn btn-info btn-lg" type="submit">
+									<i class="fa fa-calculator" style="color: #f2f2f2;"></i> Hitung
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div id="hasil-sim">
+		<legend><b>Hasil Simulasi</b></legend>
+		<div class="col-md-6">
+			<table id="detail-calc1" width="100%">
+				<tr>
+					<td colspan="3" style="background-color: #f2f2f2;">
+						<h4><b>Data Mobil</b></h4>
+					</td>
+				</tr>
+				<tr>
+					<td width="35%">Mobil</td>
+					<td width="3%">:</td>
+					<td>{c_brand} {c_model} {c_warna}</td>
+				</tr>
+				<tr>
+					<td>Tahun</td>
+					<td>:</td>
+					<td>{c_tahun}</td>
+				</tr>
+				<tr>
+					<td>Harga Mobil</td>
+					<td>:</td>
+					<td>{c_harga}</td>
+				</tr>
+				<tr>
+					<td>DP ({c_dp} %)</td>
+					<td>:</td>
+					<td>Rp {xxxxxxx}</td>
+				</tr>
+				<tr>
+					<td>Harga Mobil Setelah DP</td>
+					<td>:</td>
+					<td>Rp {xxxxxxxx}</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color: #f2f2f2;">
+						<h4><b>Asuransi</b></h4>
+					</td>
+				</tr>
+				<tr>
+					<td>Asuransi</td>
+					<td>:</td>
+					<td>{jenis_as} (nilai_premi_as %) </td>
+				</tr>
+				<tr>
+					<td>Masa Asuransi</td>
+					<td>:</td>
+					<td>{thn_as} Tahun</td>
+				</tr>
+				<tr>
+					<td>Total Biaya Asuransi</td>
+					<td>:</td>
+					<td>Rp {xxxxxxxx}</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="background-color: #f2f2f2;">
+						<h4><b>Bunga & Angsuran</b></h4>
+					</td>
+				</tr>
+				<tr>
+					<td>Tenor</td>
+					<td>:</td>
+					<td>{bunga_thn} Tahun</td>
+				</tr>
+				<tr>
+					<td>Bunga</td>
+					<td>:</td>
+					<td>{bunga_bcaf} %</td>
+				</tr>
+				<tr>
+					<td>Total Biaya Bunga</td>
+					<td>:</td>
+					<td>Rp {xxxxxxx}</td>
+				</tr>
+				<tr>
+					<td>Angsuran</td>
+					<td>:</td>
+					<td>Rp {nilai_angsuran} x {xxx} Bulan</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<table id="detail-calc2" width="100%">
+				<tr>
+					<td colspan="3" style="background-color: #f2f2f2;"><h4><b>Yang Dibayar Didepan</b></h4></td>
+				</tr>
+				<tr>
+					<td width="35%">Uang Muka / DP</td>
+					<td width="3%">:</td>
+					<td>Rp {c_dp}</td>
+				</tr>
+				<tr>
+					<td>Angsuran I</td>
+					<td>:</td>
+					<td>Rp {nilai_angsuran}</td>
+				</tr>
+				<tr>
+					<td>Fiducia</td>
+					<td>:</td>
+					<td>Rp ({biaya_adm_polis}+{biaya_adm}+{fiducia})</td>
+				</tr>
+				<tr>
+					<td>Asuransi + Polis</td>
+					<td>:</td>
+					<td>Rp {xxxxxx} (nilai_premi_as % x harga mobil)</td>
+				</tr>
+				<tr>
+					<td>Credit Protection</td>
+					<td>:</td>
+					<td>Rp {xxxxxxxxxxx}</td>
+				</tr>
+				<tr style="border-top: 1px solid #f2f2f2;">
+					<td><b>Total</b></td>
+					<td>:</td>
+					<td><b>Rp (xxxxxxxxxx)</b></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="clearfix"></div>
 </section>

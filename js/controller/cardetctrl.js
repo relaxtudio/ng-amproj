@@ -1,4 +1,4 @@
-am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', function($scope, $state, NgMap){
+am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($scope, $state, NgMap, $timeout){
 	$scope.initSlider = function() {
 		var car;
 		$(function(){
@@ -47,8 +47,11 @@ am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', function($scope, $stat
 	
 	$scope.interiorView();
 
-	$scope.loadMap = function(){
-		NgMap.getMap();
-	}
+	$scope.loadMap = function() {
+        NgMap.getMap().then(function(map){
+            $scope.map = map;
+            google.maps.event.trigger(map, "resize");
+        })
+    };
 
 }])
