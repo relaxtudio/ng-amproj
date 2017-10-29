@@ -1,4 +1,4 @@
-<section class="dashboard">
+<section id="dashboard-sec" class="dashboard tab-pane fade in active">
 	<div class="row">
 		<div class="col-md-8">
 			<div id="latest-car" class="boxshadow">

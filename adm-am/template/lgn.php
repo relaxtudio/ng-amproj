@@ -1,4 +1,3 @@
-<div class="lg-bg"></div>
 <div id="lgn-wrapper" class="panel panel-default">
 	<div id="lgn-logo" class="panel-heading" align="center">
 		<img src="assets/img/adm.png" width="50">

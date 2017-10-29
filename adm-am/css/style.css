@@ -10,6 +10,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
+ /* background-color: #010818; */
 }
 
 .clearfix {
@@ -198,7 +199,7 @@ html, body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	opacity: 1;
 	background: rgba(0,0,0,0.5);
   display: none;
@@ -220,6 +221,20 @@ html, body {
 
 .dashboard, .akun, .mobil, .showroom, .simkredit, .promo, .profile {
   width: 100%;
+  display: block;
+}
+
+.action-btn {
+  margin: 2px;
+  text-align: center;
+}
+
+.action-btn > img {
+  border: 1px solid #a6a6a6;
+}
+
+.action-btn > img:hover {
+  background-color: #a6a6a6;
 }
 
 /*-----DASHBOARD SECTION-----*/
@@ -251,5 +266,27 @@ html, body {
 }
 
 .akun-wrap {
+  width: 100%;
+}
+
+/*-----MOBIL SECTION-----*/
+
+#btn-mobil {
+  margin-bottom: 10px;
+}
+
+.preview-img {
+  overflow-y: scroll;
+  max-height: 200px;
+  width: 100%;
+}
+
+.thumbimage {
+  width:145px;
+  position:relative;
+  padding:10px;
+}
+
+.thumbimage-int {
   width: 100%;
 }
