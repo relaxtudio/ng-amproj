@@ -129,10 +129,10 @@
 							<a href="#ft-preview" data-toggle="tab"><i class="fa fa-camera"></i> Foto Preview</a>
 						</li>
 						<li>
-							<a href="#ft-exterior" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360</a>
+							<a href="#ft-exterior" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
 						</li>
 						<li>
-							<a href="#ft-interior" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360</a>
+							<a href="#ft-interior" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360&deg;</a>
 						</li>
 					</ul>
 					<form id="newmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="#">
@@ -244,7 +244,7 @@
 										<div class="form-group">
 											<label class="control-label col-xs-4" for="preview"><i class="fa fa-camera"></i> Preview</label>
 											<div class="col-xs-6">
-												<input id="preview" type="file" name="preview" multiple="true" class="form-control">
+												<input id="preview" type="file" name="preview" multiple="true" class="form-control" accept="image/*">
 											</div>
 											<br><br>
 											<div id="prev" class="preview-img"></div>
@@ -255,11 +255,11 @@
 							<div id="ft-exterior" class="tab-pane fade in">
 								<div class="row">
 									<div class="col-md-12">
-										<legend>Exterior 360</legend>
+										<legend>Exterior 360&deg;</legend>
 										<div class="form-group">
-											<label class="control-label col-xs-4" for="exterior"><i class="fa fa-camera"></i> Exterior 360</label>
+											<label class="control-label col-xs-4" for="exterior"><i class="fa fa-camera"></i> Exterior 360&deg;</label>
 											<div class="col-xs-6">
-												<input id="exterior" type="file" name="exterior" multiple="true" class="form-control">
+												<input id="exterior" type="file" name="exterior" multiple="true" class="form-control" accept="image/*">
 											</div>
 											<br><br>
 											<div id="ext360" class="preview-img"></div>
@@ -270,11 +270,11 @@
 							<div id="ft-interior" class="tab-pane fade in">
 								<div class="row">
 									<div class="col-md-12">
-										<legend>Interior 360</legend>
+										<legend>Interior 360&deg;</legend>
 										<div class="form-group">
-											<label class="control-label col-xs-4" for="interiorr"><i class="fa fa-camera"></i> Interior 360</label>
+											<label class="control-label col-xs-4" for="interiorr"><i class="fa fa-camera"></i> Interior 360&deg;</label>
 											<div class="col-xs-6">
-												<input id="interior" type="file" name="interior" class="form-control">
+												<input id="interior" type="file" name="interior" class="form-control" accept="image/*">
 											</div>
 											<br><br>
 											<div id="int360" class="preview-img"></div>
@@ -305,124 +305,164 @@
 					<h4 class="modal-title" align="center">Edit Data Mobil</h4>
 				</div>
 				<div class="modal-body">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#ed-dt-mobil" data-toggle="tab"><i class="fa fa-car"></i> Data Mobil</a>
+						</li>
+						<li>
+							<a href="#ed-ft-preview" data-toggle="tab"><i class="fa fa-camera"></i> Foto Preview</a>
+						</li>
+						<li>
+							<a href="#ed-ft-exterior" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
+						</li>
+						<li>
+							<a href="#ed-ft-interior" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360&deg;</a>
+						</li>
+					</ul>
 					<form id="editmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="#">
-						<div class="row">
-							<div class="col-md-12">
-								<legend>Data Mobil</legend>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="cars_detail_id">ID</label>
-									<div class="col-xs-3">
-										<input id="cars_detail_id" type="text" name="cars_detail_id" disabled="true" class="form-control">
+						<div class="tab-content">
+							<div id="ed-dt-mobil" class="row tab-pane fade in active">
+								<div class="col-md-12">
+									<legend>Data Mobil</legend>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="brand_id">Brand</label>
+										<div class="col-xs-8">
+											<select id="brand_id" class="form-control" required="true">
+												<option value="" disabled="true" selected="selected" >---Pilih Brand---</option>
+												<option value="1">BMW</option>
+												<option value="2">Honda</option>
+												<option value="3">Mercedes-Benz</option>
+												<option value="1">BMW</option>
+												<option value="2">Honda</option>
+												<option value="3">Mercedes-Benz</option>
+												<option value="1">BMW</option>
+												<option value="2">Honda</option>
+												<option value="3">Mercedes-Benz</option>
+												<option value="1">BMW</option>
+												<option value="2">Honda</option>
+												<option value="3">Mercedes-Benz</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="c_nama">Mobil</label>
+										<div class="col-xs-8">
+											<input id="c_nama" type="text" name="c_nama" class="form-control" required="true">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="cars_model_id">Model</label>
+										<div class="col-xs-8">
+											<select id="cars_model_id" class="form-control" required="true">
+												<option value="" disabled="true" selected="selected">---Pilih Model---</option>
+												<option value="1">SUV</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="tahun">Tahun</label>
+										<div class="col-xs-5">
+											<input id="tahun" type="number" name="tahun" class="form-control" required="true">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="nopol">Nopol</label>
+										<div class="col-xs-6">
+											<input id="nopol" type="text" name="nopol" class="form-control" required="true">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="bbm">BBM</label>
+										<div class="col-xs-7">
+											<input id="bbm" type="text" name="bbm" class="form-control" required="true">
+										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="brand_id">Brand</label>
-									<div class="col-xs-8">
-										<select id="brand_id" class="form-control" required="true">
-											<option value="" disabled="true" selected="selected" >---Pilih Brand---</option>
-											<option value="1">BMW</option>
-											<option value="2">Honda</option>
-											<option value="3">Mercedes-Benz</option>
-											<option value="1">BMW</option>
-											<option value="2">Honda</option>
-											<option value="3">Mercedes-Benz</option>
-											<option value="1">BMW</option>
-											<option value="2">Honda</option>
-											<option value="3">Mercedes-Benz</option>
-											<option value="1">BMW</option>
-											<option value="2">Honda</option>
-											<option value="3">Mercedes-Benz</option>
-										</select>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="km">Kilometer</label>
+										<div class="col-xs-6">
+											<input id="km" type="number" name="km" class="form-control" required="true">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="c_nama">Mobil</label>
-									<div class="col-xs-8">
-										<input id="c_nama" type="text" name="c_nama" class="form-control" required="true">
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="trans_id">Transmisi</label>
+										<div class="col-xs-8">
+											<select id="trans_id" class="form-control" required="true">
+												<option value="" disabled="true" selected="selected">---Transmisi---</option>
+												<option value="1">Manual</option>
+												<option value="2">Semi-Otomatis</option>
+												<option value="3">Otomatis</option>
+											</select>
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="cars_model_id">Model</label>
-									<div class="col-xs-8">
-										<select id="cars_model_id" class="form-control" required="true">
-											<option value="" disabled="true" selected="selected">---Pilih Model---</option>
-											<option value="1">SUV</option>
-										</select>
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="silinder">Silinder</label>
+										<div class="col-xs-4">
+											<input id="silinder" type="text" name="silinder" class="form-control" required="true">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="tahun">Tahun</label>
-									<div class="col-xs-5">
-										<input id="tahun" type="number" name="tahun" class="form-control" required="true">
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="warna">Warna</label>
+										<div class="col-xs-8">
+											<input id="warna" type="text" name="warna" class="form-control" required="true">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="nopol">Nopol</label>
-									<div class="col-xs-6">
-										<input id="nopol" type="text" name="nopol" class="form-control" required="true">
+									<div class="form-group">
+										<label class="control-label col-xs-4" for="showroom_id">Showroom</label>
+										<div class="col-xs-8">
+											<select id="showroom_id" class="form-control" required="true">
+												<option value="" disabled="true" selected="selected">---Showroom---</option>
+												<option value="1">Dharmawangsa 69</option>
+											</select>
+										</div>	
 									</div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="bbm">BBM</label>
-									<div class="col-xs-7">
-										<input id="bbm" type="text" name="bbm" class="form-control" required="true">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="km">Kilometer</label>
-									<div class="col-xs-6">
-										<input id="km" type="number" name="km" class="form-control" required="true">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="trans_id">Transmisi</label>
-									<div class="col-xs-8">
-										<select id="trans_id" class="form-control" required="true">
-											<option value="" disabled="true" selected="selected">---Transmisi---</option>
-											<option value="1">Manual</option>
-											<option value="2">Semi-Otomatis</option>
-											<option value="3">Otomatis</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="silinder">Silinder</label>
-									<div class="col-xs-4">
-										<input id="silinder" type="text" name="silinder" class="form-control" required="true">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="warna">Warna</label>
-									<div class="col-xs-8">
-										<input id="warna" type="text" name="warna" class="form-control" required="true">
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="showroom_id">Showroom</label>
-									<div class="col-xs-8">
-										<select id="showroom_id" class="form-control" required="true">
-											<option value="" disabled="true" selected="selected">---Showroom---</option>
-											<option value="1">Dharmawangsa 69</option>
-										</select>
-									</div>	
 								</div>
 							</div>
-							<div class="col-md-12">
-								<legend>Data Foto</legend>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="exterior"><i class="fa fa-camera"></i> Exterior</label>
-									<div class="col-xs-6">
-										<input id="exterior" type="file" name="exterior" multiple="true" class="form-control">
+							<div id="ed-ft-preview" class="tab-pane fade in">
+								<div class="row">
+									<div class="col-md-12">
+										<legend>Foto Preview</legend>
+										<div class="form-group">
+											<label class="control-label col-xs-4" for="preview"><i class="fa fa-camera"></i> Preview</label>
+											<div class="col-xs-6">
+												<input id="preview" type="file" name="preview" multiple="true" class="form-control" accept="image/*">
+											</div>
+											<br><br>
+											<div id="prev" class="preview-img"></div>
+										</div>
 									</div>
 								</div>
-								<div class="form-group">
-									<label class="control-label col-xs-4" for="interiorr"><i class="fa fa-camera"></i> Interior</label>
-									<div class="col-xs-6">
-										<input id="Interior" type="file" name="Interior" class="form-control">
+							</div>
+							<div id="ed-ft-exterior" class="tab-pane fade in">
+								<div class="row">
+									<div class="col-md-12">
+										<legend>Exterior 360&deg;</legend>
+										<div class="form-group">
+											<label class="control-label col-xs-4" for="exterior"><i class="fa fa-camera"></i> Exterior 360&deg;</label>
+											<div class="col-xs-6">
+												<input id="exterior" type="file" name="exterior" multiple="true" class="form-control" accept="image/*">
+											</div>
+											<br><br>
+											<div id="ext360" class="preview-img"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="ed-ft-interior" class="tab-pane fade in">
+								<div class="row">
+									<div class="col-md-12">
+										<legend>Interior 360&deg;</legend>
+										<div class="form-group">
+											<label class="control-label col-xs-4" for="interiorr"><i class="fa fa-camera"></i> Interior 360&deg;</label>
+											<div class="col-xs-6">
+												<input id="interior" type="file" name="interior" class="form-control" accept="image/*">
+											</div>
+											<br><br>
+											<div id="int360" class="preview-img"></div>
+										</div>
 									</div>
 								</div>
 							</div>
