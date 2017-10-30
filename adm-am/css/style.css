@@ -295,6 +295,12 @@ html, body {
   margin-bottom: 15px;
 }
 
+
+/*-----SIMKREDIT SECTION-----*/
+#allrisk-tbl *, #kombinasi-tbl *, #tlo-tbl *, #bunga-tbl * {
+  text-align: center;
+}
+
 /*-----PROMO SECTION------*/
 #btn-promo {
   margin-bottom: 15px;

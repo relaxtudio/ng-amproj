@@ -19,6 +19,9 @@ $(document).ready(function(){
 		$("#newmobil").on("hidden.bs.modal", function(){
 			$('#newmobil a:first').tab('show');
 		});
+		$("#editmobil").on("hidden.bs.modal", function(){
+			$('#editmobil a:first').tab('show');
+		});
 	})
 
 	function getRandomColor() {

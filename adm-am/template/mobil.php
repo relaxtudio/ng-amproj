@@ -286,6 +286,7 @@
 						<div class="modal-footer">
 							<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
 							<div class="form-group">
+								<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
 								<a id="newmobil-sub" class="btn btn-success" href="#" type="submit">Simpan</a>
 							</div>
 						</div>
@@ -469,7 +470,8 @@
 						</div>
 						<div class="modal-footer">
 							<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
-							<div class="form-group" align="center">
+							<div class="form-group">
+								<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
 								<a id="editmobil-sub" class="btn btn-primary" href="#" type="submit">Update</a>
 							</div>
 						</div>
@@ -599,7 +601,8 @@
 								<input id="brand_img" type="file" name="brand_img" class="form-control">
 							</div>
 						</div>
-						<div class="form-group" align="center">
+						<div class="modal-footer">
+							<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
 							<a id="newbrand-sub" href="#" class="btn btn-success" type="submit">Simpan</a>
 						</div>
 					</form>
