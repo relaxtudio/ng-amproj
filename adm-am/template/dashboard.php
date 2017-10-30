@@ -4,7 +4,7 @@
 			<div id="latest-car" class="boxshadow">
 				<div class="panel panel-default custbg">
 					<div class="panel-heading custbg-hd" align="center">
-						Mobil Baru yang Ditambahkan
+						DATA MOBIL YANG BARU DITAMBAHKAN
 					</div>
 					<div class="panel-body">
 						<table id="top8LatestCar" class="table table-striped" width="100%" align="justify">

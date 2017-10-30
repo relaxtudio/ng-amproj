@@ -69,10 +69,7 @@
 							<a href="#newbrand" data-toggle="modal" class="btn btn-info action-btn"><i class="fa fa-plus"></i> Brand</a>
 						</div>
 						<div class="col-md-6" align="center">
-							<a href="#allbrand" data-toggle="collapse" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Data</a>
-						</div>
-						<div id="allbrand" class="collapse">
-							Test
+							<a href="#allbrand" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Brand</a>
 						</div>
 					</div>
 				</div>
@@ -88,7 +85,7 @@
 						<canvas id="modelChart"></canvas>
 						<br>
 						<div align="center">
-							<a href="#allmodel" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Data</a>
+							<a href="#allmodel" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Model</a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +101,7 @@
 						<canvas id="transChart"></canvas>
 						<br>
 						<div align="center">
-							<a href="#alltrans" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Data</a>
+							<a href="#alltrans" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Transmisi</a>
 						</div>
 					</div>
 				</div>
@@ -288,7 +285,7 @@
 						</div>
 						<div class="modal-footer">
 							<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
-							<div class="form-group" align="center">
+							<div class="form-group">
 								<a id="newmobil-sub" class="btn btn-success" href="#" type="submit">Simpan</a>
 							</div>
 						</div>
@@ -569,19 +566,32 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<div id="hapusbrand" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content" style="background-color: #ff6666; color: #fff;">
-					<div class="modal-header custbg-hd">
-						<button type="button" class="close" data-dismiss="modal" style="color: #9effff;">
-							&times;
-						</button>
-						<h4 class="modal-title"></h4>
-					</div>
-					<div class="modal-body">
-						
-					</div>
+	<div id="allbrand" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color: #00cc7a; color: #fff;">
+					<button type="button" class="close" data-dismiss="modal" style="color: #000;">
+						&times;
+					</button>
+					<h4 class="modal-title">Data Brand Mobil</h4>
+				</div>
+				<div class="modal-body">
+					<table id="brand-tbl" width="100%">
+						<tr> 
+							<th width="8%">ID</th>
+							<th width="60%">Nama Brand</th>
+							<th width="12%">Logo</th>
+							<th width="20%">Aksi</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Toyota</td>
+							<td><img src="assets/car-brands/toyota.png" width="50px;"></td>
+							<td><a id="del-brand" class="btn btn-danger" href="#" title="Hapus"><i class="fa fa-trash"></i> </a></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -592,7 +602,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #00cc7a; color: #fff;">
-					<button type="button" class="close" data-dismiss="modal" style="color: #9effff;">
+					<button type="button" class="close" data-dismiss="modal" style="color: #000;">
 						&times;
 					</button>
 					<h4 class="modal-title">Data Model Mobil</h4>
@@ -633,10 +643,10 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #00cc7a; color: #fff;">
-					<button type="button" class="close" data-dismiss="modal" style="color: #9effff;">
+					<button type="button" class="close" data-dismiss="modal" style="color: #000;">
 						&times;
 					</button>
-					<h4 class="modal-title">Data Transimis Mobil</h4>
+					<h4 class="modal-title">Data Transmisi Mobil</h4>
 				</div>
 				<div class="modal-body">
 					<table id="trans-tbl" class="table table-striped" width="100%">
@@ -645,7 +655,7 @@
 							<th width="40%">Aksi</th>
 						</tr>
 						<tr>
-							<td>Manual</td>
+							<td contenteditable="true">Manual</td>
 							<td>
 								<a href="#" class="btn btn-primary" id="ed-trans"><i class="fa fa-edit"></i> Edit</a>
 								<a href="#" class="btn btn-danger" id="del-trans">
@@ -664,22 +674,6 @@
 							</td>
 						</tr>
 					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="hapustrans" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content" style="background-color: #ff6666; color: #fff;">
-				<div class="modal-header custbg-hd">
-					<button type="button" class="close" data-dismiss="modal" style="color: #9effff;">
-						&times;
-					</button>
-					<h4 class="modal-title"></h4>
-				</div>
-				<div class="modal-body">
-					
 				</div>
 			</div>
 		</div>

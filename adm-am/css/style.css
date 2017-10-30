@@ -195,7 +195,7 @@ html, body {
 
 /*-----ADMIN CONTENT-----*/
 .overlay {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -289,4 +289,13 @@ html, body {
 
 .thumbimage-int {
   width: 100%;
+}
+
+.inline-add-btn {
+  margin-bottom: 15px;
+}
+
+/*-----PROMO SECTION------*/
+#btn-promo {
+  margin-bottom: 15px;
 }
