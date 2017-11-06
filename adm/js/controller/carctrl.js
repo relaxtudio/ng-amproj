@@ -34,6 +34,7 @@ am.controller('CarCtrl', ['$scope', '$state', '$ws', function($scope, $state, $w
 	$scope.distCar = function(data) {
 		$scope.filter.page = data;
 		$scope.getCar({filter: $scope.filter});
+		$scope.current.page = data;
 	}
 
 	$scope.init();
