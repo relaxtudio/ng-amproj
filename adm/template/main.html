@@ -1,0 +1,70 @@
+<div>
+	<div id="snav" class="side-nav">
+	  <ul class="nav nav-pills nav-stacked">
+	    <li> 
+	        <a id="dashboard" class="navbtn" data-toggle="pill" ng-click="goto('dash')"> 
+	            <i class="fa fa-dashboard"></i>
+	             <span>Dashboard</span> 
+	         </a>
+	    </li>
+	    <li> 
+	        <a id="akun" class="navbtn" data-toggle="pill" ng-click="goto('akun')"> 
+	            <i class="fa fa-users"></i>
+	             <span>Akun</span> 
+	        </a> 
+	    </li>
+	    <li> 
+	        <a id="mobil" class="navbtn" data-toggle="pill" ng-click="goto('car')"> 
+	            <i class="fa fa-car"></i> 
+	            <span>Mobil</span> 
+	        </a> 
+	    </li> 
+	    <li> 
+	        <a id="showroom" class="navbtn" data-toggle="pill" ng-click="goto('show')">
+	            <i class="fa fa-building-o"></i> 
+	            <span>Showroom</span> 
+	        </a> 
+	    </li>
+	    <li> 
+	        <a id="simulasi" class="navbtn" data-toggle="pill" ng-click="goto('sim')">
+	            <i class="fa fa-calculator"></i> 
+	            <span>Simulasi Kredit</span> 
+	        </a> 
+	    </li>
+	    <li> 
+	        <a id="promo" class="navbtn" data-toggle="pill" ng-click="goto('promo')"> 
+	            <i class="fa fa-picture-o"></i> 
+	            <span>Promo</span> 
+	        </a> 
+	    </li>
+	    <li> 
+	        <a id="profile" class="navbtn" data-toggle="pill" ng-click="goto('profil')"> 
+	            <i class="fa fa-gear"></i> 
+	            <span>Profile</span> 
+	        </a> 
+	    </li>
+	    <li> 
+	        <a id="logout" ng-click="logout()"> 
+	            <i class="fa fa-sign-out"></i> 
+	            <span>Logout</span> 
+	        </a> 
+	    </li>
+	  </ul>
+	</div>
+</div>
+<div id="content">
+	<div class="container">
+		<div class="top-logo" align="center">
+			<span>
+				<img src="css/img/logo1.png" width="150px">
+			</span>
+		</div>
+		<div class="lgn-as" align="right">Selamat Datang, {{user.name}}</div>
+		<!--SECTION PLACE INCLUDE HERE-->
+		<div id="sections" class="tab-content">
+			<div ui-view="content" class="content"></div>
+		</div>
+		<div id="forms"></div>
+	</div>
+	<div class="overlay"></div>
+</div>

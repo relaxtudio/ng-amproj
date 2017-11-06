@@ -1,0 +1,109 @@
+<div>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="tbl-mobil" class="boxshadow">
+				<div class="panel panel-default custbg">
+					<div class="panel-heading custbg-hd">
+						Daftar Mobil
+					</div>
+					<div class="panel-body">
+						<div id="btn-mobil" class="pull-left">
+							<a href="#newmobil" data-toggle="modal" id="newmobil-btn" class="btn btn-info"><i class="fa fa-plus"></i> Mobil</a>
+						</div>
+						<div class="pull-right">
+							<span>Cari &nbsp;</span>
+							<input id="src-mobil" type="text" name="src-mobil" class="form-group">
+							<p>Total : <b> {{carTotal.all}} </b> Mobil</p>
+						</div>
+						<table id="list-mobil" width="100%" class="table table-striped">
+							<tr>
+								<th width="5%">No. <a id="sort-mobil" href="#"> <i class="fa fa-sort"></i></a></th>
+								<th width="12%">Brand</th>
+								<th width="25%">Mobil</th>
+								<th width="7%">Tahun</th>
+								<th width="8%">Model</th>
+								<th width="16%">Warna</th>
+								<th width="11%">Status</th>
+								<th width="21%">Aksi</th>
+							</tr>
+							<tr ng-repeat="car in car">
+								<td> {{car.id}} </td>
+								<td> {{car.brand}} </td>
+								<td> {{car.name}} </td>
+								<td> {{car.tahun}} </td>
+								<td> {{car.model}} </td>
+								<td> {{car.warna}} </td>
+								<td> {{car.status}} </td>
+								<td>
+									<a data-toggle="modal" class="btn btn-primary action-btn" title="Edit"><i class="fa fa-edit"></i></a>
+									<a data-toggle="modal" class="btn btn-danger action-btn" title="Hapus"><i class="fa fa-trash"></i></a>
+									<a data-toggle="modal" class="action-btn" title="Terjual"><img src="css/img/sold-icon.png" width="35"></a>
+								</td>
+							</tr>
+						</table>
+						<div class="pages-mobil" align="center">
+							<ul class="pagination pagination-sm">
+							    <!-- <li class="disabled"><a href="#">&laquo;</a></li> -->
+							    <li ng-class="(n == current.page) ? 'active' : ''" ng-repeat="n in [] | range: carTotal.page ">
+							    	<a ng-click="distCar(n)">{{n}}</a>
+							    </li>
+							    <!-- <li><a href="#">&raquo;</a></li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div id="tbl-brand" class="boxshadow">
+				<div class="panel panel-default custbg">
+					<div class="panel-heading custbg-hd">
+						Brand Mobil	
+					</div>
+					<div class="panel-body">
+						<canvas id="brandChart"></canvas>
+						<br>
+						<div class="col-md-6" align="center">
+							<a href="#newbrand" data-toggle="modal" class="btn btn-info action-btn"><i class="fa fa-plus"></i> Brand</a>
+						</div>
+						<div class="col-md-6" align="center">
+							<a href="#allbrand" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Brand</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div id="tbl-model" class="boxshadow">
+				<div class="panel panel-default custbg">
+					<div class="panel-heading custbg-hd">
+						Model Mobil
+					</div>
+					<div class="panel-body">
+						<canvas id="modelChart"></canvas>
+						<br>
+						<div align="center">
+							<a href="#allmodel" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Model</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div id="tbl-trans" class="boxshadow">
+				<div class="panel panel-default custbg">
+					<div class="panel-heading custbg-hd">
+						Jenis Transmisi
+					</div>
+					<div class="panel-body">
+						<canvas id="transChart"></canvas>
+						<br>
+						<div align="center">
+							<a href="#alltrans" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Transmisi</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div>

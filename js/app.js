@@ -16,7 +16,8 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					templateUrl: 'template/base.html',
 					controller: 'BaseCtrl'
 				}
-			}
+			},
+			authenticate: false
 		})
 
 		.state('car', {
@@ -26,7 +27,8 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					templateUrl: 'template/car.html',
 					controller: 'CarCtrl'
 				}
-			}
+			},
+			authenticate: false
 		})
 
 		.state('contact', {
@@ -36,7 +38,8 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					templateUrl: 'template/contact.html',
 					controller: 'ContactCtrl'
 				}
-			}
+			},
+			authenticate: false
 		})
 
 		.state('sim', {
@@ -46,7 +49,8 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					templateUrl: 'template/sim.html',
 					controller: 'SimCtrl'
 				}
-			}
+			},
+			authenticate: false
 		})
 
 		.state('cardetail', {
@@ -56,7 +60,8 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					templateUrl: 'template/cardetail.html',
 					controller: 'CardetCtrl'
 				}
-			}
+			},
+			authenticate: false
 		})
 
 		.state('about', {
@@ -66,6 +71,7 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					templateUrl: 'template/about.html',
 					controller: 'AboutCtrl'
 				}
-			}
+			},
+			authenticate: false
 		})
 })
