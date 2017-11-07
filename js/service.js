@@ -45,13 +45,18 @@ am.factory('$ws', function($ls, $http, CONFIG) {
         initServer();
 
         return {
+            getPromo: function(data, success, error) {
+                return $http.post(C_WS + 'getPromo', data).then(success, error);
+            },
         	getCar: function(data, success, error) {
         		return $http.post(C_WS + 'getCar', data).then(success, error);
         	},
         	getCarDetail:  function(data, success, error) {
         		return $http.post(C_WS + 'getCarDetail', data).then(success, error);
         	},
-
+            getBrand: function(data, success, error) {
+                return $http.post(C_WS + 'getBrand', data).then(success, error);
+            },
         	calcSim: function(data, success, error) {
         		return $http.post(C_WS + 'calcSim', data).then(success, error);
         	}

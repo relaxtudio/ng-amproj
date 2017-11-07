@@ -9,7 +9,7 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div ng-repeat="slide in slides" ng-class="$index == 0 ? 'item active' : 'item'">
-              <img ng-src="assets/img/{{slide.img}}" alt="Mobil 1">
+              <img ng-src="assets/promo/{{slide.img}}" alt="Mobil 1">
             </div>
           </div>
 
@@ -36,53 +36,8 @@
       </div>
 
       <div class="brands-lg">
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/bmw.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/chevrolet.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/daihatsu.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/honda.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/hyundai.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/isuzu.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/kia.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/lexus.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/mazda.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/mercy.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/minimorris.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/mitsubishi.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/nissan.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/suzuki.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/toyota.png" class="img-responsive">
-        </div>
-        <div class="col-md-2 col-xs-4">
-          <img src="assets/car-brands/vw.png" class="img-responsive">
+        <div ng-repeat="brand in brand" class="col-md-2 col-xs-4">
+          <img ng-src="assets/car-brands/{{brand.name}}.png" class="img-responsive">
         </div>
       </div>
       </div>
@@ -91,193 +46,18 @@
           <p><b>STOK MOBIL TERBARU</b></p><span>-Our Recent Cars-</span>
         </div>
         <div class="rc-list owl-carousel owl-theme">
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
+          <div ng-repeat="car in car" class="list-cars col-md-12">
+            <a ng-click="scrollToTop()" target="_blank">
               <div class="panel panel-default">
                 <div class="rc-prod">
-                  <img src="assets/img/2.jpg">
+                  <img ng-src="assets/cars/{{car.dir_img}}/preview.jpg">
                   <div class="cars-det">
                     <div class="rc-nama">
-                      <legend>Mobil 1</legend>
+                      <legend>{{car.name}}</legend>
                     </div>
                     <div class="rc-info">
                       <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/4.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 2</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/3.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 3</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/1.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 4</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/2.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 5</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/3.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 6</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/1.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 7</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fa fa-road"></i> Km 123456
-                      </div>
-                    </div>
-                    <div class="rc-loc">
-                      <i class="fa fa-map-marker"></i> Dharmawangsa 69
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="list-cars col-md-12">
-            <a href="#!/cardetail" ng-click="scrollToTop()" target="_blank">
-              <div class="panel panel-default">
-                <div class="rc-prod">
-                  <img src="assets/img/4.jpg">
-                  <div class="cars-det">
-                    <div class="rc-nama">
-                      <legend>Mobil 8</legend>
-                    </div>
-                    <div class="rc-info">
-                      <div class="col-md-6">
-                        <i class="fa fa-calendar"></i> Tahun 2015
+                        <i class="fa fa-calendar"></i><span> Tahun {{car.tahun}} </span>
                       </div>
                       <div class="col-md-6">
                         <i class="fa fa-road"></i> Km 123456

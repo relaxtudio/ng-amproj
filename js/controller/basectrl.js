@@ -1,21 +1,40 @@
-am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $state, $interval){
+var error = function(respon) {
+	console.log(respon);
+}
+
+am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
 	$scope.init = function() {
+		$scope.slides = [];
+		$scope.brand = [];
+		$scope.car = [];
+		$scope.slides = [];
+		$scope.filter = {
+			limit: 8,
+			page: 1
+		};
+		$scope.filterPromo = {
+			active: 'Y'
+		};
 		$scope.slides = [];
 		$scope.currentIndex = 0;
 		$scope.interval = 6000;
-		$scope.slideShow();
+		$scope.initWs();
+	};
+
+	$scope.initWs = function() {
+		$ws.getPromo({filter: $scope.filterPromo}, function(respon) {
+			$scope.slides = respon.data;
+		}, error);
+		$ws.getBrand(null, function(respon) {
+			$scope.brand = respon.data;
+		}, error);
+		$ws.getCar({filter: $scope.filter}, function(respon) {
+			$scope.car = respon.data;
+		}, error);
 	};
 
 	$scope.cl = function(a) {
 		console.log(a);
-	};
-
-	$scope.slideShow = function() {
-		$scope.slides = [
-			{ id: '1', name: 'image1', img: 'poster1.jpg' },
-			{ id: '2', name: 'image2', img: 'sample-2.jpg' },
-			{ id: '3', name: 'image3', img: 'sample-3.jpg' },
-		];
 	};
 
 	$scope.setCurrentSlideIndex = function (index) {
@@ -72,4 +91,4 @@ am.controller('BaseCtrl', ['$scope', '$state', '$interval', function($scope, $st
       window.scrollTo(0, 0);
     };
 
-}])
+})
