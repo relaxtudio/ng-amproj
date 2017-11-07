@@ -8,7 +8,7 @@
 					</div>
 					<div class="panel-body">
 						<div id="btn-mobil" class="pull-left">
-							<a href="#newmobil" data-toggle="modal" id="newmobil-btn" class="btn btn-info"><i class="fa fa-plus"></i> Mobil</a>
+							<a data-toggle="modal" id="newmobil-btn" class="btn btn-info" ng-click="openModalMobil()"><i class="fa fa-plus"></i> Mobil</a>
 						</div>
 						<div class="pull-right">
 							<span>Cari &nbsp;</span>
@@ -35,9 +35,9 @@
 								<td> {{car.warna}} </td>
 								<td> {{car.status}} </td>
 								<td>
-									<a data-toggle="modal" class="btn btn-primary action-btn" title="Edit"><i class="fa fa-edit"></i></a>
-									<a data-toggle="modal" class="btn btn-danger action-btn" title="Hapus"><i class="fa fa-trash"></i></a>
-									<a data-toggle="modal" class="action-btn" title="Terjual"><img src="css/img/sold-icon.png" width="35"></a>
+									<a ng-click="openModalEdit(this)" data-toggle="modal" class="btn btn-primary action-btn" title="Edit"><i class="fa fa-edit"></i></a>
+									<a ng-click="openModalDelete(this)" data-toggle="modal" class="btn btn-danger action-btn" title="Hapus"><i class="fa fa-trash"></i></a>
+									<a ng-click="openModalSold(this)" data-toggle="modal" class="action-btn" title="Terjual"><img src="css/img/sold-icon.png" width="35"></a>
 								</td>
 							</tr>
 						</table>

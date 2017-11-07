@@ -1,4 +1,4 @@
-am.controller('MainCtrl', ['$scope', '$state', '$ws', function($scope, $state, $ws) {
+am.controller('MainCtrl', function($scope, $state, $ws) {
 	$scope.init = function() {
 		$scope.user = $ws.loginUser();
 	}
@@ -29,4 +29,4 @@ am.controller('MainCtrl', ['$scope', '$state', '$ws', function($scope, $state, $
 	}
 
 	$scope.init();
-}])
+})

@@ -1,6 +1,6 @@
-am.controller('CarCtrl', ['$scope', '$state', '$ws', function($scope, $state, $ws) {
-	var error = function() {
-		console.log('error');
+am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack) {
+	var error = function(respon) {
+		console.log('error', respon);
 	}
 
 	$scope.init = function() {
@@ -17,7 +17,14 @@ am.controller('CarCtrl', ['$scope', '$state', '$ws', function($scope, $state, $w
 		$scope.current = {
 			page: 1
 		};
+		$scope.modalMobil = {
+			currentTab: 'dt-mobil'
+		};
 		$scope.initWs();
+	}
+
+	$scope.log = function(data) {
+		console.log(data);
 	}
 
 	$scope.initWs = function() {
@@ -31,11 +38,65 @@ am.controller('CarCtrl', ['$scope', '$state', '$ws', function($scope, $state, $w
 		}, error);
 	}
 
+	$scope.addCar = function(data) {
+		$ws.addCar(data, function(respon) {
+
+		}, error);
+	}
+
+	$scope.editCar = function(data) {
+		$ws.editCar(data, function(respon) {
+
+		}, error);
+	}
+
+	$scope.delCar = function(data) {
+		$ws.delCar(data, function(respon) {
+
+		}, error);
+	}
+
 	$scope.distCar = function(data) {
 		$scope.filter.page = data;
 		$scope.getCar({filter: $scope.filter});
 		$scope.current.page = data;
 	}
 
+	$scope.openModalMobil = function() {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/carModal.html",
+			scope: $scope
+		});
+	}
+
+	$scope.openModalEdit = function(scope) {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/carEdit.html",
+			scope: scope
+		});
+	}
+
+	$scope.openModalDelete = function(scope) {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/carDelete.html",
+			scope: scope
+		});
+	}
+
+	$scope.openModalSold = function(scope) {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/carSold.html",
+			scope: scope
+		});
+	}
+
+	$scope.tab = function(data) {
+		$scope.modalMobil.currentTab = data;
+	}
+
+	$scope.cancel = function() {
+		$uibModalStack.dismissAll();
+	}
+
 	$scope.init();
-}])
+})

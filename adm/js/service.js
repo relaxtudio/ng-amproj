@@ -84,6 +84,27 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		getCarSum: function(data, success, error) {
 			return $http.post(C_WS + 'getCarSum', data).then(success, error);
+		},
+		addCar: function(data, success, error) {
+			return $http.post(C_WS + 'addCar', data).then(success, error);
+		},
+		editCar: function(data, success, error) {
+			return $http.post(C_WS + 'editCar', data).then(success, error);
+		},
+		delCar: function(data, success, error) {
+			return $http.post(C_WS + 'del', data).then(success, error);
+		},
+		getBrand: function(data, success, error) {
+			return $http.post(C_WS + 'getBrand', data).then(success, error);
+		},
+		getModel: function(data, success, error) {
+			return $http.post(C_WS + 'getModel', data).then(success, error);
+		},
+		getTrans: function(data, success, error) {
+			return $http.post(C_WS + 'getTrans', data).then(success, error);
+		},
+		getShow: function(data, success, error) {
+			return $http.post(C_WS + 'getShow', data).then(success, error);
 		}
 	}
 })

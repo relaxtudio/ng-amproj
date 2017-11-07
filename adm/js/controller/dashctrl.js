@@ -1,6 +1,6 @@
 var jq = $.noConflict();
 
-am.controller('DashCtrl', ['$scope', '$state', '$ws', function($scope, $state, $ws) {
+am.controller('DashCtrl', function($scope, $state, $ws) {
 	$scope.init = function() {
 		$scope.car = [];
 		$scope.carTotal = {
@@ -37,5 +37,7 @@ am.controller('DashCtrl', ['$scope', '$state', '$ws', function($scope, $state, $
 		});
 	}
 
+
+
 	$scope.init();
-}])
+})
