@@ -61,14 +61,17 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 
 		$scope.viewer = new PANOLENS.Viewer( { container: document.querySelector('#interior') } );
 		$scope.viewer.add( $scope.panorama );		
-	}
-	
+	};
 
 	$scope.loadMap = function() {
         NgMap.getMap().then(function(map){
             $scope.map = map;
             google.maps.event.trigger(map, "resize");
         })
+    };
+
+    $scope.simAs = function(call, param) {
+    	$state.go(call, {data: param});
     };
 
     $scope.init();

@@ -50,7 +50,8 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 					controller: 'SimCtrl'
 				}
 			},
-			authenticate: false
+			authenticate: false,
+			params: {data: null}
 		})
 
 		.state('cardetail', {

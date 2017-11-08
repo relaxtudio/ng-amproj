@@ -31,8 +31,8 @@
 						</span>
 				</div>
 				<div class="panel-body">
-					<form id="form-simkred1" class="form-horizontal" method="POST" action="#">
-						<div class="form-group">
+					<form id="form-simkred1" name="simForm" class="form-horizontal" method="POST" ng-submit="submitSim(simForm)">
+						<div class="form-group" ng-show="!stats.param">
 							<label for="brand_id" class="control-label col-md-4 col-xs-2">Brand</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
 								<select id="brand_id" class="form-control" ng-model="brandSelect" ng-change="selectBrand()">
@@ -40,27 +40,33 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group">
+						<div class="form-group" ng-show="!stats.param">
 							<label for="c_model" class="control-label col-md-4 col-xs-2">Tipe</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
-								<select id="c_model" class="form-control" ng-model="car.select" ng-change="test(car.select)">
+								<select id="c_model" class="form-control" ng-model="car.select" ng-change="selectCar(car.select)">
 									<option ng-repeat="carFilter in car.listFilter" ng-value={{carFilter}}> {{carFilter.name}} - Rp. {{carFilter.harga | number}} </option>
 								</select>
+							</div>
+						</div>
+						<div class="form-group" ng-show="stats.param">
+							<label for="c_model" class="control-label col-md-4 col-xs-2">Mobil</label>
+							<div class="col-md-5 col-xs-9 col-xs-offset-1">
+								<span>{{stats.param.brand}} {{stats.param.name}} - {{stats.param.detail.nopol}} </span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-md-4 col-xs-2" for="c_harga">Harga</label>
 							<div class="col-md-6 col-xs-9 col-xs-offset-1">
 								<div class="input-group">
-									<span class="input-group-addon" style="background-color: transparent; border-bottom: 1px solid #ccc; border-left: 0; border-top: 0">Rp</span>
-									<input type="text" name="c_harga" id="c_harga" class="form-control" ng-model="sim.c_harga">
+									<span class="input-group-addon" style="background-color: transparent; border-bottom: 1px solid #ccc; border-left: 0; border-top: 0">Rp  {{sim.param.c_harga | number}} </span>
+									<!-- <input type="number" name="c_harga" id="c_harga" class="form-control" ng-model="sim.c_harga" disabled> -->
 								</div>
 							</div>
 						</div>
 						<div class="form-group has-feedback">
 							<label class="control-label col-md-4 col-xs-2" for="c_dp">DP</label>
 							<div class="col-md-3 col-xs-4 col-xs-offset-1">
-								<input type="text" name="c_dp" min="30" id="c_dp" class="form-control" ng-model="sim.c_dp">
+								<input type="number" name="c_dp" min="30" id="c_dp" class="form-control" ng-model="sim.param.c_dp" required>
 								<span class="form-control-feedback">%</span>
 							</div>
 						</div>
@@ -69,7 +75,7 @@
 								Tenor
 							</label>
 							<div class="col-md-4 col-xs-6 col-xs-offset-1">
-								<select id="bunga_thn" class="form-control" ng-model="sim.bunga_thn">
+								<select id="bunga_thn" class="form-control" ng-model="sim.param.bunga_thn" required>
 									<option value="1">1 Tahun</option>
 									<option value="2">2 Tahun</option>
 									<option value="3">3 Tahun</option>
@@ -82,7 +88,7 @@
 								Asuransi
 							</label>
 							<div class="col-md-4 col-xs-6 col-xs-offset-1">
-								<select id="jenis_as" class="form-control" ng-model="sim.jenis_as">
+								<select id="jenis_as" class="form-control" ng-model="sim.param.jenis_as" required>
 									<option value="allrisk">All Risk</option>
 									<option value="kombinasi">Kombinasi</option>
 									<option value="tlo">TLO</option>
@@ -92,7 +98,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-4 col-xs-2" for="thn_as">Masa Asuransi</label>
 							<div class="col-md-4 col-xs-6 col-xs-offset-1">
-								<select id="thn_as" class="form-control" ng-model="sim.thn_as">
+								<select id="thn_as" class="form-control" ng-model="sim.param.thn_as" required>
 									<option value="1">1 Tahun</option>
 									<option value="2">2 Tahun</option>
 									<option value="3">3 Tahun</option>
@@ -105,7 +111,7 @@
 						<div class="form-group">
 							<label class="control-label"></label>
 							<div align="center">
-								<button id="calc-btn" class="btn btn-info btn-lg" type="submit">
+								<button id="calc-btn" class="btn btn-info btn-lg">
 									<i class="fa fa-calculator" style="color: #f2f2f2;"></i> Hitung
 								</button>
 							</div>
@@ -116,7 +122,7 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
-	<div id="hasil-sim">
+	<div id="hasil-sim" ng-show="sim.result">
 		<legend><b>Hasil Simulasi</b></legend>
 		<div class="col-md-6">
 			<table id="detail-calc1" width="100%">
@@ -128,27 +134,27 @@
 				<tr>
 					<td width="35%">Mobil</td>
 					<td width="3%">:</td>
-					<td>{c_brand} {c_model} {c_warna}</td>
+					<td>{{car.select.brand}} {{car.select.model}} {{car.select.warna}}</td>
 				</tr>
 				<tr>
 					<td>Tahun</td>
 					<td>:</td>
-					<td>{c_tahun}</td>
+					<td>{{car.select.tahun}}</td>
 				</tr>
 				<tr>
 					<td>Harga Mobil</td>
 					<td>:</td>
-					<td>{c_harga}</td>
+					<td>{{car.select.harga | number}}</td>
 				</tr>
 				<tr>
-					<td>DP ({c_dp} %)</td>
+					<td>DP ({{sim.result.mobil.dpPerc}} %)</td>
 					<td>:</td>
-					<td>Rp {xxxxxxx}</td>
+					<td>Rp {{sim.result.mobil.dp | number}}</td>
 				</tr>
 				<tr>
 					<td>Harga Mobil Setelah DP</td>
 					<td>:</td>
-					<td>Rp {xxxxxxxx}</td>
+					<td>Rp {{sim.result.mobil.harga - sim.result.mobil.dp | number}} </td>
 				</tr>
 				<tr>
 					<td colspan="3" style="background-color: #f2f2f2;">
@@ -158,17 +164,17 @@
 				<tr>
 					<td>Asuransi</td>
 					<td>:</td>
-					<td>{jenis_as} (nilai_premi_as %) </td>
+					<td>{{sim.result.asuransi.jenis}} - ({{sim.result.asuransi.premi}} %) </td>
 				</tr>
 				<tr>
 					<td>Masa Asuransi</td>
 					<td>:</td>
-					<td>{thn_as} Tahun</td>
+					<td>{{sim.result.asuransi.masa}} Tahun</td>
 				</tr>
 				<tr>
 					<td>Total Biaya Asuransi</td>
 					<td>:</td>
-					<td>Rp {xxxxxxxx}</td>
+					<td>Rp {{sim.result.asuransi.total | number}} </td>
 				</tr>
 				<tr>
 					<td colspan="3" style="background-color: #f2f2f2;">
@@ -178,22 +184,22 @@
 				<tr>
 					<td>Tenor</td>
 					<td>:</td>
-					<td>{bunga_thn} Tahun</td>
+					<td>{{sim.result.bunga.tenor}} Tahun</td>
 				</tr>
 				<tr>
 					<td>Bunga</td>
 					<td>:</td>
-					<td>{bunga_bcaf} %</td>
+					<td>{{sim.result.bunga.bunga}} %</td>
 				</tr>
 				<tr>
 					<td>Total Biaya Bunga</td>
 					<td>:</td>
-					<td>Rp {xxxxxxx}</td>
+					<td>Rp {{sim.result.bunga.total | number}}</td>
 				</tr>
 				<tr>
 					<td>Angsuran</td>
 					<td>:</td>
-					<td>Rp {nilai_angsuran} x {xxx} Bulan</td>
+					<td>Rp {{sim.result.bunga.angsuran | number}} x {{sim.result.bunga.masaangsr}} Bulan</td>
 				</tr>
 			</table>
 		</div>
@@ -205,12 +211,12 @@
 				<tr>
 					<td width="35%">Uang Muka / DP</td>
 					<td width="3%">:</td>
-					<td>Rp {c_dp}</td>
+					<td>Rp {{sim.result.prepayment.dp | number}} </td>
 				</tr>
 				<tr>
 					<td>Angsuran I</td>
 					<td>:</td>
-					<td>Rp {nilai_angsuran}</td>
+					<td>Rp {{sim.result.prepayment.angsuran | number}}</td>
 				</tr>
 				<tr>
 					<td>Fiducia</td>
@@ -220,12 +226,12 @@
 				<tr>
 					<td>Asuransi + Polis</td>
 					<td>:</td>
-					<td>Rp {xxxxxx} (nilai_premi_as % x harga mobil)</td>
+					<td>Rp {{sim.result.prepayment.aspolis | number}}</td>
 				</tr>
 				<tr>
 					<td>Credit Protection</td>
 					<td>:</td>
-					<td>Rp {xxxxxxxxxxx}</td>
+					<td>Rp {{sim.result.prepayment.crdtpro | number}}</td>
 				</tr>
 				<tr style="border-top: 1px solid #f2f2f2;">
 					<td><b>Total</b></td>
