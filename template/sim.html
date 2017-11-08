@@ -35,18 +35,16 @@
 						<div class="form-group">
 							<label for="brand_id" class="control-label col-md-4 col-xs-2">Brand</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
-								<select id="brand_id" class="form-control">
-									<option>-Brand Mobil-</option>
-									<option>Toyota</option>
+								<select id="brand_id" class="form-control" ng-model="brandSelect" ng-change="selectBrand()">
+									<option ng-repeat="brand in brand" ng-value="{{brand}}"> {{brand.name}} </option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="c_model" class="control-label col-md-4 col-xs-2">Tipe</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
-								<select id="c_model" class="form-control">
-									<option>-Merk Mobil-</option>
-									<option>Alphard C | Putih | 2014</option>
+								<select id="c_model" class="form-control" ng-model="car.select" ng-change="test(car.select)">
+									<option ng-repeat="carFilter in car.listFilter" ng-value={{carFilter}}> {{carFilter.name}} - Rp. {{carFilter.harga | number}} </option>
 								</select>
 							</div>
 						</div>
@@ -55,14 +53,14 @@
 							<div class="col-md-6 col-xs-9 col-xs-offset-1">
 								<div class="input-group">
 									<span class="input-group-addon" style="background-color: transparent; border-bottom: 1px solid #ccc; border-left: 0; border-top: 0">Rp</span>
-									<input type="text" name="c_harga" id="c_harga" class="form-control">
+									<input type="text" name="c_harga" id="c_harga" class="form-control" ng-model="sim.c_harga">
 								</div>
 							</div>
 						</div>
 						<div class="form-group has-feedback">
 							<label class="control-label col-md-4 col-xs-2" for="c_dp">DP</label>
 							<div class="col-md-3 col-xs-4 col-xs-offset-1">
-								<input type="text" name="c_dp" min="30" id="c_dp" class="form-control">
+								<input type="text" name="c_dp" min="30" id="c_dp" class="form-control" ng-model="sim.c_dp">
 								<span class="form-control-feedback">%</span>
 							</div>
 						</div>
@@ -71,7 +69,7 @@
 								Tenor
 							</label>
 							<div class="col-md-4 col-xs-6 col-xs-offset-1">
-								<select id="bunga_thn" class="form-control">
+								<select id="bunga_thn" class="form-control" ng-model="sim.bunga_thn">
 									<option value="1">1 Tahun</option>
 									<option value="2">2 Tahun</option>
 									<option value="3">3 Tahun</option>
@@ -84,7 +82,7 @@
 								Asuransi
 							</label>
 							<div class="col-md-4 col-xs-6 col-xs-offset-1">
-								<select id="jenis_as" class="form-control">
+								<select id="jenis_as" class="form-control" ng-model="sim.jenis_as">
 									<option value="allrisk">All Risk</option>
 									<option value="kombinasi">Kombinasi</option>
 									<option value="tlo">TLO</option>
@@ -94,7 +92,7 @@
 						<div class="form-group">
 							<label class="control-label col-md-4 col-xs-2" for="thn_as">Masa Asuransi</label>
 							<div class="col-md-4 col-xs-6 col-xs-offset-1">
-								<select id="thn_as" class="form-control">
+								<select id="thn_as" class="form-control" ng-model="sim.thn_as">
 									<option value="1">1 Tahun</option>
 									<option value="2">2 Tahun</option>
 									<option value="3">3 Tahun</option>

@@ -24,29 +24,29 @@
 	<br>
 	<div id="cars-info-wrap" class="col-md-4 col-sm-4">
 		<div id="cars-title" class="col-md-12">
-			<p><b>Honda Civic Tipe R</b></p>
+			<p><b>{{car.brand}} {{car.name}} </b></p>
 		</div>
 		<div id="cars-info" class="col-md-12">
 			<div>
-				<i class="fa fa-calendar"></i> Tahun : 2017
+				<i class="fa fa-calendar"></i> Tahun : {{car.tahun}}
 			</div>
 			<div>
-				<i class="fa fa-dashboard"></i> Kilometer : 123456
+				<i class="fa fa-dashboard"></i> Kilometer : {{car.detail.km}}
 			</div>
 			<div>
-				<i class="fa fa-paint-brush"></i> Warna : Putih Metalik
+				<i class="fa fa-paint-brush"></i> Warna : {{car.warna}}
 			</div>
 			<div>
-				<i class="fa fa-cogs"></i> Transimisi : Manual
+				<i class="fa fa-cogs"></i> Transimisi : {{car.trans}}
 			</div>
 			<div>
-				<i class="fa fa-gavel"></i> Silinder : 2.0
+				<i class="fa fa-gavel"></i> Silinder : {{car.detail.silinder}}
 			</div>
 			<div>
-				<i class="fa fa-building-o"> &nbsp;Showroom : <a data-toggle="modal" data-target="#mapshowroom" >Dharmawangsa 69</a></i>
+				<i class="fa fa-building-o"> &nbsp;Showroom : <a data-toggle="modal" data-target="#mapshowroom" >{{car.detail.sr_alamat}}</a></i>
 			</div>
 			<div style="font-size: 1.3em">
-				<i class="fa fa-tag"></i> <b>Rp 1.200.000.000,-</b>
+				<i class="fa fa-tag"></i> <b>Rp {{car.harga | number}}</b>
 			</div>
 			<div align="center">
 				<a href="#" class="btn btn-info" style="color: #f2f2f2;">

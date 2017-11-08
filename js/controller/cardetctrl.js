@@ -1,4 +1,23 @@
-am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($scope, $state, NgMap, $timeout){
+am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $timeout) {
+	$scope.init = function() {
+		$scope.filter = {
+			id: $stateParams.id
+		};
+		$scope.car = {};
+		$scope.initWs();
+	};
+
+	$scope.initWs = function() {
+		$ws.getCar({filter: $scope.filter}, function(respon) {
+			$scope.car = respon.data[0];
+			$ws.getCarDetail({filter: $scope.filter}, function(respon) {
+				$scope.car.detail = respon.data[0];
+				$scope.interiorView();
+				$scope.initSlider();	
+			}, error)
+		}, error);
+	};
+
 	$scope.initSlider = function() {
 		var car;
 		$(function(){
@@ -8,7 +27,7 @@ am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($
 		        currentFrame: 1, // This the start frame for auto spin
 		        imgList: '.threesixty_images', // selector for image list
 		        progress: '.spinner', // selector to show the loading progress
-		        imagePath:'assets/ext/civic-2017/', // path of the image assets
+		        imagePath:'assets/cars/' + $scope.car.detail.dir_img + '/ext/', // path of the image assets
 		        filePrefix: '', // file prefix if any
 		        ext: '.png', // extention for the assets
 		        height: '315',
@@ -34,18 +53,16 @@ am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($
 
 		});
 	};
-	$scope.initSlider();
 
 	$scope.interiorView = function() {
 		var panorama, viewer;
 		$scope.interior = interior;
-		$scope.panorama = new PANOLENS.ImagePanorama( 'assets/int/civic-interior.jpg' );
+		$scope.panorama = new PANOLENS.ImagePanorama( 'assets/cars/' + $scope.car.detail.dir_img + '/int/interior.jpg' );
 
 		$scope.viewer = new PANOLENS.Viewer( { container: document.querySelector('#interior') } );
 		$scope.viewer.add( $scope.panorama );		
 	}
 	
-	$scope.interiorView();
 
 	$scope.loadMap = function() {
         NgMap.getMap().then(function(map){
@@ -54,4 +71,6 @@ am.controller('CardetCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($
         })
     };
 
-}])
+    $scope.init();
+
+})

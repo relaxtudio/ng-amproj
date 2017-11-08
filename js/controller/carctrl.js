@@ -11,7 +11,6 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 	$scope.initWs = function() {
 		$ws.getCar({filter: $scope.filter}, function(respon) {
 			$scope.car = respon.data;
-			console.log($scope.car);
 		})
 	}
 

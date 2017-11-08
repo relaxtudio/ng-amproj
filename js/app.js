@@ -54,11 +54,11 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 		})
 
 		.state('cardetail', {
-			url: '/cardetail',
+			url: '/cardetail/:id',
 			views: {
 				'content': {
 					templateUrl: 'template/cardetail.html',
-					controller: 'CardetCtrl'
+					controller: 'CarDetCtrl'
 				}
 			},
 			authenticate: false
