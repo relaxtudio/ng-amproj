@@ -2,7 +2,7 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 	$scope.init = function() {
 		$scope.car = [];
 		$scope.filter = {
-			limit: 10,
+			limit: 12,
 			page: 1
 		};
 		$scope.initWs();

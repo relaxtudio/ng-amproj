@@ -31,8 +31,8 @@
 	<div class="clearfix"></div>
 
 	<div id="cars-wrap">
-		<div class="list-cars col-md-3 col-sm-6">
-			<a ng-repeat="car in car" ng-href="#!/cardetail/{{car.id}}">
+		<div  ng-repeat="car in car" class="list-cars col-md-3 col-sm-6">
+			<a ng-href="#!/cardetail/{{car.id}}">
 				<div class="panel panel-default">
 					<div class="rc-prod">
 						<div ng-show="car.status == 'SOLD OUT'" class="sold-out">
