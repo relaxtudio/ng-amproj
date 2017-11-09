@@ -10,7 +10,8 @@ am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
 		$scope.slides = [];
 		$scope.filter = {
 			limit: 8,
-			page: 1
+			page: 1,
+			maxpage: 1
 		};
 		$scope.filterPromo = {
 			active: 'Y'

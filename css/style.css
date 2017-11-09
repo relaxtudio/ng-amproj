@@ -292,6 +292,10 @@ body {
     display: table;
 }
 
+.clearfix {
+	text-align: center;
+}
+
 #cars-wrap {
 	margin-top: 10px;
 	display: inline-block;

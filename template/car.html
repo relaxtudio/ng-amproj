@@ -60,7 +60,10 @@
 			</a>
 		</div>
 	</div>
-	<div class="clearfix"></div>
+	<div class="clearfix">
+		<div ng-show="status.contentLoading">Loading</div>
+		<button ng-show="filter.currentPage < filter.maxpage" ng-click="showMore()">Show More</button>
+	</div>
 
 	<div id="filter-modal" class="modal fade" role="dialog">
 		<div class="modal-dialog">

@@ -54,6 +54,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
         	getCarDetail:  function(data, success, error) {
         		return $http.post(C_WS + 'getCarDetail', data).then(success, error);
         	},
+            getCarSum:  function(data, success, error) {
+                return $http.post(C_WS + 'getCarSum', data).then(success, error);
+            },
             getBrand: function(data, success, error) {
                 return $http.post(C_WS + 'getBrand', data).then(success, error);
             },
