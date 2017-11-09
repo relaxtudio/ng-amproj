@@ -60,7 +60,7 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 			$ws.calcSim($scope.sim.param, function(respon) {
 				console.log(respon.data);
 				$scope.sim.result = respon.data;
-				$scope.sim.result.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis)
+				$scope.sim.result.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia)
 			}, error);
 		}
 	};
