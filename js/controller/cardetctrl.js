@@ -12,7 +12,9 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 			$scope.car = respon.data[0];
 			$ws.getCarDetail({filter: $scope.filter}, function(respon) {
 				$scope.car.detail = respon.data[0];
-				$scope.interiorView();
+				$timeout(function() {
+					$scope.interiorView();
+				}, 500);
 				$scope.initSlider();	
 			}, error)
 		}, error);

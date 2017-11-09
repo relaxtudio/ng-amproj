@@ -1,76 +1,23 @@
-am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function($scope, $state, NgMap, $timeout){
+am.controller('ContactCtrl', function($scope, $state, $ws, NgMap, $timeout){
     
     $scope.init = function() {
         $scope.status = {
             load: false
         };
-        $scope.locations = [
-            {
-                lks : 'Dharmawangsa 69',
-                desc : 'Jl. Dharmawangsa No. 69',
-                tlp : '031-5017171',
-                kota: 'Surabaya',
-                lat : -7.276557, 
-                lng : 112.756154
-            },
-            {
-                lks : 'Kertajaya 158',
-                desc : 'Jl. Kertajaya No.158',
-                tlp : '031-5047171',
-                kota: 'Surabaya',
-                lat : -7.2789629, 
-                lng : 112.757262
-            },
-            {
-                lks : 'Barata Jaya 19 / 28',
-                desc : 'Jl. Barata Jaya XIX No. 28',
-                tlp : '031-5045455',
-                kota : 'Surabaya',
-                lat : -7.30123239, 
-                lng : 112.75917991
-            },
-            {
-                lks : 'Jenggolo 60',
-                desc : 'Jl. Jenggolo No. 60',
-                tlp : '031-8957171',
-                kota: 'Sidoarjo',
-                lat : -7.4415895, 
-                lng : 112.7197847
-            },
-            {
-                lks : 'Ngagel Jaya 33',
-                desc : 'Jl Ngagel Jaya No. 33',
-                tlp : '031-5027171',
-                kota : 'Surabaya',
-                lat : -7.289509, 
-                lng : 112.7539402
-            },    
-            {
-                lks : 'Kertajaya 97',
-                desc : 'Jl. Kertajaya No. 97',
-                tlp : '031-5057171',
-                kota : 'Surabaya',
-                lat : -7.2781743,
-                lng : 112.7565125
-            },
-            {
-                lks : 'DTC Wonokromo',
-                desc : 'DTC Wonokromo Lt6',
-                tlp : '087851758333',
-                kota : 'Surabaya',
-                lat : -7.3023274, 
-                lng : 112.7375112
-            },
-            {
-                lks : 'BG Junction',
-                desc : 'Jl Bubutan I No. 7',
-                tlp : '08315884747',
-                kota : 'Surabaya',
-                lat : -7.251574, 
-                lng : 112.735953
-            }
-        ];
-        $scope.loadMap();
+        $scope.locations = [];
+        $scope.initWs();
+    };
+
+    $scope.initWs = function() {
+        $ws.getMap(null, function(respon) {
+            $scope.locations = respon.data;
+            $scope.loadMap();
+            $scope.initFunction();
+            $timeout(function() {
+                $scope.loadAllMarker();
+            }, 450);
+            window.scrollTo(0, 0);
+        }, error);
     };
 
     $scope.initFunction = function() {
@@ -105,18 +52,14 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
         $scope.map.lng = map.lng;
         $scope.map.index = index;
         $scope.map.lks = map.lks;
-        $scope.map.desc = map.desc;
+        $scope.map.descr = map.descr;
         $scope.map.tlp = map.tlp;
         $scope.map.tlp = map.kota;
     };
 
     $scope.init();
     $scope.$on('$viewContentLoaded', function() {
-        $scope.initFunction();
-        $timeout(function() {
-            $scope.loadAllMarker();
-        }, 450);
-        window.scrollTo(0, 0);
+        $scope.initWs();
     });
 
     $scope.$on('$destroy', function() {
@@ -129,4 +72,4 @@ am.controller('ContactCtrl', ['$scope', '$state', 'NgMap', '$timeout', function(
       }, 'fast');
     };
 
-}])
+})

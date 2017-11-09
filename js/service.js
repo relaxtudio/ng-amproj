@@ -59,6 +59,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
             },
         	calcSim: function(data, success, error) {
         		return $http.post(C_WS + 'calcSim', data).then(success, error);
-        	}
+        	},
+            getMap: function(data, success, error) {
+                return $http.post(C_WS + 'getMap', data).then(success, error);
+            }
         }
 })
