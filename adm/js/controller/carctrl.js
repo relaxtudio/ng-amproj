@@ -90,8 +90,19 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		});
 	}
 
-	$scope.tab = function(data) {
-		$scope.modalMobil.currentTab = data;
+	$scope.tab = function(type, data) {
+		if (type == 'modalMobil') {
+			$scope.modalMobil.currentTab = data;
+		}
+		if (type == 'editMobil') {
+
+		}
+		if (type == 'deleteMobil') {
+
+		}
+		if (type == 'soldMobil') {
+
+		}
 	}
 
 	$scope.cancel = function() {

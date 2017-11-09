@@ -12,16 +12,16 @@
 					<button ng-click="log(modalMobil.currentTab)">console.log</button>
 					<ul class="nav nav-tabs">
 						<li class="active">
-							<a ng-click="tab('dt-mobil')" data-toggle="tab"><i class="fa fa-car"></i> Data Mobil</a>
+							<a ng-click="tab('modalMobil', 'dt-mobil')" data-toggle="tab"><i class="fa fa-car"></i> Data Mobil</a>
 						</li>
 						<li>
-							<a ng-click="tab('ft-preview')" data-toggle="tab"><i class="fa fa-camera"></i> Foto Preview</a>
+							<a ng-click="tab('modalMobil', 'ft-preview')" data-toggle="tab"><i class="fa fa-camera"></i> Foto Preview</a>
 						</li>
 						<li>
-							<a ng-click="tab('ft-exterior')" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
+							<a ng-click="tab('modalMobil', 'ft-exterior')" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
 						</li>
 						<li>
-							<a ng-click="tab('ft-interior')" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360&deg;</a>
+							<a ng-click="tab('modalMobil', 'ft-interior')" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360&deg;</a>
 						</li>
 					</ul>
 					<form id="newmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST">
