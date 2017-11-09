@@ -1,4 +1,4 @@
-var am = angular.module('am', ['ui.router', 'ngAnimate', 'ngMap', 'angular-timeline']);
+var am = angular.module('am', ['ui.router', 'ngAnimate', 'ngMap', 'angular-timeline', 'ocNgRepeat']);
 
 
 

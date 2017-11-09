@@ -356,11 +356,16 @@ body {
 	padding-bottom: 5px;
 }
 
-#interior, #interior > canvas {
+#interior {
 	width: 100%;
 	height: 365px;
-	margin: auto;
+	/*margin: auto;*/
 	left:0;
+}
+
+.panolens-canvas {
+	width: 100%;
+	height: 365px;
 }
 
 #map-loc {

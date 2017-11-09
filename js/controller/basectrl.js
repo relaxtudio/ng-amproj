@@ -31,6 +31,7 @@ am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
 		}, error);
 		$ws.getCar({filter: $scope.filter}, function(respon) {
 			$scope.car = respon.data;
+			$scope.responSlider();
 		}, error);
 	};
 
@@ -60,7 +61,7 @@ am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
 	$scope.responSlider = function() {
 		var owl;
 		$(function(){
-			$scope.$owl = $('.owl-carousel').owlCarousel({
+			owl = $('.owl-carousel').owlCarousel({
 				loop: true,
 				responsiveClass: false,
 				autoplay: true,
@@ -85,8 +86,6 @@ am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
 			});
 		});
 	}
-
-	$scope.responSlider();
 
 	$scope.scrollToTop = function() {
       window.scrollTo(0, 0);

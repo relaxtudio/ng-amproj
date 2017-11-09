@@ -6,8 +6,10 @@
   "dependencies": {
     "angular": "^1.6.6",
     "angular-animate": "^1.6.6",
+    "angular-owl-carousel2": "^1.0.6",
     "angular-ui-router": "^0.4.3",
     "connect-modrewrite": "^0.10.1",
+    "ng-repeat-owl-carousel": "0.0.2",
     "ngmap": "^1.18.4"
   },
   "devDependencies": {

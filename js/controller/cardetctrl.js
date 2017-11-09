@@ -4,6 +4,9 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 			id: $stateParams.id
 		};
 		$scope.car = {};
+		$scope.panolens = {
+			status: false
+		};
 		$scope.initWs();
 	};
 
@@ -12,8 +15,9 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 			$scope.car = respon.data[0];
 			$ws.getCarDetail({filter: $scope.filter}, function(respon) {
 				$scope.car.detail = respon.data[0];
+				console.log($scope.car.detail.dir_img);
 				$timeout(function() {
-					$scope.interiorView();
+					// $scope.interiorView();
 				}, 500);
 				$scope.initSlider();	
 			}, error)
@@ -57,12 +61,20 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 	};
 
 	$scope.interiorView = function() {
-		var panorama, viewer;
-		$scope.interior = interior;
-		$scope.panorama = new PANOLENS.ImagePanorama( 'assets/cars/' + $scope.car.detail.dir_img + '/int/interior.jpg' );
+		$timeout(function() {
+			if (!$scope.panolens.status) {
+				var panorama, viewer;
 
-		$scope.viewer = new PANOLENS.Viewer( { container: document.querySelector('#interior') } );
-		$scope.viewer.add( $scope.panorama );		
+				container = document.querySelector('#interior');
+				interior = interior;
+				panorama = new PANOLENS.ImagePanorama('assets/cars/' + $scope.car.detail.dir_img + '/int/interior.jpg');
+
+				viewer = new PANOLENS.Viewer( { container: container } );
+				viewer.add( panorama );
+
+				$scope.panolens.status = true;
+			}
+		}, 500)
 	};
 
 	$scope.loadMap = function() {

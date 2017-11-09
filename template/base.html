@@ -46,33 +46,30 @@
           <p><b>STOK MOBIL TERBARU</b></p><span>-Our Recent Cars-</span>
         </div>
         <div class="rc-list owl-carousel owl-theme">
-          <div class="list-cars col-md-12">
-            <div ng-repeat="car in car" class="item">
-              <a ng-click="scrollToTop()" target="_blank">
-                <div class="panel panel-default">
-                  <div class="rc-prod">
-                    <img ng-src="assets/cars/{{car.dir_img}}/preview.jpg">
-                    <div class="cars-det">
-                      <div class="rc-nama">
-                        <legend>{{car.name}}</legend>
+          <div class="list-cars col-md-12" ng-repeat="car in car">
+            <a ng-href="#!/cardetail/{{car.id}}" ng-click="scrollToTop()">
+              <div class="panel panel-default">
+                <div class="rc-prod">
+                  <img ng-src="assets/cars/{{car.dir_img}}/preview.jpg">
+                  <div class="cars-det">
+                    <div class="rc-nama">
+                      <legend>{{car.name}}</legend>
+                    </div>
+                    <div class="rc-info">
+                      <div class="col-md-6">
+                        <i class="fa fa-calendar"></i> Tahun {{car.tahun}}
                       </div>
-                      <div class="rc-info">
-                        <div class="col-md-6">
-                          <i class="fa fa-calendar"></i> Tahun {{car.tahun}} 
-                        </div>
-                        <div class="col-md-6">
-                          <i class="fa fa-road"></i> Km {{car.km}}
-                        </div>
+                      <div class="col-md-6">
+                        <i class="fa fa-road"></i> Km {{car.km}}
                       </div>
-                      <div class="rc-loc">
-                        <i class="fa fa-map-marker"></i> {{car.showroom}}
-                      </div>
+                    </div>
+                    <div class="rc-loc">
+                      <i class="fa fa-map-marker"></i> {{car.showroom}}
                     </div>
                   </div>
                 </div>
-              </a>
-            </div>
-            <div class="clearfix"></div>
+              </div>
+            </a>
           </div>
         </div>
         <br>

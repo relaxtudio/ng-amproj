@@ -1,7 +1,7 @@
 <section class="cardetail">
 	<div id="prod-toggle">
 		<a ng-click="mobil = false" class="btn btn-default"><img src="assets/img/360_icon.png" width="30"> Exterior</a>
-		<a ng-click="mobil = true" class="btn btn-default"><img src="assets/img/360_icon.png" width="30"> Interior</a>
+		<a ng-click="mobil = true; interiorView()" class="btn btn-default"><img src="assets/img/360_icon.png" width="30"> Interior</a>
 	</div>
 	<div id="cars-product" class="col-md-8 col-sm-8">
 		<div id="exterior" ng-show="!mobil" class="animate-show-hide">
@@ -18,7 +18,7 @@
 			    <a class="btn btn-default custom_next" custom_next><i class="fa fa-forward"></i></a>
 			</div>
 		</div>
-		<div id="interior" ng-hide="!mobil" class="animate-show-hide" >
+		<div id="interior" ng-show="mobil" class="animate-show-hide interior">
 		</div>
 	</div>
 	<br>
