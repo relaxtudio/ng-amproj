@@ -20,6 +20,15 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$scope.modalMobil = {
 			currentTab: 'dt-mobil'
 		};
+		$scope.editMobil = {
+			currentTab: 'dt-mobil'
+		};
+		$scope.deleteMobil = {
+			currentTab: 'dt-mobil'
+		};
+		$scope.soldMobil = {
+			currentTab: 'dt-mobil'
+		};
 		$scope.initWs();
 	}
 
@@ -63,6 +72,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.openModalMobil = function() {
+		console.log($scope.modalMobil);
 		var modal = $uibModal.open({
 			templateUrl: "template/modal/carModal.html",
 			scope: $scope
@@ -95,13 +105,13 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			$scope.modalMobil.currentTab = data;
 		}
 		if (type == 'editMobil') {
-
+			$scope.editMobil.currentTab = data;
 		}
 		if (type == 'deleteMobil') {
-
+			$scope.deleteMobil.currentTab = data;
 		}
 		if (type == 'soldMobil') {
-
+			$scope.soldMobil.currentTab = data;
 		}
 	}
 

@@ -1,1 +1,45 @@
-{{car}}
+<div>
+	<div class="modal-content">
+		<div class="modal-header" style="background-color: #ff6666; color: #fff;">
+			<button type="button" class="close" ng-click="cancel()" style="color: #9effff;">
+				&times;
+			</button>
+			<h4 class="modal-title" align="center">Konfirmasi Hapus Data</h4>
+		</div>
+		<div class="modal-body">
+			<p>Anda akan menghapus data mobil dengan ringkasan sebagai berikut :<p>
+			<table id="resume-mobil" width="100%" class="table table-striped">
+				<tr>
+					<td width="20%">Mobil</td>
+					<td width="5%">:</td>
+					<td width="75%">{{car.brand}} {{car.name}}</td>
+				</tr>
+				<tr>
+					<td>Tahun</td>
+					<td>:</td>
+					<td>{{car.tahun}}</td>
+				</tr>
+				<tr>
+					<td>Warna</td>
+					<td>:</td>
+					<td>{{car.warna}}</td>
+				</tr>
+				<tr>
+					<td>Showroom</td>
+					<td>:</td>
+					<td>{{car.showroom}}</td>
+				</tr>
+				<tr>
+					<td>Harga</td>
+					<td>:</td>
+					<td>Rp {{car.harga | number}}</td>
+				</tr>
+			</table>
+			<p>Apakah anda yakin ingin menghapus data ini?</p>
+		</div>
+		<div class="modal-footer">
+			<a class="btn btn-default" class="close" data-dismiss="modal">Batal</a>
+			<a id="hapusmobil-y" href="#" class="btn btn-danger">Ya</a>
+		</div>
+	</div>
+</div>

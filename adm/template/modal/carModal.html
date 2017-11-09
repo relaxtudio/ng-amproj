@@ -11,17 +11,17 @@
 				<div class="modal-body">
 					<button ng-click="log(modalMobil.currentTab)">console.log</button>
 					<ul class="nav nav-tabs">
-						<li class="active">
-							<a ng-click="tab('modalMobil', 'dt-mobil')" data-toggle="tab"><i class="fa fa-car"></i> Data Mobil</a>
+						<li ng-class="modalMobil.currentTab == 'dt-mobil' ? 'active' : ''">
+							<a ng-click="tab('modalMobil', 'dt-mobil')"><i class="fa fa-car"></i> Data Mobil</a>
 						</li>
-						<li>
-							<a ng-click="tab('modalMobil', 'ft-preview')" data-toggle="tab"><i class="fa fa-camera"></i> Foto Preview</a>
+						<li ng-class="modalMobil.currentTab == 'ft-preview' ? 'active' : ''">
+							<a ng-click="tab('modalMobil', 'ft-preview')"><i class="fa fa-camera"></i> Foto Preview</a>
 						</li>
-						<li>
-							<a ng-click="tab('modalMobil', 'ft-exterior')" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
+						<li ng-class="modalMobil.currentTab == 'ft-exterior' ? 'active' : ''">
+							<a ng-click="tab('modalMobil', 'ft-exterior')"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
 						</li>
-						<li>
-							<a ng-click="tab('modalMobil', 'ft-interior')" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360&deg;</a>
+						<li ng-class="modalMobil.currentTab == 'ft-interior' ? 'active' : ''">
+							<a ng-click="tab('modalMobil', 'ft-interior')"><i class="fa fa-camera"></i> Interior 360&deg;</a>
 						</li>
 					</ul>
 					<form id="newmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST">
@@ -35,19 +35,7 @@
 										<label class="control-label col-xs-4" for="brand_id">Brand</label>
 										<div class="col-xs-8">
 											<select id="brand_id" class="form-control" required="true">
-												<option value="" disabled="true" selected="selected" >---Pilih Brand---</option>
-												<option value="1">BMW</option>
-												<option value="2">Honda</option>
-												<option value="3">Mercedes-Benz</option>
-												<option value="1">BMW</option>
-												<option value="2">Honda</option>
-												<option value="3">Mercedes-Benz</option>
-												<option value="1">BMW</option>
-												<option value="2">Honda</option>
-												<option value="3">Mercedes-Benz</option>
-												<option value="1">BMW</option>
-												<option value="2">Honda</option>
-												<option value="3">Mercedes-Benz</option>
+												
 											</select>
 										</div>
 									</div>

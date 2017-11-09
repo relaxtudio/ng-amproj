@@ -2,29 +2,30 @@
 		<div>
 			<div class="modal-content">
 				<div class="modal-header" style="background-color: #0099cc; color: #fff;">
-					<button type="button" class="close" data-dismiss="modal">
+					<button type="button" class="close" ng-click="cancel()" style="color: #9effff;">
 						&times;
 					</button>
 					<h4 class="modal-title" align="center">Edit Data Mobil</h4>
 				</div>
 				<div class="modal-body">
+					<button ng-click="log(editMobil.currentTab)">console.log</button>
 					<ul class="nav nav-tabs">
-						<li class="active">
-							<a ng-click="tab('editMobil', 'dt-mobil')" data-toggle="tab"><i class="fa fa-car"></i> Data Mobil</a>
+						<li ng-class="editMobil.currentTab == 'dt-mobil' ? 'active' : ''">
+							<a ng-click="tab('editMobil', 'dt-mobil')"><i class="fa fa-car"></i> Data Mobil</a>
 						</li>
-						<li>
-							<a ng-click="tab('editMobil', 'ft-preview')" data-toggle="tab"><i class="fa fa-camera"></i> Foto Preview</a>
+						<li ng-class="editMobil.currentTab == 'ft-preview' ? 'active' : ''">
+							<a ng-click="tab('editMobil', 'ft-preview')"><i class="fa fa-camera"></i> Foto Preview</a>
 						</li>
-						<li>
-							<a ng-click="tab('editMobil', 'ft-exterior')" data-toggle="tab"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
+						<li ng-class="editMobil.currentTab == 'ft-exterior' ? 'active' : ''">
+							<a ng-click="tab('editMobil', 'ft-exterior')"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
 						</li>
-						<li>
-							<a ng-click="tab('editMobil', 'ft-interior')" data-toggle="tab"><i class="fa fa-camera"></i> Interior 360&deg;</a>
+						<li ng-class="editMobil.currentTab == 'ft-interior' ? 'active' : ''">
+							<a ng-click="tab('editMobil', 'ft-interior')"><i class="fa fa-camera"></i> Interior 360&deg;</a>
 						</li>
 					</ul>
-					<form id="editmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="#">
+					<form id="editmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST">
 						<div class="tab-content">
-							<div ng-show="modalMobil.currentTab == 'dt-mobil'" id="ed-dt-mobil" class="row tab-pane fade in active">
+							<div ng-show="editMobil.currentTab == 'dt-mobil'" id="ed-dt-mobil" class="row tab-pane fade in active">
 								<div class="col-md-12">
 									<legend>Data Mobil</legend>
 								</div>
@@ -124,7 +125,7 @@
 									</div>
 								</div>
 							</div>
-							<div ng-show="modalMobil.currentTab == 'ft-preview'" id="ed-ft-preview" class="tab-pane fade in">
+							<div ng-show="editMobil.currentTab == 'ft-preview'" id="ed-ft-preview" class="row tab-pane fade in active">
 								<div class="row">
 									<div class="col-md-12">
 										<legend>Foto Preview</legend>
@@ -139,7 +140,7 @@
 									</div>
 								</div>
 							</div>
-							<div ng-show="modalMobil.currentTab == 'ft-exterior'" id="ed-ft-exterior" class="tab-pane fade in">
+							<div ng-show="editMobil.currentTab == 'ft-exterior'" id="ed-ft-exterior" class="row tab-pane fade in active">
 								<div class="row">
 									<div class="col-md-12">
 										<legend>Exterior 360&deg;</legend>
@@ -154,7 +155,7 @@
 									</div>
 								</div>
 							</div>
-							<div ng-show="modalMobil.currentTab == 'ft-interior'" id="ed-ft-interior" class="tab-pane fade in">
+							<div ng-show="editMobil.currentTab == 'ft-interior'" id="ed-ft-interior" class="row tab-pane fade in active">
 								<div class="row">
 									<div class="col-md-12">
 										<legend>Interior 360&deg;</legend>
