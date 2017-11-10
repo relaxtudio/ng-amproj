@@ -28,15 +28,15 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 		var car;
 		$(function(){
 			$scope.$car =  $('.car').ThreeSixty({
-		        totalFrames: 52, // Total no. of image you have for 360 slider
-		        endFrame: 52, // end frame for the auto spin animation
+		        totalFrames: 44, // Total no. of image you have for 360 slider
+		        endFrame: 44, // end frame for the auto spin animation
 		        currentFrame: 1, // This the start frame for auto spin
 		        imgList: '.threesixty_images', // selector for image list
 		        progress: '.spinner', // selector to show the loading progress
 		        imagePath:'assets/cars/' + $scope.car.detail.dir_img + '/ext/', // path of the image assets
 		        filePrefix: '', // file prefix if any
-		        ext: '.png', // extention for the assets
-		        height: '315',
+		        ext: '.jpg', // extention for the assets
+		        height: '465',
 		        width: '100%',
 		        navigation: false
 		    });

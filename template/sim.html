@@ -25,10 +25,10 @@
 		<div class="col-sm-6 col-sm-offset-3">
 			<div  id="simkred-bcaf" class="panel panel-default">
 				<div class="panel-heading">
-					<i class="fa fa-calculator"></i> <b>Simulasi Kredit Mobil </b>
-						<span class="pull-right">
-							<img src="assets/img/bcaf.png" width="130">
-						</span>
+					<i class="fa fa-calculator"></i> <b>Simulasi Kredit</b>
+					<span style="float:right;">
+						<img src="assets/img/bcaf.png" width="115">
+					</span>
 				</div>
 				<div class="panel-body">
 					<form id="form-simkred1" name="simForm" class="form-horizontal" method="POST" ng-submit="submitSim(simForm)">
@@ -58,14 +58,14 @@
 							<label class="control-label col-md-4 col-xs-2" for="c_harga">Harga</label>
 							<div class="col-md-6 col-xs-9 col-xs-offset-1">
 								<div class="input-group">
-									<span class="input-group-addon" style="background-color: transparent; border-bottom: 1px solid #ccc; border-left: 0; border-top: 0">Rp  {{sim.param.c_harga | number}} </span>
+									<span class="input-group-addon" style="background-color: transparent; border-bottom: 1px solid #ccc; border-left: 0; border-top: 0; text-align: justify;">Rp  {{sim.param.c_harga | number}} </span>
 									<!-- <input type="number" name="c_harga" id="c_harga" class="form-control" ng-model="sim.c_harga" disabled> -->
 								</div>
 							</div>
 						</div>
 						<div class="form-group has-feedback">
 							<label class="control-label col-md-4 col-xs-2" for="c_dp">DP</label>
-							<div class="col-md-3 col-xs-4 col-xs-offset-1">
+							<div class="col-md-3 col-xs-5 col-xs-offset-1">
 								<input type="number" name="c_dp" min="30" id="c_dp" class="form-control" ng-model="sim.param.c_dp" required>
 								<span class="form-control-feedback">%</span>
 							</div>
@@ -164,7 +164,7 @@
 				<tr>
 					<td>Asuransi</td>
 					<td>:</td>
-					<td>{{sim.result.asuransi.jenis}} - ({{sim.result.asuransi.premi}} %) </td>
+					<td>{{sim.result.asuransi.jenis}} ({{sim.result.asuransi.premi}} %) </td>
 				</tr>
 				<tr>
 					<td>Masa Asuransi</td>
