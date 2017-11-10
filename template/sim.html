@@ -44,7 +44,7 @@
 							<label for="c_model" class="control-label col-md-4 col-xs-2">Tipe</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
 								<select id="c_model" class="form-control" ng-model="car.select" ng-change="selectCar(car.select)">
-									<option ng-repeat="carFilter in car.listFilter" ng-value={{carFilter}}> {{carFilter.name}} - Rp. {{carFilter.harga | number}} </option>
+									<option ng-repeat="carFilter in car.listFilter" ng-value={{carFilter}}> {{carFilter.name}} -  {{carFilter.tahun}} - {{carFilter.warna}} </option>
 								</select>
 							</div>
 						</div>
