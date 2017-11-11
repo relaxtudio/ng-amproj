@@ -76,6 +76,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		logout: function() {
 			$ls.remove(C_SESSION);
 		},
+		testUpload: function(data, success, error) {
+			return $http.post(C_WS + 'testUpload', data).then(success, error);
+		},
 		getCar: function(data, success, error) {
 			return $http.post(C_WS + 'getCar', data).then(success, error);
 		},

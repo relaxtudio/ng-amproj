@@ -4,6 +4,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.init = function() {
+		$scope.image = null;
 		$scope.carTotal = {
 			limit: 10,
 			page: 0,
@@ -61,6 +62,12 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 
 	$scope.delCar = function(data) {
 		$ws.delCar(data, function(respon) {
+
+		}, error);
+	}
+
+	$scope.soldCar = function(data) {
+		$ws.soldCar(data, function(respon) {
 
 		}, error);
 	}
