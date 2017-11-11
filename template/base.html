@@ -1,14 +1,12 @@
   <section class="home-content">
         <div id="promo" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-slide-to="0" class="active"></li>
-            <li data-slide-to="1"></li>
-            <li data-slide-to="2"></li>
+            <li ng-repeat="i in slides" style="border-radius: 50% !important;" data-slide-to="{{i.id}}" ng-class="{active: ($index == 0)}"></li>
           </ol>
 
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
-            <div ng-repeat="slide in slides" ng-class="$index == 0 ? 'item active' : 'item'">
+            <div ng-repeat="slide in slides" ng-class="$index == 0 ? 'item active' : 'item'" id="{{slide.id}}">
               <img ng-src="assets/promo/{{slide.img}}" alt="Mobil 1">
             </div>
           </div>
