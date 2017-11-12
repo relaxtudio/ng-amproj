@@ -28,8 +28,8 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 		var car;
 		$(function(){
 			$scope.$car =  $('.car').ThreeSixty({
-		        totalFrames: 44, // Total no. of image you have for 360 slider
-		        endFrame: 44, // end frame for the auto spin animation
+		        totalFrames: 30, // Total no. of image you have for 360 slider
+		        endFrame: 30, // end frame for the auto spin animation
 		        currentFrame: 1, // This the start frame for auto spin
 		        imgList: '.threesixty_images', // selector for image list
 		        progress: '.spinner', // selector to show the loading progress
