@@ -1,6 +1,7 @@
 am.controller('MainCtrl', function($scope, $state, $ws) {
 	$scope.init = function() {
 		$scope.user = $ws.loginUser();
+		$scope.loading = false;
 	}
 
 	$scope.goto = function(path) {

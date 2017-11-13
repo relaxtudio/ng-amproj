@@ -1,10 +1,10 @@
-am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack) {
+am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack, $timeout, $http) {
 	var error = function(respon) {
 		console.log('error', respon);
 	}
 
 	$scope.init = function() {
-		$scope.loading = false;
+		$scope.$parent.loading = false;
 		$scope.carTotal = {
 			limit: 10,
 			page: 0,
@@ -61,9 +61,32 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$scope.getCar({filter: $scope.filter});
 	}
 
+	$scope.testLoading = function() {
+		$scope.$parent.loading = true;
+		$timeout(function() {
+			$scope.$parent.loading = false;
+		}, 2000);
+	}
+
 	$scope.getCar = function(data) {
+		$scope.car = [];
+		
 		$ws.getCar(data, function(respon) {
-			$scope.car = respon.data;
+			for (i in respon.data) {
+				$ws.getCarDetail({filter: {id: i}}, function(result) {
+					console.log(respon.data[i], result.data[0])
+				})
+			}
+		}, error);
+	}
+
+	$scope.getCarDetail = function(id) {
+		$ws.getCarDetail({
+			filter: {
+				id: id
+			}
+		}, function(respon) {
+			return respon.data;
 		}, error);
 	}
 
@@ -114,7 +137,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			return window.alert('Interior Mobil wajib diisi');
 		}
 		var token = $scope.$parent.user.token;
-		$scope.loading = true;
+		$scope.$parent.loading = true;
 		$ws.addCar({
 			token: token,
 			data: $scope.newCar.add
@@ -164,7 +187,8 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 									exterior: [],
 									interior: ''
 								};
-								$scope.loading = false;
+								$scope.cancel();
+								$scope.$parent.loading = false;
 							}, error);
 						}, error);
 					}, error);
