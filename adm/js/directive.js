@@ -9,7 +9,6 @@ am.directive("ngFileUpload", [function () {
                 var values = [];
                 angular.forEach(element[0].files, function(item) {
                 	var reader = new FileReader();
-                	console.log(item);
                 	reader.readAsDataURL(item);
                 	reader.onload = function(respon) {
                 		var value = {
@@ -20,7 +19,12 @@ am.directive("ngFileUpload", [function () {
                 	}
                 });
                 scope.$apply(function() {
-                	scope.ngFileUpload = values;
+                	console.log(values);
+                	if (isMultiple) {
+	                	scope.ngFileUpload = values;            		
+                	} else {
+                		scope.ngFileUpload = values[0];
+                	}
                 })
             });
         }
