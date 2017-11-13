@@ -72,11 +72,13 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$scope.car = [];
 		
 		$ws.getCar(data, function(respon) {
-			for (i in respon.data) {
-				$ws.getCarDetail({filter: {id: i}}, function(result) {
-					console.log(respon.data[i], result.data[0])
+			respon.data.forEach(function(item) {
+				var car = item;
+				$ws.getCarDetail({filter: {id: item.id}}, function(respon) {
+					car.detail = respon.data[0];
+					$scope.car.push(car);
 				})
-			}
+			})
 		}, error);
 	}
 
