@@ -98,7 +98,7 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 			return $http.post(C_WS + 'editCar', data).then(success, error);
 		},
 		delCar: function(data, success, error) {
-			return $http.post(C_WS + 'del', data).then(success, error);
+			return $http.post(C_WS + 'delCar', data).then(success, error);
 		},
 		getShowroom: function(data, success, error) {
 			return $http.post(C_WS + 'getShowroom', data).then(success, error);
@@ -120,6 +120,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		dirCar: function(data, success, error) {
 			return $http.post(C_WS + 'dirCar', data).then(success, error);
+		},
+		delDir: function(data, success, error) {
+			return $http.post(C_WS + 'delDir', data).then(success, error);
 		},
 		uploadCar: function(data, success, error) {
 			return $http.post(C_WS + 'uploadCar', data).then(success, error);
