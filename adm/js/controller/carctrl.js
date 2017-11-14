@@ -1,4 +1,4 @@
-am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack, $timeout, $http) {
+am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack, $timeout) {
 	var error = function(respon) {
 		console.log('error', respon);
 	}
@@ -70,25 +70,14 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 
 	$scope.getCar = function(data) {
 		$scope.car = [];
-		
 		$ws.getCar(data, function(respon) {
 			respon.data.forEach(function(item) {
 				var car = item;
 				$ws.getCarDetail({filter: {id: item.id}}, function(respon) {
 					car.detail = respon.data[0];
 					$scope.car.push(car);
-				})
+				}, error)
 			})
-		}, error);
-	}
-
-	$scope.getCarDetail = function(id) {
-		$ws.getCarDetail({
-			filter: {
-				id: id
-			}
-		}, function(respon) {
-			return respon.data;
 		}, error);
 	}
 
@@ -200,18 +189,33 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.editCar = function(data) {
-		$ws.editCar(data, function(respon) {
+		var token = $scope.$parent.user.token;
+		$ws.editCar(null, function(respon) {
 
 		}, error);
 	}
 
 	$scope.delCar = function(data) {
-		$ws.delCar(data, function(respon) {
-
+		console.log('delete');
+		$scope.$parent.loading = true;
+		var token = $scope.$parent.user.token;
+		$ws.delCar({token: token, data: {id: data.id}}, function(respon) {
+			console.log(respon.data);
+			if (respon.data.data) {
+				$ws.delDir({
+					token: token,
+					dir: data.dir_img,
+					type: 'cars'
+				}, function(respon) {
+					console.log(respon.data);
+					$scope.$parent.loading = false;
+				}, error);
+			}
 		}, error);
 	}
 
 	$scope.soldCar = function(data) {
+		var token = $scope.$parent.user.token;
 		$ws.soldCar(data, function(respon) {
 
 		}, error);
