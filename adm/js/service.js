@@ -100,6 +100,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		delCar: function(data, success, error) {
 			return $http.post(C_WS + 'delCar', data).then(success, error);
 		},
+		soldCar: function(data, success, error) {
+			return $http.post(C_WS + 'soldCar', data).then(success, error);
+		},
 		getShowroom: function(data, success, error) {
 			return $http.post(C_WS + 'getShowroom', data).then(success, error);
 		},
@@ -126,6 +129,18 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		uploadCar: function(data, success, error) {
 			return $http.post(C_WS + 'uploadCar', data).then(success, error);
+		},
+		getPromo: function(data, success, error) {
+			return $http.post(C_WS + 'getPromo', data).then(success, error);
+		},
+		addPromo: function(data, success, error) {
+			return $http.post(C_WS + 'addPromo', data).then(success, error);
+		},
+		delPromo: function(data, success, error) {
+			return $http.post(C_WS + 'delPromo', data).then(success, error);
+		},
+		promoToggle: function(data, success, error) {
+			return $http.post(C_WS + 'promoToggle', data).then(success, error);
 		}
 	}
 })

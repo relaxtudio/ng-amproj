@@ -1,0 +1,23 @@
+<div class="modal-content">
+	<div class="">
+		<div class="modal-header custbg-hd">
+			<button type="button" class="close" data-dismiss="modal" style="color: #9effff;">
+				&times;
+			</button>
+			<h4 class="modal-title">Promo Baru</h4>
+		</div>
+		<div class="modal-body">
+			<form id="newpromo-form" method="POST" action="#" class="form-horizontal" enctype="multipart/form-data">
+				<div class="form-group">
+					<label class="control-label col-xs-4" for="c_promo">Promo</label>
+					<div class="col-xs-6">
+						<input id="c_promo" type="file" name="c_promo" accept="image/*" multiple="true" ng-file-upload="newPromo.data">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<a id="promo-btn" ng-click="addPromo()" class="btn btn-success"><i class="fa fa-save"></i> Simpan</a>
+				</div> 
+			</form>
+		</div>
+	</div>
+</div>

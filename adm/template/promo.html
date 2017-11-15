@@ -1,0 +1,78 @@
+	<div class="row">
+		<div class="col-md-4">
+			<div id="promo" class="boxshadow">
+				<div class="panel panel-default custbg">
+					<div class="panel-heading custbg-hd">
+						Daftar Promo
+					</div>
+					<div class="panel-body">
+						<div id="btn-promo">
+							<a class="btn btn-info" ng-click="openModalPromo()"><i class="fa fa-plus"></i> Promo Baru</a>
+						</div>
+						<table id="list-promo" width="100%" class="table table-striped">
+							<tr>
+								<th width="10%">ID</th>
+								<th width="50%">Promo</th>
+								<th width="20%">Aktif</th>
+								<th width="20%">Aksi</th>
+							</tr>
+							<tr ng-repeat="promo in promo.data">
+								<td> {{promo.id}} </td>
+								<td><a> {{promo.img}} </a></td>
+								<td><a ng-click="promoToggle(promo)"><i ng-class="promo.active == 'Y' ? 'fa fa-check' : 'fa fa-times'"></i></a></td>
+								<td><a class="btn btn-danger" title="Hapus" onclick="confirm('Anda yakin menghapus promo ini?');" ng-click="delPromo(promo)"><i class="fa fa-trash"></i></a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div id="slideshow-prev" class="boxshadow">
+				<div class="panel panel-default custbg">
+					<div class="panel-heading custbg-hd">
+						Preview Slideshow
+					</div>
+					<div class="panel-body">
+						<div id="ss-promo" class="carousel slide" data-ride="carousel">
+							<ol class="carousel-indicators">
+							    <li ng-repeat="i in promo.show" style="border-radius: 50% !important;" data-slide-to="{{i.id}}" ng-class="{active: ($index == 0)}"></li>
+						  	</ol>
+						  	<div class="carousel-inner">
+						  		<div ng-repeat="slide in promo.show" ng-class="$index == 0 ? 'item active' : 'item'" id="{{slide.id}}">
+						  			<img ng-src="../assets/promo/{{slide.img}}" width="100%">
+						  		</div>
+
+						  		<a class="left carousel-control" href="#ss-promo" data-slide="prev">
+							      <span class="glyphicon glyphicon-chevron-left"></span>
+							      <span class="sr-only">Previous</span>
+							    </a>
+							    <a class="right carousel-control" href="#ss-promo" data-slide="next">
+							      <span class="glyphicon glyphicon-chevron-right"></span>
+							      <span class="sr-only">Next</span>
+							    </a>
+						  	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="promo-prev1" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" style="background-color: #ff6666; color: #fff;">
+					<button type="button" class="close" data-dismiss="modal" style="color: #9effff;">
+						&times;
+					</button>
+					<h4 class="modal-title" align="center">Preview Promo</h4>
+				</div>
+				<div class="modal-body">
+					<img src="http://www.bekasihonda.com/wp-content/uploads/2017/10/Honda-JAZZ-2017.jpg" width="100%">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
