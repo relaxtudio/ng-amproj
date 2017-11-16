@@ -141,6 +141,15 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		promoToggle: function(data, success, error) {
 			return $http.post(C_WS + 'promoToggle', data).then(success, error);
+		},
+		getMap: function(data, success, error) {
+			return $http.post(C_WS + 'getMap', data).then(success, error);
+		},
+		addMap: function(data, success, error) {
+			return $http.post(C_WS + 'addMap', data).then(success, error);
+		},
+		delMap: function(data, success, error) {
+			return $http.post(C_WS + 'delMap', data).then(success, error);
 		}
 	}
 })

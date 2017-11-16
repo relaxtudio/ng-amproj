@@ -1,6 +1,11 @@
 var am = angular.module('am', ['ui.router', 'ngAnimate', 'ngMap', 'angular-timeline', 'ocNgRepeat']);
 
-
+am.run(function($rootScope) {
+	$rootScope.$on('mapInitialized', function(evt,map) {
+		$rootScope.map = map;
+		$rootScope.apply();
+	})
+})
 
 am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProvider) {
 	$qProvider.errorOnUnhandledRejections(false);

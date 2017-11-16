@@ -1,0 +1,28 @@
+<div>
+	<ng-map id="map" on-click="get($event)" zoom="{{map.zoom}}" center="{{map.lat}}, {{map.lng}}">
+		<marker position="{{newLoc.lat}}, {{newLoc.lng}}" icon="http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|76ff03"></marker>
+		<marker id="marker-{{$index}}" ng-repeat="m in locations" position="{{m.lat}}, {{m.lng}}" title="{{m.lks}}, {{m.desc}}" animation="DROP" on-click="showInfoWindow('det')">
+		</marker>
+	</ng-map>
+	<div style="width: 200px">
+		New Map
+		<form name="showroom" ng-submit="addShowroom(showroom)">
+			<input type="" ng-model="newLoc.nama" placeholder="nama" required>
+			<input type="" ng-model="newLoc.alamat" placeholder="alamat" required>
+			<input type="" ng-model="newLoc.telp" placeholder="telepon" required>
+			<input type="" ng-model="newLoc.kota" placeholder="kota" required>
+			<input type="" ng-model="newLoc.lat" disabled>
+			<input type="" ng-model="newLoc.lng" disabled>
+			<button type="submit">ADD NEW LOCATION</button>
+		</form>
+	</div>
+	<div>
+		<div>Existing Map</div>
+		<div ng-repeat="loc in locations" style="width: 200px; background-color: gray; display: inline-block; margin: 5px">
+			<div>{{loc.lks}}</div>
+			<div>{{loc.descr}}</div>
+			<div>{{loc.tlp}}</div>
+			<div>{{loc.kota}}</div>
+		</div>
+	</div>
+</div>

@@ -1,4 +1,4 @@
-var am = angular.module('adm', ['ui.router', 'ui.bootstrap']);
+var am = angular.module('adm', ['ui.router', 'ui.bootstrap', 'ngMap']);
 
 am.run(function($rootScope, $state, $ws) {
 	$rootScope.$on("$stateChangeSuccess", function(event, toState) {
