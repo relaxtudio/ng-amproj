@@ -7,14 +7,14 @@
 	<div class="row">
 		<div id="newmap" class="col-md-3">
 			<div class="panel panel-default custbg boxshadow">
-				<div class="panel-heading custbg-hd"> New Map</div>
+				<div class="panel-heading custbg-hd">Showroom Baru</div>
 				<div class="panel-body">
 					<form name="showroom" class="form-horizontal" ng-submit="addShowroom(showroom)">
 						<div class="newmap-input">
 							<input type="" ng-model="newLoc.nama" placeholder="Nama Showroom" class="form-control" required>
 						</div>
 						<div class="newmap-input">
-							<input type="" ng-model="newLoc.alamat" class="form-control" placeholder="Alamat" required>
+							<textarea type="" ng-model="newLoc.alamat" class="form-control" placeholder="Alamat" required style="min-width:232px; max-width: 232px; min-height: 75px; max-height: 150px;"></textarea>
 						</div>
 						<div class="newmap-input">
 							<input type="" ng-model="newLoc.telp" class="form-control" placeholder="Telepon" required>
@@ -28,8 +28,8 @@
 						<div class="newmap-input">
 							<input type="" ng-model="newLoc.lng" class="form-control" readonly>
 						</div>
-						<div class="newmap-input">
-							<button type="submit" class="btn btn-success">ADD NEW LOCATION</button>
+						<div class="newmap-input" align="right">
+							<button type="submit" class="btn btn-success">SIMPAN</button>
 						</div>
 					</form>
 				</div>
@@ -37,7 +37,7 @@
 		</div>
 		<div id="listmap" class="col-md-9">
 			<div class="panel panel-default custbg boxshadow">
-				<div class="panel-heading custbg-hd">Existing Map</div>
+				<div class="panel-heading custbg-hd">Daftar Showroom</div>
 				<div class="panel-body">
 					<div ng-repeat="loc in locations">
 						<div class="col-md-4">
