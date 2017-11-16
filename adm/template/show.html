@@ -42,16 +42,24 @@
 					<div ng-repeat="loc in locations">
 						<div class="col-md-4">
 							<div class="panel panel-default">	
-								<div class="panel-heading" style="background-color: #fff;">{{loc.lks}}</div>
+								<div class="panel-heading" style="background-color: #fff;"><i class="fa fa-building-o"></i> {{loc.lks}}</div>
 								<div class="panel-body">
-									<div>{{loc.descr}}</div>
-									<div>{{loc.tlp}}</div>
-									<div>{{loc.kota}}</div>
+									<div>
+										<i class="fa fa-map-marker"></i>
+										&emsp;{{loc.descr}}
+									</div>
+									<div>
+										<i class="fa fa-phone"></i>
+										&emsp;{{loc.tlp}}
+									</div>
+									<div>
+										<i class="fa fa-map-o"></i>
+										&nbsp; {{loc.kota}}
+									</div>
 									<br>
 									<div align="center">
 										<button id="editmap" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button> &nbsp;
 										<button id="delmap" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i>
-											
 										</button>
 									</div>
 								</div>
