@@ -306,6 +306,16 @@ html, body {
   margin-bottom: 15px;
 }
 
+/*-----DHOWROOM SECTION------*/
+#smap {
+  width: 100%;
+  height: 535px;
+  margin-bottom: 25px;
+}
+
+.newmap-input {
+  margin-bottom: 10px;
+}
 
 /*-----SIMKREDIT SECTION-----*/
 #allrisk-tbl *, #kombinasi-tbl *, #tlo-tbl *, #bunga-tbl * {

@@ -1,28 +1,65 @@
 <div>
-	<ng-map id="map" on-click="get($event)" zoom="{{map.zoom}}" center="{{map.lat}}, {{map.lng}}">
+	<ng-map id="smap" on-click="get($event)" zoom="{{map.zoom}}" center="{{map.lat}}, {{map.lng}}">
 		<marker position="{{newLoc.lat}}, {{newLoc.lng}}" icon="http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|76ff03"></marker>
 		<marker id="marker-{{$index}}" ng-repeat="m in locations" position="{{m.lat}}, {{m.lng}}" title="{{m.lks}}, {{m.desc}}" animation="DROP" on-click="showInfoWindow('det')">
 		</marker>
 	</ng-map>
-	<div style="width: 200px">
-		New Map
-		<form name="showroom" ng-submit="addShowroom(showroom)">
-			<input type="" ng-model="newLoc.nama" placeholder="nama" required>
-			<input type="" ng-model="newLoc.alamat" placeholder="alamat" required>
-			<input type="" ng-model="newLoc.telp" placeholder="telepon" required>
-			<input type="" ng-model="newLoc.kota" placeholder="kota" required>
-			<input type="" ng-model="newLoc.lat" disabled>
-			<input type="" ng-model="newLoc.lng" disabled>
-			<button type="submit">ADD NEW LOCATION</button>
-		</form>
-	</div>
-	<div>
-		<div>Existing Map</div>
-		<div ng-repeat="loc in locations" style="width: 200px; background-color: gray; display: inline-block; margin: 5px">
-			<div>{{loc.lks}}</div>
-			<div>{{loc.descr}}</div>
-			<div>{{loc.tlp}}</div>
-			<div>{{loc.kota}}</div>
+	<div class="row">
+		<div id="newmap" class="col-md-3">
+			<div class="panel panel-default custbg boxshadow">
+				<div class="panel-heading custbg-hd"> New Map</div>
+				<div class="panel-body">
+					<form name="showroom" class="form-horizontal" ng-submit="addShowroom(showroom)">
+						<div class="newmap-input">
+							<input type="" ng-model="newLoc.nama" placeholder="Nama Showroom" class="form-control" required>
+						</div>
+						<div class="newmap-input">
+							<input type="" ng-model="newLoc.alamat" class="form-control" placeholder="Alamat" required>
+						</div>
+						<div class="newmap-input">
+							<input type="" ng-model="newLoc.telp" class="form-control" placeholder="Telepon" required>
+						</div>
+						<div class="newmap-input">
+							<input type="" ng-model="newLoc.kota" class="form-control" placeholder="Kota" required>
+						</div>
+						<div class="newmap-input">
+							<input type="" ng-model="newLoc.lat" class="form-control" readonly>
+						</div>
+						<div class="newmap-input">
+							<input type="" ng-model="newLoc.lng" class="form-control" readonly>
+						</div>
+						<div class="newmap-input">
+							<button type="submit" class="btn btn-success">ADD NEW LOCATION</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="listmap" class="col-md-9">
+			<div class="panel panel-default custbg boxshadow">
+				<div class="panel-heading custbg-hd">Existing Map</div>
+				<div class="panel-body">
+					<div ng-repeat="loc in locations">
+						<div class="col-md-4">
+							<div class="panel panel-default">	
+								<div class="panel-heading" style="background-color: #fff;">{{loc.lks}}</div>
+								<div class="panel-body">
+									<div>{{loc.descr}}</div>
+									<div>{{loc.tlp}}</div>
+									<div>{{loc.kota}}</div>
+									<br>
+									<div align="center">
+										<button id="editmap" class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button> &nbsp;
+										<button id="delmap" class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i>
+											
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
