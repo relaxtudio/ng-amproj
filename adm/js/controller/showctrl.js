@@ -24,7 +24,6 @@ am.controller('ShowCtrl', function($scope, $state, $ws, NgMap) {
 	}
 
 	$scope.get = function(event) {
-		console.log(event.latLng.lat());
 		$scope.newLoc.lat = event.latLng.lat();
 		$scope.newLoc.lng = event.latLng.lng();
 	}
