@@ -70,7 +70,7 @@
 								<span class="form-control-feedback">%</span>
 							</div>
 						</div>
-						<div class="form-group">
+						<!--<div class="form-group">
 							<label class="control-label col-md-4 col-xs-2" for="bunga_thn">
 								Tenor
 							</label>
@@ -82,7 +82,7 @@
 									<option value="4">4 Tahun</option>
 								</select>
 							</div>
-						</div>
+						</div>-->
 						<div class="form-group">
 							<label class="control-label col-md-4 col-xs-2" for="jenis_as">
 								Asuransi
@@ -122,6 +122,150 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
+	<br>
+	<div class="calc-wrapper">
+		<div id="hasil-sim" class="col-sm-6 col-sm-offset-3">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div>
+						<legend><b>Hasil Simulasi</b></legend>
+						<table id="data-mbl" class="table" width="100%">
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Data Mobil</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="20%">Mobil</td>
+								<td width="3%">:</td>
+								<td width="77%">{{car.select.brand}} {{car.select.model}} {{car.select.warna}}</td>
+							</tr>
+							<tr>
+								<td>Tahun</td>
+								<td>:</td>
+								<td>{{car.select.tahun}}</td>
+							</tr>
+							<tr>
+								<td>Warna</td>
+								<td>:</td>
+								<td>{{car.select.warna}}</td>
+							</tr>
+							<tr>
+								<td>Harga Mobil</td>
+								<td>:</td>
+								<td>Rp {{car.select.harga | number}},-</td>
+							</tr>
+						</table>
+					</div>
+					<div>
+						<table width="100%" class="table">
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Tenor 1 Tahun</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="35%">Jumlah Bayar Diawal</td>
+								<td width="5%" style="vertical-align: middle;">:</td>
+								<td width="60%" style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran</td>
+								<td>:</td>
+								<td>Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Tenor 2 Tahun</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="35%">Jumlah Bayar Diawal</td>
+								<td width="5%" style="vertical-align: middle;">:</td>
+								<td width="60%" style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran</td>
+								<td>:</td>
+								<td>Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Tenor 3 Tahun</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="35%">Jumlah Bayar Diawal</td>
+								<td width="5%" style="vertical-align: middle;">:</td>
+								<td width="60%" style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran</td>
+								<td>:</td>
+								<td>Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Tenor 4 Tahun</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="35%">Jumlah Bayar Diawal</td>
+								<td width="5%" style="vertical-align: middle;">:</td>
+								<td width="60%" style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran</td>
+								<td>:</td>
+								<td>Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Tenor 5 Tahun</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="35%">Jumlah Bayar Diawal</td>
+								<td width="5%" style="vertical-align: middle;">:</td>
+								<td width="60%" style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran (1-3th)</td>
+								<td style="vertical-align: middle;">:</td>
+								<td style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran (4-5th)</td>
+								<td style="vertical-align: middle;">:</td>
+								<td style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td colspan="3" style="background-color: #f2f2f2;">
+									<h4><b>Tenor 6 Tahun</b></h4>
+								</td>
+							</tr>
+							<tr>
+								<td width="35%">Jumlah Bayar Diawal</td>
+								<td width="5%" style="vertical-align: middle;">:</td>
+								<td width="60%" style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran (1-4th)</td>
+								<td style="vertical-align: middle;">:</td>
+								<td style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+							<tr>
+								<td>Angsuran (5-6th)</td>
+								<td style="vertical-align: middle;">:</td>
+								<td style="vertical-align: middle;">Rp xxxxxxxx</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div id="hasil-sim" ng-show="sim.result">
 		<legend><b>Hasil Simulasi</b></legend>
 		<div class="col-md-6">
