@@ -25,6 +25,7 @@ am.controller('DashCtrl', function($scope, $state, $ws) {
 	$scope.getCar = function(data) {
 		$ws.getCar(data, function(respon) {
 			$scope.car = respon.data;
+			$scope.order = 'id';
 		}, null);
 	}
 

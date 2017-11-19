@@ -27,7 +27,7 @@
 								<th width="11%">Status</th>
 								<th width="21%">Aksi</th>
 							</tr>
-							<tr ng-repeat="car in car">
+							<tr ng-repeat="car in car | orderBy:'id*1'">
 								<td> {{car.id}} </td>
 								<td> {{car.brand}} </td>
 								<td> {{car.name}} </td>
