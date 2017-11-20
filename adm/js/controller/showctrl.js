@@ -48,5 +48,13 @@ am.controller('ShowCtrl', function($scope, $state, $ws, NgMap) {
 		}, error);
 	}
 
+	$scope.placeMarker = function(){
+		console.log(this.getPlace());
+        var newLoc = this.getPlace().geometry.location;
+        $scope.newLoc.lat = newLoc.lat();
+        $scope.newLoc.lng = newLoc.lng();
+        
+    };
+
 	$scope.init();
 })

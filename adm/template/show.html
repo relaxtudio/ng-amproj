@@ -9,12 +9,17 @@
 			<div class="panel panel-default custbg boxshadow">
 				<div class="panel-heading custbg-hd">Showroom Baru</div>
 				<div class="panel-body">
+					<div class="newmap-input">
+						<textarea places-auto-complete types="['geocode']" on-place-changed="placeMarker()" class="form-control" placeholder="Cari alamat untuk tampil di peta" required style="min-width:232px; max-width: 232px; min-height: 75px; max-height: 150px;"></textarea>
+					</div>
+					<hr style="border-color: #666;">
+					<h4>Form Showroom Baru</h4>
 					<form name="showroom" class="form-horizontal" ng-submit="addShowroom(showroom)">
 						<div class="newmap-input">
 							<input type="" ng-model="newLoc.nama" placeholder="Nama Showroom" class="form-control" required>
 						</div>
 						<div class="newmap-input">
-							<textarea type="" ng-model="newLoc.alamat" class="form-control" placeholder="Alamat" required style="min-width:232px; max-width: 232px; min-height: 75px; max-height: 150px;"></textarea>
+							<textarea ng-model="newLoc.alamat" class="form-control" placeholder="Alamat" required style="min-width:232px; max-width: 232px; min-height: 75px; max-height: 150px;">{{jalan}} {{nomer}}</textarea>
 						</div>
 						<div class="newmap-input">
 							<input type="" ng-model="newLoc.telp" class="form-control" placeholder="Telepon" required>
