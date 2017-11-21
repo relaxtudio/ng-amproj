@@ -33,6 +33,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$scope.brand = [];
 		$scope.model = [];
 		$scope.showroom = [];
+		$scope.trans = [];
 		$scope.newCar = {
 			add: {add_by: $scope.$parent.user.id},
 			detail: {add_by: $scope.$parent.user.id},
@@ -55,9 +56,12 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 				$scope.model = respon.data;
 				$ws.getShowroom(null, function(respon) {
 					$scope.showroom = respon.data;
+					$ws.getTrans(null, function(respon) {
+						$scope.trans = respon.data;
+					})
 				})
 			})
-		}, error)
+		}, error);
 		$scope.getCar({filter: $scope.filter});
 	}
 
@@ -256,6 +260,13 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		});
 	}
 
+	$scope.modalBrandAdd = function() {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/brandAdd.html",
+			scope: $scope
+		});
+	}
+
 	$scope.tab = function(type, data) {
 		if (type == 'modalMobil') {
 			$scope.modalMobil.currentTab = data;
@@ -272,7 +283,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.cancel = function() {
-		$uibModalStack.dismissAll();
+		var closemodal = $uibModal.close();
 	}
 
 	$scope.init();

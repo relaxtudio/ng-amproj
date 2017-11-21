@@ -62,14 +62,22 @@
 						Brand Mobil	
 					</div>
 					<div class="panel-body">
-						<canvas id="brandChart"></canvas>
-						<br>
-						<div class="col-md-6" align="center">
-							<a href="#newbrand" data-toggle="modal" class="btn btn-info action-btn"><i class="fa fa-plus"></i> Brand</a>
-						</div>
-						<div class="col-md-6" align="center">
-							<a href="#allbrand" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Brand</a>
-						</div>
+						<a data-toggle="modal" ng-click="modalBrandAdd()" class="btn btn-info action-btn"><i class="fa fa-plus"></i> Brand</a>
+						<br><br>
+						<table id="brand-list" class="table table-striped" width="100%">
+							<tr>
+								<td><b>No.</b></td>
+								<td><b>Nama Brand</b></td>
+								<td><b>Logo</b></td>
+								<td><b>Aksi</b></td>
+							</tr>
+							<tr ng-repeat="brand in brand">
+								<td style="vertical-align: middle;">{{brand.id}}</td>
+								<td style="vertical-align: middle;">{{brand.name}}</td>
+								<td><img ng-src="../assets/car-brands/{{brand.name}}.png" style="width: 50px;"></td>
+								<td style="vertical-align: middle;"><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -81,11 +89,20 @@
 						Model Mobil
 					</div>
 					<div class="panel-body">
-						<canvas id="modelChart"></canvas>
-						<br>
-						<div align="center">
-							<a href="#allmodel" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Model</a>
-						</div>
+						<a ng-click class="btn btn-info action-btn"><i class="fa fa-plus"></i> Model</a>
+						<br><br>
+						<table id="model-list" class="table table-striped" width="100%">
+							<tr>
+								<td><b>No.</b></td>
+								<td><b>Model Mobil</b></td>
+								<td><b>Aksi</b></td>
+							</tr>
+							<tr ng-repeat="model in model">
+								<td>{{model.id}}</td>
+								<td>{{model.name}}</td>
+								<td><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+							</tr>							
+						</table>
 					</div>
 				</div>
 			</div>
@@ -97,11 +114,20 @@
 						Jenis Transmisi
 					</div>
 					<div class="panel-body">
-						<canvas id="transChart"></canvas>
-						<br>
-						<div align="center">
-							<a href="#alltrans" data-toggle="modal" class="btn btn-success action-btn"><i class="fa fa-list"></i> Semua Transmisi</a>
-						</div>
+						<a ng-click="" class="btn btn-info action-btn"><i class="fa fa-plus"></i> Transmisi</a>
+						<br><br>
+						<table id="model-list" class="table table-striped" width="100%">
+							<tr>
+								<td><b>No.</b></td>
+								<td><b>Jenis Transmisi</b></td>
+								<td><b>Aksi</b></td>
+							</tr>
+							<tr ng-repeat="trans in trans">
+								<td>{{trans.id}}</td>
+								<td>{{trans.name}}</td>
+								<td><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+							</tr>							
+						</table>
 					</div>
 				</div>
 			</div>
