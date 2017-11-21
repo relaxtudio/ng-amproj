@@ -88,8 +88,22 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 						$ws.calcSim($scope.sim.param, function(respon) {
 							$scope.sim.tahun4 = respon.data;
 							$scope.sim.tahun4.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
-							console.log($scope.sim);
+							console.log($scope.sim)
 							$scope.sim.result = true;
+							$scope.sim.param.bunga_thn = 5;
+							$ws.calcSim($scope.sim.param, function(respon) {
+								$scope.sim.tahun5 = respon.data;
+								$scope.sim.tahun5.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+								$scope.sim.result = true;
+								console.log($scope.sim)
+								$scope.sim.param.bunga_thn = 6;
+								$ws.calcSim($scope.sim.param, function(respon) {
+									$scope.sim.tahun6 = respon.data;
+									$scope.sim.tahun6.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+									console.log($scope.sim);
+									$scope.sim.result = true;
+								}, error);
+							}, error);
 						}, error);
 					}, error);	
 				}, error);
