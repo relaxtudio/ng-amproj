@@ -219,42 +219,42 @@
 								<td>:</td>
 								<td>Rp {{sim.tahun4.prepayment.angsuran | number}}</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun5">
 								<td colspan="3" style="background-color: #f2f2f2;">
 									<h4><b>Tenor 5 Tahun</b></h4>
 								</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun5">
 								<td width="35%">Jumlah Bayar Diawal</td>
 								<td width="5%" style="vertical-align: middle;">:</td>
 								<td width="60%" style="vertical-align: middle;">Rp {{sim.tahun5.total | number}}</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun5">
 								<td>Angsuran (1-3th)</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun5.bunga.term1 | number}}</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun5">
 								<td>Angsuran (4-5th)</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun5.bunga.term2 | number}}</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun6">
 								<td colspan="3" style="background-color: #f2f2f2;">
 									<h4><b>Tenor 6 Tahun</b></h4>
 								</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun6">
 								<td width="35%">Jumlah Bayar Diawal</td>
 								<td width="5%" style="vertical-align: middle;">:</td>
 								<td width="60%" style="vertical-align: middle;">Rp {{sim.tahun6.total | number}}</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun6">
 								<td>Angsuran (1-4th)</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun6.bunga.term1 | number}}</td>
 							</tr>
-							<tr>
+							<tr ng-show="sim.tahun6">
 								<td>Angsuran (5-6th)</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun6.bunga.term2 | number}}</td>

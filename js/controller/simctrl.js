@@ -42,6 +42,17 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 
 	$scope.selectBrand = function() {
 		$scope.car.listFilter = [];
+		$scope.sim = {
+			param: {
+				c_harga: 0,
+				c_dp: 0,
+				bunga_thn: 0,
+				jenis_as: '',
+				thn_as: 0,
+				thnmobil: 0
+			},
+			result: null
+		};
 		for (i in $scope.car.list) {
 			if ($scope.car.list[i].brand_id == $scope.brandSelect.id) {
 				$scope.car.listFilter.push($scope.car.list[i]);
@@ -52,6 +63,7 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 	$scope.selectCar = function(data) {
 		$scope.sim.param.c_harga = parseInt(data.harga);
 		$scope.sim.param.thnmobil = parseInt(data.tahun);
+		$scope.sim.result = false;
 		console.log(data);
 	};
 
