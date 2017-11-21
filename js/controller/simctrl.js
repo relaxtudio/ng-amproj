@@ -57,10 +57,42 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 
 	$scope.submitSim = function(form) {
 		if ($scope.sim.param.c_harga > 0 && form.$valid) {
+			// var tahun = [1, 2, 3, 4];
+			// tahun.forEach(function(value) {
+			// 	var object = "tahun" + value;
+			// 	console.log(object);
+			// 	$scope.sim.param.bunga_thn = value.toString();
+			// 	if (value < 5) {
+			// 		$ws.calcSim($scope.sim.param, function(respon) {
+			// 			$scope.sim[object] = respon.data;
+			// 			$scope.sim[object].total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+			// 			console.log($scope.sim);
+			// 		}, error);
+			// 	} else {
+
+			// 	}
+			// })
+			$scope.sim.param.bunga_thn = 1;
 			$ws.calcSim($scope.sim.param, function(respon) {
-				console.log(respon.data);
-				$scope.sim.result = respon.data;
-				$scope.sim.result.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia)
+				$scope.sim.tahun1 = respon.data;
+				$scope.sim.tahun1.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+				$scope.sim.param.bunga_thn = 2;
+				$ws.calcSim($scope.sim.param, function(respon) {
+					$scope.sim.tahun2 = respon.data;
+					$scope.sim.tahun2.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+					$scope.sim.param.bunga_thn = 3;
+					$ws.calcSim($scope.sim.param, function(respon) {
+						$scope.sim.tahun3 = respon.data;
+						$scope.sim.tahun3.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+						$scope.sim.param.bunga_thn = 4;
+						$ws.calcSim($scope.sim.param, function(respon) {
+							$scope.sim.tahun4 = respon.data;
+							$scope.sim.tahun4.total = parseFloat(respon.data.prepayment.dp) + parseFloat(respon.data.prepayment.angsuran) + parseFloat(respon.data.prepayment.crdtpro) + parseFloat(respon.data.prepayment.aspolis) + parseFloat(respon.data.prepayment.fiducia);
+							console.log($scope.sim);
+							$scope.sim.result = true;
+						}, error);
+					}, error);	
+				}, error);
 			}, error);
 		}
 	};
