@@ -327,6 +327,15 @@ html, body {
   margin-bottom: 15px;
 }
 
+#ss-promo {
+  height: 400px;
+}
+
+.carousel-inner > .item > img {
+  width: 100%;
+  height: 400px;
+}
+
 /* spinkit */
 .sk-fading-circle {
   margin: 50vh auto;
