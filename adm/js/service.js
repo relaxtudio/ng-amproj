@@ -150,6 +150,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		delMap: function(data, success, error) {
 			return $http.post(C_WS + 'delMap', data).then(success, error);
+		},
+		getValue: function(data, success, error) {
+			return $http.post(C_WS + 'getValue', data).then(success, error);
 		}
 	}
 })
