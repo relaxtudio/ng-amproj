@@ -283,7 +283,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.cancel = function() {
-		var closemodal = $uibModal.close();
+		$uibModalStack.dismissAll();
 	}
 
 	$scope.init();

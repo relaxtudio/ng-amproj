@@ -1,9 +1,14 @@
 <div>
-	<div>Bunga</div>
-	<div ui-grid="gridBunga" ui-grid-edit ui-grid-row-edit ui-grid-cellNav></div>
-	<div>
-		<a ng-click="updateData(gridBunga)">UPDATE</a>
+	<div class="panel panel-default custbg boxshadow">
+		<div class="panel-heading custbg-hd">Bunga</div>
+		<div class="panel-body">
+			<div ui-grid="gridBunga" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-auto-resize></div>
+		</div>
 	</div>
-	<div>Fixcap</div>
-	<div ui-grid="gridFixcap" ui-grid-edit ui-grid-row-edit ui-grid-cellNav></div>
+	<div class="panel panel-default custbg boxshadow">
+		<div class="panel-heading custbg-hd">Fix and Cap</div>
+		<div class="panel-body">	
+			<div ui-grid="gridFixcap" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-auto-resize></div>
+		</div>
+	</div>
 </div>
