@@ -3,24 +3,24 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 		$scope.data = {};
 		$scope.gridBunga = {};
 		$scope.gridBunga.columnDefs = [
-			{name: 'id', enableCellEdit: false},
-			{name: 'thnmin'},
-			{name: 'thnmax'},
-			{name: 'dp'},
-			{name: 'thn1'},
-			{name: 'thn2'},
-			{name: 'thn3'},
-			{name: 'thn4'}
+			{name: 'id', enableCellEdit: false, displayName: 'No.', width: '5%'},
+			{name: 'thnmin', displayName: 'Tahun Min Mobil'},
+			{name: 'thnmax', displayName: 'Tahun Max Mobil'},
+			{name: 'dp', displayName: 'DP (%)'},
+			{name: 'thn1', displayName: '1 Tahun'},
+			{name: 'thn2', displayName: '2 Tahun'},
+			{name: 'thn3', displayName: '3 Tahun'},
+			{name: 'thn4', displayName: '4 Tahun'}
 		]
 		$scope.gridFixcap = {};
 		$scope.gridFixcap.columnDefs = [
-			{name: 'id', enableCellEdit: false},
-			{name: 'thnmin'},
-			{name: 'thnmax'},
-			{name: 'tenor'},
-			{name: 'dp'},
-			{name: 'term1'},
-			{name: 'term2'}
+			{name: 'id', enableCellEdit: false, displayName: 'No.', width: '5%'},
+			{name: 'thnmin', displayName: 'Tahun Min Mobil'},
+			{name: 'thnmax', displayName: 'Tahun Max Mobil'},
+			{name: 'tenor', displayName: 'Tenor (th)'},
+			{name: 'dp', displayName: 'DP (%)'},
+			{name: 'term1', displayName: 'Periode 1'},
+			{name: 'term2', displayName: 'Periode 2'}
 		]
 		$scope.initWs();
 	}
@@ -36,8 +36,6 @@ am.controller('SimCtrl', function($scope, $state, $ws) {
 			})
 		}, error);
 	}
-
-	
 
 	$scope.init();
 })
