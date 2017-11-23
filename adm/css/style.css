@@ -326,6 +326,10 @@ html, body {
   height: auto !important;
 }
 
+.ui-grid-canvas {
+  text-transform: uppercase;
+}
+
 /*-----PROMO SECTION------*/
 #btn-promo {
   margin-bottom: 15px;

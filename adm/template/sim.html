@@ -1,18 +1,45 @@
 <div>
 	<div>
-		<button ng-click="update()">UPDATE</button>
-		<button ng-click="refresh()">REFRESH</button>
+		<button ng-click="update()" class="btn btn-primary"><i class="fa fa-upload"></i> UPDATE DATA</button>
+		<button ng-click="refresh()" class="btn btn-success"><i class="fa fa-refresh"></i> REFRESH DATA</button>
+		<div class="pull-right">
+			<button class="btn btn-info" ng-click="hideBunga = !hideBunga">
+				  <i class="fa fa-eye" ng-if="hideBunga"></i><i class="fa fa-eye-slash" ng-if="!hideBunga"></i> Bunga
+			</button>
+			<button class="btn btn-info" ng-click="hideFixcap = !hideFixcap">
+				<i class="fa fa-eye" ng-if="hideFixcap"></i><i class="fa fa-eye-slash" ng-if="!hideFixcap"></i> Fix & Cap
+			</button>
+			<button class="btn btn-info" ng-click="hidePremi = !hidePremi">
+				<i class="fa fa-eye" ng-if="hidePremi"></i><i class="fa fa-eye-slash" ng-if="!hidePremi"></i> Asuransi
+			</button>
+			<button class="btn btn-info" ng-click="hideBiaya = !hideBiaya">
+				<i class="fa fa-eye" ng-if="hideBiaya"></i><i class="fa fa-eye-slash" ng-if="!hideBiaya"></i> Biaya Lain
+			</button>
+		</div>
 	</div>
-	<div class="panel panel-default custbg boxshadow">
+	<br>
+	<div class="panel panel-default custbg boxshadow" ng-hide="hideBunga">
 		<div class="panel-heading custbg-hd">Bunga</div>
 		<div class="panel-body">
 			<div ui-grid="gridBunga" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-auto-resize></div>
 		</div>
 	</div>
-	<div class="panel panel-default custbg boxshadow">
+	<div class="panel panel-default custbg boxshadow" ng-hide="hideFixcap">
 		<div class="panel-heading custbg-hd">Fix and Cap</div>
 		<div class="panel-body">	
 			<div ui-grid="gridFixcap" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-auto-resize></div>
+		</div>
+	</div>
+	<div class="panel panel-default custbg boxshadow" ng-hide="hidePremi">
+		<div class="panel-heading custbg-hd">Premi Asuransi</div>
+		<div class="panel-body">	
+			<div ui-grid="gridPremi" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-auto-resize></div>
+		</div>
+	</div>
+	<div class="panel panel-default custbg boxshadow" ng-hide="hideBiaya">
+		<div class="panel-heading custbg-hd">Biaya Lain</div>
+		<div class="panel-body">	
+			<div ui-grid="gridBiaya" ui-grid-edit ui-grid-row-edit ui-grid-cellNav ui-grid-auto-resize></div>
 		</div>
 	</div>
 </div>
