@@ -1,5 +1,5 @@
-var error = function() {
-	console.log(false);
+var error = function(value) {
+	console.log(value);
 }
 
 am.controller('LoginCtrl', ['$scope', '$state', '$ws', function($scope, $state, $ws) {

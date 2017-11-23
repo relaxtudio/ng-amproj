@@ -153,6 +153,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		getValue: function(data, success, error) {
 			return $http.post(C_WS + 'getValue', data).then(success, error);
+		},
+		updateSim: function(data, success, error) {
+			return $http.post(C_WS + 'updateSim', data).then(success, error);
 		}
 	}
 })
