@@ -88,6 +88,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		getCarSum: function(data, success, error) {
 			return $http.post(C_WS + 'getCarSum', data).then(success, error);
 		},
+		getCarSold: function(data, success, error) {
+			return $http.post(C_WS + 'getCarSold', data).then(success, error);
+		},
 		addCar: function(data, success, error) {
 			return $http.post(C_WS + 'addCar', data).then(success, error);
 		},
@@ -112,8 +115,20 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		getBrand: function(data, success, error) {
 			return $http.post(C_WS + 'getBrand', data).then(success, error);
 		},
+		addBrand: function(data, success, error) {
+			return $http.post(C_WS + 'addBrand', data).then(success, error);
+		},
+		delBrand: function(data, success, error) {
+			return $http.post(C_WS + 'delBrand', data).then(success, error);
+		},
 		getModel: function(data, success, error) {
 			return $http.post(C_WS + 'getModel', data).then(success, error);
+		},
+		addModel: function(data, success, error) {
+			return $http.post(C_WS + 'addModel', data).then(success, error);
+		},
+		delModel: function(data, success, error) {
+			return $http.post(C_WS + 'delModel', data).then(success, error);
 		},
 		getTrans: function(data, success, error) {
 			return $http.post(C_WS + 'getTrans', data).then(success, error);
@@ -141,6 +156,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		},
 		promoToggle: function(data, success, error) {
 			return $http.post(C_WS + 'promoToggle', data).then(success, error);
+		},
+		getSocmed: function(data, success, error) {
+			return $http.post(C_WS + 'getSocmed', data).then(success, error);
 		},
 		getMap: function(data, success, error) {
 			return $http.post(C_WS + 'getMap', data).then(success, error);

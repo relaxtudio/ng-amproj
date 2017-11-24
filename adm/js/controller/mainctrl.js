@@ -23,10 +23,8 @@ am.controller('MainCtrl', function($scope, $state, $ws) {
 				scope.carTotal.all += parseInt(respon.data[i].total);
 			}
 			scope.carTotal.showroom = respon.data;
-			scope.carTotal.page = Math.ceil(respon.data.length / limit) + 1;
-		}, function(responError) {
-			console.log('error', responError)
-		});
+			scope.carTotal.page = Math.ceil(scope.carTotal.all / limit) + 1;
+		}, error);
 	}
 
 	$scope.init();

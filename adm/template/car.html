@@ -13,7 +13,7 @@
 						</div>
 						<div class="pull-right">
 							<span>Cari &nbsp;</span>
-							<input id="src-mobil" type="text" name="src-mobil" class="form-group">
+							<input id="src-mobil" type="text" name="src-mobil" class="form-group" placeholder="Masukkan kata kunci" ng-model="filter.search" ng-enter="search(filter.search)">
 							<p>Total : <b> {{carTotal.all}} </b> Mobil</p>
 						</div>
 						<table id="list-mobil" width="100%" class="table table-striped">

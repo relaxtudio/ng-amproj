@@ -40,7 +40,7 @@
 						<div class="panel panel-default custbg">
 							<div class="panel-body" align="center">
 								<p>&Sigma; Mobil Terjual</p>
-								<h3>xxxx</h3>
+								<h3> {{carTotal.sold | number}} </h3>
 							</div>
 						</div>
 					</div>
@@ -50,7 +50,11 @@
 				<div class="panel panel-default custbg">
 					<div class="panel-body">
 						<p>Jumlah Mobil per-Showroom</p>
-						<canvas id="carSrChart"></canvas>
+						<canvas id="doughnut" 
+								class="chart chart-doughnut" 
+								chart-data="carTotal.chart.data" 
+								chart-labels="carTotal.chart.labels">		
+						</canvas>
 					</div>
 				</div>
 			</div>

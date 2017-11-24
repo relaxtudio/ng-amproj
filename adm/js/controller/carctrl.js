@@ -13,7 +13,8 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		};
 		$scope.filter = {
 			limit: $scope.carTotal.limit,
-			page: 1
+			page: 1,
+			search: ''
 		};
 		$scope.current = {
 			page: 1
@@ -41,6 +42,10 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			exterior: [],
 			interior: ''
 		};
+		$scope.newBrand = {
+			name: '',
+			file: ''
+		};
 		$scope.initWs();
 	}
 
@@ -49,19 +54,27 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.initWs = function() {
-		$scope.$parent.getCarSum(null, $scope, $scope.carTotal.limit);
-		$ws.getBrand(null, function(respon) {
-			$scope.brand = respon.data;
-			$ws.getModel(null, function(respon) {
-				$scope.model = respon.data;
-				$ws.getShowroom(null, function(respon) {
-					$scope.showroom = respon.data;
-					$ws.getTrans(null, function(respon) {
-						$scope.trans = respon.data;
-					})
-				})
-			})
+		$ws.getCarSum({filter: $scope.filter}, function(respon) {
+			for (i in respon.data) {
+				$scope.carTotal.all += parseInt(respon.data[i].total);
+			}
+			$scope.carTotal.showroom = respon.data;
+			$scope.carTotal.page = Math.ceil($scope.carTotal.all / $scope.filter.limit);
+			$ws.getBrand(null, function(respon) {
+				$scope.brand = respon.data;
+				$ws.getModel(null, function(respon) {
+					$scope.model = respon.data;
+					$ws.getShowroom(null, function(respon) {
+						$scope.showroom = respon.data;
+						$ws.getTrans(null, function(respon) {
+							$scope.trans = respon.data;
+							$scope.$parent.loading = false;
+						}, error);
+					}, error);
+				}, error);
+			}, error);
 		}, error);
+		
 		$scope.getCar({filter: $scope.filter});
 	}
 
@@ -70,6 +83,18 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$timeout(function() {
 			$scope.$parent.loading = false;
 		}, 2000);
+	}
+
+	$scope.search = function(data) {
+		$ws.getCarSum({filter: $scope.filter}, function(respon) {
+			$scope.carTotal.all = 0;
+			for (i in respon.data) {
+				$scope.carTotal.all += parseInt(respon.data[i].total);
+			}
+			$scope.carTotal.showroom = respon.data;
+			$scope.carTotal.page = Math.ceil($scope.carTotal.all / $scope.filter.limit);
+			$scope.getCar({filter: $scope.filter});
+		}, error)
 	}
 
 	$scope.getCar = function(data) {
@@ -220,8 +245,9 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 
 	$scope.soldCar = function(data) {
 		var token = $scope.$parent.user.token;
-		$ws.soldCar(data, function(respon) {
-
+		$ws.soldCar({token: token, id: data.id}, function(respon) {
+			console.log(respon.data);
+			$scope.init();
 		}, error);
 	}
 
@@ -229,6 +255,50 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$scope.filter.page = data;
 		$scope.getCar({filter: $scope.filter});
 		$scope.current.page = data;
+	}
+
+	$scope.addBrand = function(data) {
+		var token = $scope.$parent.user.token;
+		var brand = $scope.newBrand;
+		if (!brand.name) {
+			return window.alert('Brand Mobil wajib diisi');
+		}
+		if (!brand.image) {
+			return window.alert('Gambar Brand wajib diisi');
+		}
+		$scope.$parent.loading = true;
+		$ws.addBrand({
+			token: token,
+			data: $scope.newBrand.name
+		}, function(respon) {
+			console.log(respon.data, $scope.newBrand);
+			$ws.uploadCar({
+				token: token,
+				image: [$scope.newBrand],
+				dir: 'car-brands',
+				type: 'car-brands'
+			}, function(respon) {
+				$scope.cancel();
+				$scope.init();	
+			}, error);
+		}, error);
+	}
+
+	$scope.delBrand = function(data) {
+		var token = $scope.$parent.user.token;
+		$scope.$parent.loading = true;
+		$ws.delBrand(data, function(respon) {
+			$scope.cancel();
+			$scope.init();
+		}, error);
+	}
+
+	$scope.addModel = function(data) {
+
+	}
+
+	$scope.delModel = function(data) {
+
 	}
 
 	$scope.openModalMobil = function() {
