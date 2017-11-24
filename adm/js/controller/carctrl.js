@@ -267,6 +267,13 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		});
 	}
 
+	$scope.modalModelAdd = function() {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/modelAdd.html",
+			scope: $scope
+		})
+	}
+
 	$scope.tab = function(type, data) {
 		if (type == 'modalMobil') {
 			$scope.modalMobil.currentTab = data;
