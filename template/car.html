@@ -7,11 +7,11 @@
 		</div>
 		<div id="c-total" class="col-xs-6 col-md-3">
 			<div class="pull-right">
-				Total : <b>1234</b> Mobil
+				Total : <b>XXXX</b> Mobil
 			</div>
 		</div>
 	</div>
-	<div id="sort-dt">
+	<!--<div id="sort-dt">
 		<div class="form-inline">
 			<div class="form-group">
 				<div class="col-xs-5">
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 	<div class="clearfix"></div>
 
 	<div id="cars-wrap">
@@ -62,7 +62,7 @@
 	</div>
 	<div class="clearfix">
 		<div ng-show="status.contentLoading">Loading</div>
-		<button ng-show="filter.currentPage < filter.maxpage" ng-click="showMore()">Show More</button>
+		<button ng-show="filter.currentPage < filter.maxpage" ng-click="showMore()" class="btn btn-info btn-lg">Show More</button>
 	</div>
 
 	<div id="filter-modal" class="modal fade" role="dialog">
