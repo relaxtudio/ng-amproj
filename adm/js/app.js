@@ -1,4 +1,4 @@
-var am = angular.module('adm', ['ui.router', 'ui.bootstrap', 'ngMap', 'ui.grid', 'ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.cellNav']);
+var am = angular.module('adm', ['ui.router', 'ui.bootstrap', 'ngMap', 'ui.grid', 'ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.cellNav', 'ui.grid.selection']);
 
 am.run(function($rootScope, $state, $ws) {
 	$rootScope.$on("$stateChangeSuccess", function(event, toState) {

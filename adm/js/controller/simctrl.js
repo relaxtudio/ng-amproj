@@ -7,7 +7,11 @@ am.controller('SimCtrl', function($scope, $state, $ws, $interval, $q) {
 			premi: [],
 			biaya: []
 		};
-		$scope.gridBunga = {};
+		$scope.gridBunga = {
+			enableRowSelection: true,
+		    enableSelectAll: true,
+		    selectionRowHeaderWidth: 35
+		};
 		$scope.gridBunga.columnDefs = [
 			{name: 'id', enableCellEdit: false, displayName: 'No.', width: '5%', visible: false},
 			{name: 'thnmin', displayName: 'Tahun Min Mobil'},
@@ -19,6 +23,7 @@ am.controller('SimCtrl', function($scope, $state, $ws, $interval, $q) {
 			{name: 'thn4', displayName: '4 Tahun', cellTemplate: '<div class="ui-grid-cell-contents">{{row.entity.thn4}} %</div>'}
 		];
 		$scope.gridBunga.rowEditWaitInterval = -1;
+		$scope.gridBunga.multiSelect = true;
 
 		$scope.gridFixcap = {};
 		$scope.gridFixcap.columnDefs = [
@@ -48,7 +53,7 @@ am.controller('SimCtrl', function($scope, $state, $ws, $interval, $q) {
 			{name: 'thn6', displayName: '6 Th', width: '7%', enableSorting: false, cellTemplate: '<div class="ui-grid-cell-contents">{{row.entity.thn6}} %</div>'}
 		];
 		$scope.gridPremi.rowEditWaitInterval = -1;
-		$scope.gridPremi.excessRows = 26;
+		$scope.gridPremi.excessRows = 50;
 
 		$scope.gridBiaya = {};
 		$scope.gridBiaya.columnDefs = [
