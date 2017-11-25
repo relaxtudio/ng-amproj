@@ -25,7 +25,7 @@
 							<div>BBM : {{car.bbm}}</div>
 							<div>Kilometer : {{car.km}}</div>
 							<div>Transmisi : {{car.trans}}</div>
-							<div>Silinder : {{car.silinder}]</div>
+							<div>Silinder : {{car.silinder}}</div>
 							<div>Showroom : {{car.showroom}}</div>
 						</div>
 					</div>
@@ -34,13 +34,13 @@
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="harga" style="text-align: left"><i class="fa fa-tag"></i> Harga</label>
 				<div class="col-xs-6">
-					<input type="text" name="harga" id="harga" class="form-control">
+					<input type="text" name="harga" id="harga" class="form-control" ng-model="car.harga">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="preview" style="text-align: left"><i class="fa fa-camera"></i> Preview</label>
 				<div class="col-xs-6">
-					<input id="preview" type="file" name="preview" multiple="true" class="form-control" accept="image/*">
+					<input id="preview" type="file" name="preview" multiple="true" class="form-control" accept="image/*" ng-file-upload="car.preview" multiple="true">
 				</div>
 				<br><br>
 				<div id="prev" class="preview-img"></div>
@@ -49,7 +49,7 @@
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="exterior" style="text-align: left"><i class="fa fa-camera"></i> Exterior 360&deg;</label>
 				<div class="col-xs-6">
-					<input id="exterior" type="file" name="exterior" multiple="true" class="form-control" accept="image/*">
+					<input id="exterior" type="file" name="exterior" multiple="true" class="form-control" accept="image/*" ng-file-upload="car.exterior" multiple="true">
 				</div>
 				<br><br>
 				<div id="ext360" class="preview-img"></div>
@@ -58,7 +58,7 @@
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="interior" style="text-align: left"><i class="fa fa-camera"></i> Interior 360&deg;</label>
 				<div class="col-xs-6">
-					<input id="interior" type="file" name="interior" class="form-control" accept="image/*">
+					<input id="interior" type="file" name="interior" class="form-control" accept="image/*" ng-file-upload="car.interior" multiple="true">
 				</div>
 				<br><br>
 				<div id="int360" class="preview-img"></div>
@@ -68,7 +68,7 @@
 			<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
 			<div class="form-group">
 				<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
-				<a id="editmobil-sub" class="btn btn-primary" ng-click="editCar()" type="submit">Update</a>
+				<a id="editmobil-sub" class="btn btn-primary" ng-click="editCar(car)" type="submit">Update</a>
 			</div>
 		</div>
 		</form>

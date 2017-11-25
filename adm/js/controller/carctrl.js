@@ -229,9 +229,49 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 
 	$scope.editCar = function(data) {
 		var token = $scope.$parent.user.token;
-		$ws.editCar(null, function(respon) {
-
+		$ws.editCarDetail({token: token, data: data}, function(respon) {
+			console.log(respon.data);
+			if (data.exterior) {
+				$ws.delDir({
+					token: token,
+					dir: data.dir_img + "/ext/",
+					type: 'cars'
+				}, function(respon) {
+					console.log('delDir');
+					$ws.uploadCar({
+						token: token,
+						image: data.exterior,
+						dir: data.dir_img,
+						type: 'exterior'
+					}, function(respon) {
+						console.log('uploadCar');
+					}, error);
+				})
+			}
+			if (data.interior) {
+				$ws.uploadCar({
+					token: token,
+					image: data.interior,
+					dir: data.dir_img,
+					type: 'interior'
+				}, function(respon) {
+					console.log('uploadCar');
+				}, error);
+			}
+			if (data.preview) {
+				$ws.uploadCar({
+					token: token,
+					image: data.preview,
+					dir: data.dir_img,
+					type: 'preview'
+				}, function(respon) {
+					console.log('uploadCar');
+				}, error);
+			}
 		}, error);
+		// $ws.editCar(null, function(respon) {
+
+		// }, error);
 	}
 
 	$scope.delCar = function(data) {

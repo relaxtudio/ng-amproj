@@ -100,6 +100,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		editCar: function(data, success, error) {
 			return $http.post(C_WS + 'editCar', data).then(success, error);
 		},
+		editCarDetail: function(data, success, error) {
+			return $http.post(C_WS + 'editCarDetail', data).then(success, error);
+		},
 		delCar: function(data, success, error) {
 			return $http.post(C_WS + 'delCar', data).then(success, error);
 		},
