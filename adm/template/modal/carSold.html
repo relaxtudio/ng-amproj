@@ -1,6 +1,6 @@
 <div>
 	<div class="modal-header" style="background-color: #00cc7a; color: #fff;">
-		<button type="button" class="close" data-dismiss="modal">
+		<button type="button" class="close" data-dismiss="modal" ng-click="cancel()">
 			&times;
 		</button>
 		<h4 class="modal-title" align="center">Konfirmasi Mobil Terjual</h4>
@@ -36,7 +36,7 @@
 		</table>
 		<p>Apakah anda yakin ingin mengubah status data mobil ini menjadi <b>SOLD OUT?</b></p>
 		<div class="modal-footer">
-			<a class="btn btn-default" class="close" data-dismiss="modal">Batal</a>
+			<a class="btn btn-default" class="close" data-dismiss="modal" ng-click="cancel()">Batal</a>
 			<a id="terjual-y" ng-click="soldCar(car)" class="btn btn-success">Ya</a>
 		</div>	
 	</div>

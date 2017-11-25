@@ -910,6 +910,15 @@ select.form-control:focus, #c_harga:focus {
 .animate-show-hide.ng-hide-remove.ng-hide-remove-active { 
    opacity: 1;
 }
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(44,62,80,0.5);
+  z-index: 99999;
+}
 
 /* spinkit */
 .sk-fading-circle {
