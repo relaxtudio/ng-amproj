@@ -145,6 +145,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		delDir: function(data, success, error) {
 			return $http.post(C_WS + 'delDir', data).then(success, error);
 		},
+		delFiles: function(data, success, error) {
+			return $http.post(C_WS + 'delFiles', data).then(success, error);
+		},
 		uploadCar: function(data, success, error) {
 			return $http.post(C_WS + 'uploadCar', data).then(success, error);
 		},

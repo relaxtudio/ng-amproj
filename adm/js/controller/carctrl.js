@@ -46,6 +46,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			name: '',
 			file: ''
 		};
+		$scope.dump = {};
 		$scope.initWs();
 	}
 
@@ -231,22 +232,22 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		var token = $scope.$parent.user.token;
 		$ws.editCarDetail({token: token, data: data}, function(respon) {
 			console.log(respon.data);
-			if (data.exterior) {
-				$ws.delDir({
+			if ($scope.dump.exterior) {
+				$ws.delFiles({
 					token: token,
-					dir: data.dir_img + "/ext/",
+					dir: 'cars/' + data.dir_img + '/ext',
 					type: 'cars'
 				}, function(respon) {
-					console.log('delDir');
+					console.log('delFiles', respon.data);
 					$ws.uploadCar({
 						token: token,
-						image: data.exterior,
+						image: $scope.dump.exterior,
 						dir: data.dir_img,
 						type: 'exterior'
 					}, function(respon) {
 						console.log('uploadCar');
 					}, error);
-				})
+				}, error);
 			}
 			if (data.interior) {
 				$ws.uploadCar({

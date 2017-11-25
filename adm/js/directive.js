@@ -19,7 +19,6 @@ am.directive("ngFileUpload", [function () {
                 	}
                 });
                 scope.$apply(function() {
-                	console.log(values);
                 	if (isMultiple) {
 	                	scope.ngFileUpload = values;            		
                 	} else {
