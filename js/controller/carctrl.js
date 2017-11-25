@@ -1,11 +1,15 @@
 am.controller('CarCtrl', function($scope, $state, $ws) {
 	$scope.init = function() {
 		$scope.car = [];
+		$scope.carTotal = {
+			total: 0
+		};
 		$scope.filter = {
 			limit: 8,
 			page: 1,
 			currentPage: 1,
-			maxpage: 1
+			maxpage: 1,
+			search: ''
 		};
 		$scope.status = {
 			isLoading: false,
@@ -41,6 +45,19 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 			$scope.status.contentLoading = false;
 		}, error);
 		$scope.filter.currentPage++;
+	}
+
+	$scope.search = function() {
+		$ws.getCarSum({filter: $scope.filter}, function(respon) {
+			var total = 0;
+			for (i in respon.data) {
+				total += parseInt(respon.data[i].total);
+			}
+			$scope.carTotal.total = total;
+			var maxpage = Math.ceil(total / $scope.filter.limit);
+			$scope.filter.maxpage = maxpage;
+			$scope.status.isLoading = false;
+		}, error);
 	}
 
 	$scope.init();

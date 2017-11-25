@@ -287,18 +287,41 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	$scope.delBrand = function(data) {
 		var token = $scope.$parent.user.token;
 		$scope.$parent.loading = true;
-		$ws.delBrand(data, function(respon) {
+		$ws.delBrand({
+			token: token,
+			data: data
+		}, function(respon) {
 			$scope.cancel();
 			$scope.init();
 		}, error);
 	}
 
 	$scope.addModel = function(data) {
-
+		var token = $scope.$parent.user.token;
+		var model = $scope.newModel;
+		if (!model.name) {
+			return window.alert('Model Mobil wajib diisi');
+		}
+		$scope.$parent.loading = true;
+		$ws.addModel({
+			token: token,
+			data: $scope.newModel.name
+		}, function(respon) {
+			$scope.cancel();
+			$scope.init();
+		}, error);
 	}
 
 	$scope.delModel = function(data) {
-
+		var token = $scope.$parent.user.token;
+		$scope.$parent.loading = true;
+		$ws.delModel({
+			token: token,
+			data: data
+		}, function(respon) {
+			$scope.cancel();
+			$scope.init();
+		})
 	}
 
 	$scope.openModalMobil = function() {
