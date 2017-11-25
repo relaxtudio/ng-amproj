@@ -260,6 +260,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	$scope.addBrand = function(data) {
 		var token = $scope.$parent.user.token;
 		var brand = $scope.newBrand;
+		console.log($scope.newBrand);
 		if (!brand.name) {
 			return window.alert('Brand Mobil wajib diisi');
 		}
