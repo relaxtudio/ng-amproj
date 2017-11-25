@@ -44,14 +44,14 @@
 							<label for="c_model" class="control-label col-md-4 col-xs-2">Tipe</label>
 							<div class="col-md-6 col-xs-9 col-xs-offset-1">
 								<select id="c_model" class="form-control" ng-model="car.select" ng-change="selectCar(car.select)">
-									<option ng-repeat="carFilter in car.listFilter" ng-value={{carFilter}}> {{carFilter.name}} -  {{carFilter.tahun}} - {{carFilter.warna}} </option>
+									<option ng-repeat="carFilter in car.listFilter" ng-value={{carFilter}}> {{carFilter.name}} - {{carFilter.tahun}} - {{carFilter.warna}} </option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group" ng-show="stats.param">
 							<label for="c_model" class="control-label col-md-4 col-xs-2">Mobil</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
-								<span>{{stats.param.brand}} {{stats.param.name}} - {{stats.param.detail.nopol}} </span>
+								<span>{{stats.param.brand}} {{stats.param.name}} - {{stats.param.detail.tahun}} - {{stats.param.warna}} </span>
 							</div>
 						</div>
 						<div class="form-group">
