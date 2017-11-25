@@ -58,7 +58,7 @@ am.directive('ngFileModel', ['$parse', function ($parse) {
                     if (isMultiple) {
                         modelSetter(scope, values);
                     } else {
-                        modelSetter(scope, values[0]);
+                        modelSetter(scope, values);
                     }
                 });
             });

@@ -260,7 +260,6 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	$scope.addBrand = function(data) {
 		var token = $scope.$parent.user.token;
 		var brand = $scope.newBrand;
-		console.log($scope.newBrand);
 		if (!brand.name) {
 			return window.alert('Brand Mobil wajib diisi');
 		}
@@ -268,6 +267,8 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			return window.alert('Gambar Brand wajib diisi');
 		}
 		$scope.$parent.loading = true;
+		$scope.newBrand.file[0].name = $scope.newBrand.name + '.png';
+		console.log($scope.newBrand);
 		$ws.addBrand({
 			token: token,
 			data: $scope.newBrand.name
@@ -275,7 +276,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			console.log(respon.data, $scope.newBrand);
 			$ws.uploadCar({
 				token: token,
-				image: [$scope.newBrand],
+				image: $scope.newBrand.file,
 				dir: 'car-brands',
 				type: 'car-brands'
 			}, function(respon) {
