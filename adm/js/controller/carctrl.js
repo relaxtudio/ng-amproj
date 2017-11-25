@@ -263,7 +263,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		if (!brand.name) {
 			return window.alert('Brand Mobil wajib diisi');
 		}
-		if (!brand.image) {
+		if (!brand.file) {
 			return window.alert('Gambar Brand wajib diisi');
 		}
 		$scope.$parent.loading = true;
