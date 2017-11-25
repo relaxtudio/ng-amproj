@@ -620,6 +620,10 @@ select.form-control:focus, #c_harga:focus {
 		height: 475px;
 	}
 
+	.rc-prod > img {
+		height: auto !important;
+	}
+
 	#cars-info-wrap {
 		margin-top: 50px;
 	}
@@ -645,6 +649,10 @@ select.form-control:focus, #c_harga:focus {
 
 	#cars-product, #interior, #interior > canvas {
 		height: 420px;
+	}
+
+	.rc-prod > img {
+		height: auto !important;
 	}
 
 	#cars-info-wrap {
@@ -676,6 +684,10 @@ select.form-control:focus, #c_harga:focus {
 
 	#cars-info-wrap {
 		margin-top: 50px;
+	}
+
+	.rc-prod > img {
+		height: auto !important;
 	}
 
 	#slogan > p {
@@ -774,8 +786,12 @@ select.form-control:focus, #c_harga:focus {
  	.kshow {
 		padding: 0;
 		margin-top: 20px;
-
 	}
+
+	.rc-prod > img {
+		height: auto !important;
+	}
+
 	#sort-dt {
 		float: none;
 		width: 100%;
@@ -819,6 +835,10 @@ select.form-control:focus, #c_harga:focus {
  		height: auto !important;
 		width: 100%;
 		margin: auto;
+	}
+
+	.rc-prod > img {
+		height: auto !important;
 	}
 
 	.cardetail {
