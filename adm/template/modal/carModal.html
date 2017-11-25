@@ -24,7 +24,7 @@
 							<a ng-click="tab('modalMobil', 'ft-interior')"><i class="fa fa-camera"></i> Interior 360&deg;</a>
 						</li>
 					</ul>
-					<form id="newmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+					<form id="newmobil-form" class="form-horizontal">
 						<div class="tab-content">
 							<div ng-show="modalMobil.currentTab == 'dt-mobil'" id="dt-mobil" class="row tab-pane fade in active">
 								<div class="col-md-12">
@@ -162,7 +162,7 @@
 							<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
 							<div class="form-group">
 								<a class="btn btn-warning" class="close" ng-click="cancel()">Batal</a>
-								<a id="newmobil-sub" class="btn btn-success" ng-click="addCar()" type="submit">Simpan</a>
+								<a id="newmobil-sub" class="btn btn-success" ng-click="addCar()">Simpan</a>
 							</div>
 						</div>
 					</form>

@@ -1,6 +1,5 @@
 var error = function(value) {
 	$scope.$parent.loading = false;
-	console.log(value);
 	return window.alert(value);
 }
 

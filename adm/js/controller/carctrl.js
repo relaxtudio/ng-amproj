@@ -188,28 +188,38 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 						console.log('preview',respon.data);
 						$ws.uploadCar({
 							token: token,
+							image: $scope.newCar.interior,
+							dir: dir,
+							type: 'interior'
+						}, function(respon) {
+							console.log('interior', respon.data);
+						}, error);
+						$ws.uploadCar({
+							token: token,
 							image: $scope.newCar.exterior,
 							dir: dir,
 							type: 'exterior'
 						}, function(respon) {
 							console.log('exterior',respon.data);
-							$ws.uploadCar({
-								token: token,
-								image: $scope.newCar.interior,
-								dir: dir,
-								type: 'interior'
-							}, function(respon) {
-								console.log('interior',respon.data);
-								$scope.newCar = {
-									add: {add_by: $scope.$parent.user.id},
-									detail: {add_by: $scope.$parent.user.id},
-									preview: '',
-									exterior: [],
-									interior: ''
-								};
-								$scope.cancel();
-								$scope.$parent.loading = false;
-							}, error);
+							$scope.cancel();
+							$scope.$parent.loading = false;
+							// $ws.uploadCar({
+							// 	token: token,
+							// 	image: $scope.newCar.interior,
+							// 	dir: dir,
+							// 	type: 'interior'
+							// }, function(respon) {
+							// 	console.log('interior',respon.data, $scope.newCar.interior);
+							// 	$scope.newCar = {
+							// 		add: {add_by: $scope.$parent.user.id},
+							// 		detail: {add_by: $scope.$parent.user.id},
+							// 		preview: '',
+							// 		exterior: [],
+							// 		interior: ''
+							// 	};
+							// 	$scope.cancel();
+							// 	$scope.$parent.loading = false;
+							// }, error);
 						}, error);
 					}, error);
 				}, error);
