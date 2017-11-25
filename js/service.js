@@ -65,6 +65,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
         	},
             getMap: function(data, success, error) {
                 return $http.post(C_WS + 'getMap', data).then(success, error);
+            },
+            getSocmed: function(data, success, error) {
+                return $http.post(C_WS + 'getSocmed', data).then(success, error);
             }
         }
 })

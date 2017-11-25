@@ -4,6 +4,7 @@ var error = function(respon) {
 
 am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
 	$scope.init = function() {
+		$scope.loading = false;
 		$scope.slides = [];
 		$scope.brand = [];
 		$scope.car = [];
@@ -92,17 +93,3 @@ am.controller('BaseCtrl', function($scope, $state, $interval, $ws){
     };
 
 })
-
-am.directive('ngEnter', function () {
-    return function (scope, element, attrs) {
-        element.bind("keydown keypress", function (event) {
-            if(event.which === 13) {
-                scope.$apply(function (){
-                    scope.$eval(attrs.ngEnter);
-                });
-
-                event.preventDefault();
-            }
-        });
-    };
-});

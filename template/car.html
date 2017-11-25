@@ -1,10 +1,11 @@
 <section class="cars-content">
 	<div class="c-head">
+		<button ng-click="testLoading()">LOADING</button>
 		<div id="bt-fil" class="col-md-4 col-xs-6">
 			<form role="search">
 	          <div class="search-container" style="padding: 0">
-	            <input type="text" id="s-mobil" class="form-control" placeholder="Cari mobil">
-	            <button id="s-btn" type="submit" class="btn btn-default" data-toggle="collapse" data-target="#search.in">
+	            <input type="text" id="s-mobil" class="form-control" placeholder="Cari mobil" ng-model="filter.search" ng-enter="search()">
+	            <button id="s-btn" type="submit" class="btn btn-default" data-toggle="collapse" data-target="#search.in" ng-click="search()">
 	              <i class="fa fa-search" style="font-size: 1.25em;"></i>
 	            </button>
 	          </div>
@@ -172,3 +173,18 @@
 		</div>
 	</div>
 </section>
+<div class="fullscreen" ng-show="loading">
+  <div class="sk-fading-circle">
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+    <div class="sk-circle5 sk-circle"></div>
+    <div class="sk-circle6 sk-circle"></div>
+    <div class="sk-circle7 sk-circle"></div>
+    <div class="sk-circle8 sk-circle"></div>
+    <div class="sk-circle9 sk-circle"></div>
+    <div class="sk-circle10 sk-circle"></div>
+    <div class="sk-circle11 sk-circle"></div>
+    <div class="sk-circle12 sk-circle"></div>
+  </div>

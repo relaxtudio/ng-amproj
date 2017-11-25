@@ -48,16 +48,27 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 	}
 
 	$scope.search = function() {
-		$ws.getCarSum({filter: $scope.filter}, function(respon) {
-			var total = 0;
-			for (i in respon.data) {
-				total += parseInt(respon.data[i].total);
-			}
-			$scope.carTotal.total = total;
-			var maxpage = Math.ceil(total / $scope.filter.limit);
-			$scope.filter.maxpage = maxpage;
-			$scope.status.isLoading = false;
+		console.log($scope.filter);
+		$scope.loading = true;
+		$ws.getCar({filter: $scope.filter}, function(respon) {
+			$scope.car = respon.data;
+			$ws.getCarSum({filter: $scope.filter}, function(respon) {
+				var total = 0;
+				for (i in respon.data) {
+					total += parseInt(respon.data[i].total);
+				}
+				$scope.carTotal.total = total;
+				var maxpage = Math.ceil(total / $scope.filter.limit);
+				$scope.filter.maxpage = maxpage;
+				$scope.status.isLoading = false;
+				$scope.loading = false;
+			}, error);
 		}, error);
+		
+	}
+
+	$scope.testLoading = function() {
+		$scope.loading = true;
 	}
 
 	$scope.init();
