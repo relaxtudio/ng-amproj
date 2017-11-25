@@ -362,10 +362,24 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		});
 	}
 
+	$scope.modalBrandDelete = function(scope) {
+		var modal = $uibModal.open({
+			templateUrl: "template/modal/brandDelete.html",
+			scope: scope
+		})
+	}
+
 	$scope.modalModelAdd = function() {
 		var modal = $uibModal.open({
 			templateUrl: "template/modal/modelAdd.html",
 			scope: $scope
+		})
+	}
+
+	$scope.modalModelDelete = function(scope) {
+		var modal = $uibModal.open({
+			templateUrl : "template/modal/modelDelete.html",
+			scope: scope
 		})
 	}
 

@@ -75,7 +75,7 @@
 								<td style="vertical-align: middle;">{{brand.id}}</td>
 								<td style="vertical-align: middle;">{{brand.name}}</td>
 								<td><img ng-src="../assets/car-brands/{{brand.name}}.png" style="width: 50px;"></td>
-								<td style="vertical-align: middle;"><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+								<td style="vertical-align: middle;"><a class="btn btn-danger" ng-click="modalBrandDelete(this)"><i class="fa fa-trash"></i></a></td>
 							</tr>
 						</table>
 					</div>
@@ -100,7 +100,7 @@
 							<tr ng-repeat="model in model">
 								<td>{{model.id}}</td>
 								<td>{{model.name}}</td>
-								<td><a class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
+								<td><a class="btn btn-danger" ng-click="modalModelDelete(this)"><i class="fa fa-trash"></i></a></td>
 							</tr>							
 						</table>
 					</div>
