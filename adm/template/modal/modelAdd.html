@@ -10,12 +10,12 @@
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="value">Model Mbobil</label>
 				<div class="col-xs-6">
-					<input id="value" type="text" name="value" class="form-control">
+					<input id="value" type="text" name="value" class="form-control" ng-model="newModel.name">
 				</div>
 			</div>
 			<div class="modal-footer">
 				<a class="btn btn-warning" class="close" ng-click="cancel()" >Batal</a>
-				<a id="newmodel-sub" href="#" class="btn btn-success" type="submit">Simpan</a>
+				<a id="newmodel-sub" href="#" class="btn btn-success" ng-click="addModel()">Simpan</a>
 			</div>
 		</form>
 	</div>
