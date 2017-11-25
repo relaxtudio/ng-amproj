@@ -1,164 +1,76 @@
 <div>
-		<div>
-			<div class="modal-content">
-				<div class="modal-header" style="background-color: #0099cc; color: #fff;">
-					<button type="button" class="close" ng-click="cancel()" style="color: #9effff;">
-						&times;
-					</button>
-					<h4 class="modal-title" align="center">Edit Data Mobil</h4>
-				</div>
-				<div class="modal-body">
-					<button ng-click="log(car)">console.log</button>
-					<ul class="nav nav-tabs">
-						<li ng-class="editMobil.currentTab == 'dt-mobil' ? 'active' : ''">
-							<a ng-click="tab('editMobil', 'dt-mobil')"><i class="fa fa-car"></i> Data Mobil</a>
-						</li>
-						<li ng-class="editMobil.currentTab == 'ft-preview' ? 'active' : ''">
-							<a ng-click="tab('editMobil', 'ft-preview')"><i class="fa fa-camera"></i> Foto Preview</a>
-						</li>
-						<li ng-class="editMobil.currentTab == 'ft-exterior' ? 'active' : ''">
-							<a ng-click="tab('editMobil', 'ft-exterior')"><i class="fa fa-camera"></i> Exterior 360&deg;</a>
-						</li>
-						<li ng-class="editMobil.currentTab == 'ft-interior' ? 'active' : ''">
-							<a ng-click="tab('editMobil', 'ft-interior')"><i class="fa fa-camera"></i> Interior 360&deg;</a>
-						</li>
-					</ul>
-					<form id="editmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST">
-						<div class="tab-content">
-							<div ng-show="editMobil.currentTab == 'dt-mobil'" id="ed-dt-mobil" class="row tab-pane fade in active">
-								<div class="col-md-12">
-									<legend>Data Mobil</legend>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="brand_id">Brand</label>
-										<div class="col-xs-8">
-											<select id="brand_id" class="form-control" required="true" ng-model="car.brand_id">
-												<option ng-repeat="brand in brand" ng-value="brand.id"> {{brand.name}} </option>
-											</select>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="c_nama">Mobil</label>
-										<div class="col-xs-8">
-											<input id="c_nama" type="text" name="c_nama" class="form-control" ng-model="car.name" required="true">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="cars_model_id">Model</label>
-										<div class="col-xs-8">
-											<select id="cars_model_id" class="form-control" required="true" ng-model="car.cars_model_id">
-												<option ng-repeat="model in model" ng-value="model.id"> {{model.name}} </option>
-											</select>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="tahun">Tahun</label>
-										<div class="col-xs-5">
-											<input id="tahun" name="tahun" class="form-control" required="true" ng-model="car.detail.tahun">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="nopol">Nopol</label>
-										<div class="col-xs-6">
-											<input id="nopol" type="text" name="nopol" class="form-control" required="true" ng-model="car.detail.nopol">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="bbm">BBM</label>
-										<div class="col-xs-7">
-											<input id="bbm" type="text" name="bbm" class="form-control" required="true" ng-model="car.detail.bbm">
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="km">Kilometer</label>
-										<div class="col-xs-6">
-											<input id="km" name="km" class="form-control" required="true" ng-model="car.detail.km">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="trans_id">Transmisi</label>
-										<div class="col-xs-8">
-											<select id="trans_id" class="form-control" required="true" ng-model="car.detail.trans_id">
-												<option value="1">Manual</option>
-												<option value="2">Semi-Otomatis</option>
-												<option value="3">Otomatis</option>
-											</select>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="silinder">Silinder</label>
-										<div class="col-xs-4">
-											<input id="silinder" type="text" name="silinder" class="form-control" required="true" ng-model="car.detail.silinder">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="warna">Warna</label>
-										<div class="col-xs-8">
-											<input id="warna" type="text" name="warna" class="form-control" required="true" ng-model="car.detail.warna">
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="showroom_id">Showroom</label>
-										<div class="col-xs-8">
-											<select id="showroom_id" class="form-control" required="true" ng-model="car.detail.showroom_id">
-												<option ng-repeat="showroom in showroom" ng-value="showroom.id"> {{showroom.name}} </option>
-											</select>
-										</div>	
-									</div>
-								</div>
-							</div>
-							<div ng-show="editMobil.currentTab == 'ft-preview'" id="ed-ft-preview" class="row tab-pane fade in active">
-								<div class="col-md-12">
-									<legend>Foto Preview</legend>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="preview"><i class="fa fa-camera"></i> Preview</label>
-										<div class="col-xs-6">
-											<input id="preview" type="file" name="preview" multiple="true" class="form-control" accept="image/*">
-										</div>
-										<br><br>
-										<div id="prev" class="preview-img"></div>
-									</div>
-								</div>
-							</div>
-							<div ng-show="editMobil.currentTab == 'ft-exterior'" id="ed-ft-exterior" class="row tab-pane fade in active">
-								<div class="col-md-12">
-									<legend>Exterior 360&deg;</legend>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="exterior"><i class="fa fa-camera"></i> Exterior 360&deg;</label>
-										<div class="col-xs-6">
-											<input id="exterior" type="file" name="exterior" multiple="true" class="form-control" accept="image/*">
-										</div>
-										<br><br>
-										<div id="ext360" class="preview-img"></div>
-									</div>
-								</div>
-							</div>
-							<div ng-show="editMobil.currentTab == 'ft-interior'" id="ed-ft-interior" class="row tab-pane fade in active">
-								<div class="col-md-12">
-									<legend>Interior 360&deg;</legend>
-									<div class="form-group">
-										<label class="control-label col-xs-4" for="interiorr"><i class="fa fa-camera"></i> Interior 360&deg;</label>
-										<div class="col-xs-6">
-											<input id="interior" type="file" name="interior" class="form-control" accept="image/*">
-										</div>
-										<br><br>
-										<div id="int360" class="preview-img"></div>
-									</div>
-								</div>
-							</div>
+	<div class="modal-header" style="background-color: #0099cc; color: #fff;">
+		<button type="button" class="close" ng-click="cancel()" style="color: #9effff;">
+			&times;
+		</button>
+		<h4 class="modal-title" align="center">Edit Data Mobil</h4>
+	</div>
+	<div class="modal-body">
+		<button ng-click="log(car)">console.log</button>
+		<form id="editmobil-form" class="form-horizontal" enctype="multipart/form-data" method="POST">
+			<div class="col-md-12">
+				<div class="row">
+					<h4>Data Mobil</h4>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div>Mobil : {{car.brand}} {{car.name}}</div>
+							<div>Tahun : {{car.tahun}}</div>
+							<div>Warna : {{car.warna}}</div>
+							<div>Model : {{car.model}}</div>
+							<div>Nopol : {{car.nopol}}</div>
 						</div>
-						<div class="modal-footer">
-							<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
-							<div class="form-group">
-								<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
-								<a id="editmobil-sub" class="btn btn-primary" ng-click="editCar()" type="submit">Update</a>
-							</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div>BBM : {{car.bbm}}</div>
+							<div>Kilometer : {{car.km}}</div>
+							<div>Transmisi : {{car.trans}}</div>
+							<div>Silinder : {{car.silinder}]</div>
+							<div>Showroom : {{car.showroom}}</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="harga" style="text-align: left"><i class="fa fa-tag"></i> Harga</label>
+				<div class="col-xs-6">
+					<input type="text" name="harga" id="harga" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="preview" style="text-align: left"><i class="fa fa-camera"></i> Preview</label>
+				<div class="col-xs-6">
+					<input id="preview" type="file" name="preview" multiple="true" class="form-control" accept="image/*">
+				</div>
+				<br><br>
+				<div id="prev" class="preview-img"></div>
+			</div>
+						
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="exterior" style="text-align: left"><i class="fa fa-camera"></i> Exterior 360&deg;</label>
+				<div class="col-xs-6">
+					<input id="exterior" type="file" name="exterior" multiple="true" class="form-control" accept="image/*">
+				</div>
+				<br><br>
+				<div id="ext360" class="preview-img"></div>
+			</div>					
+			
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="interior" style="text-align: left"><i class="fa fa-camera"></i> Interior 360&deg;</label>
+				<div class="col-xs-6">
+					<input id="interior" type="file" name="interior" class="form-control" accept="image/*">
+				</div>
+				<br><br>
+				<div id="int360" class="preview-img"></div>
+			</div>
 		</div>
+		<div class="modal-footer">
+			<p align="justify">NB: Harap diisi semua data pada kolom yang tersedia dalam form ini</p>
+			<div class="form-group">
+				<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
+				<a id="editmobil-sub" class="btn btn-primary" ng-click="editCar()" type="submit">Update</a>
+			</div>
+		</div>
+		</form>
 	</div>
+</div>
