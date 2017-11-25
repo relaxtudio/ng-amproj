@@ -1,13 +1,13 @@
 <section class="cars-content">
 	<div class="c-head">
 		<div id="bt-fil" class="col-md-9 col-xs-6">
-			<a class="btn btn-default" id="filter" data-toggle="modal" data-target="#filter-modal">
+			<a class="btn btn-default" id="filter" data-toggle="modal" data-target="#filter-modal" ng-enter="search(filter.search)">
 				<i class="fa fa-filter"></i> Filter
 			</a>
 		</div>
 		<div id="c-total" class="col-xs-6 col-md-3">
 			<div class="pull-right">
-				Total : <b>XXXX</b> Mobil
+				Total : <b> {{carTotal.total | number}} </b> Mobil
 			</div>
 		</div>
 	</div>
