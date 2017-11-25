@@ -1,11 +1,16 @@
 <section class="cars-content">
 	<div class="c-head">
-		<div id="bt-fil" class="col-md-9 col-xs-6">
-			<a class="btn btn-default" id="filter" data-toggle="modal" data-target="#filter-modal" ng-enter="search(filter.search)">
-				<i class="fa fa-filter"></i> Filter
-			</a>
+		<div id="bt-fil" class="col-md-4 col-xs-6">
+			<form role="search">
+	          <div class="search-container" style="padding: 0">
+	            <input type="text" id="s-mobil" class="form-control" placeholder="Cari mobil">
+	            <button id="s-btn" type="submit" class="btn btn-default" data-toggle="collapse" data-target="#search.in">
+	              <i class="fa fa-search" style="font-size: 1.25em;"></i>
+	            </button>
+	          </div>
+	        </form>
 		</div>
-		<div id="c-total" class="col-xs-6 col-md-3">
+		<div id="c-total" class="col-xs-6 col-md-8">
 			<div class="pull-right">
 				Total : <b> {{carTotal.total | number}} </b> Mobil
 			</div>
@@ -28,10 +33,9 @@
 			</div>
 		</div>
 	</div>-->
-	<div class="clearfix"></div>
 
 	<div id="cars-wrap">
-		<div  ng-repeat="car in car" class="list-cars col-md-3 col-sm-6">
+		<div  ng-repeat="car in car" class="col-md-3 col-sm-6">
 			<a ng-href="#!/cardetail/{{car.id}}">
 				<div class="panel panel-default">
 					<div class="rc-prod">

@@ -93,10 +93,10 @@ body {
 	position: absolute;
 	border: 0;
 	outline: none;
-	top: 3px;
-	right: 10px;
-	height: 35px;
-	width: 40px;
+	top: 1px;
+	right: 1px;
+	height: 33px;
+	width: 37px;
 }
 
 
@@ -304,6 +304,10 @@ body {
 .brand-c, .tahun-c, .tipe-c {
 	width: 100%;
 	display: inline-block;
+}
+
+.rc-prod > img {
+	height: 182px;
 }
 
 /*-----CAR DETAIL SECTION-----*/
@@ -555,8 +559,8 @@ select.form-control:focus, #c_harga:focus {
 	}
 
 	#s-btn {
-		height: 33px;
-		top: 4px;
+		height: 30px;
+		top: 2px;
 	}
 
 	.carousel-inner > .item > img {
