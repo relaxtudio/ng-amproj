@@ -227,7 +227,13 @@ body {
 
 .rc-info div, .rc-loc {
 	text-align: center;
-	font-size: 0.9em;
+	font-size: 1em;
+	padding-bottom: 5px;
+}
+
+.rc-price {
+	text-align: center;
+	font-size: 1.1em;
 	padding-bottom: 8px;
 }
 

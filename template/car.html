@@ -47,7 +47,7 @@
 	                    <div class="rc-nama">
 	                      <legend>{{car.brand}} {{car.name}}</legend>
 	                    </div>
-	                    <div class="rc-info">
+	                    <div class="rc-info row">
 	                      <div class="col-md-6">
 	                        <i class="fa fa-calendar"></i> Tahun {{car.tahun}}
 	                      </div>
@@ -57,6 +57,9 @@
 	                    </div>
 	                    <div class="rc-loc">
 	                      <i class="fa fa-map-marker"></i> {{car.showroom}}
+	                    </div>
+	                    <div class="rc-price">
+	                    	<i class="fa fa-tag"></i> Rp {{car.harga | number}},-
 	                    </div>
 	                  </div>
 	                </div>
@@ -69,108 +72,6 @@
 		<button ng-show="filter.currentPage < filter.maxpage" ng-click="showMore()" class="btn btn-info btn-lg">Show More</button>
 	</div>
 
-	<div id="filter-modal" class="modal fade" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						&times;
-					</button>
-	        		<h4 class="modal-title">Filter Daftar Mobil</h4>
-				</div>
-				<div class="modal-body">
-					<div class="brand-c col-md-12">
-						<div><b>Brand Mobil</b></div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="all-brand" checked="true">Semua</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="Toyota">Toyota</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="Honda">Honda</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="Honda">Nissan</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="Honda">Ford</label>
-							</div>
-						</div>
-					</div>
-					<div class="tahun-c col-md-12">
-						<div><b>Tahun</b></div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="all-years" checked="true">Semua</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="2017">2017</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="2016">2016</label>
-							</div>
-						</div>
-					</div>
-					<div class="tipe-c col-md-12">
-						<div><b>Tipe</b></div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="all-tipe" checked="true">Semua</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="SUV">SUV</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-3">
-							<div class="checkbox">
-								<label><input type="checkbox" value="Sedan">Sedan</label>
-							</div>
-						</div>
-					</div>
-					<div class="showroom-c col-md-12">
-						<div><b>Lokasi Showroom</b></div>
-						<div class="col-xs-6 col-sm-4">
-							<div class="checkbox">
-								<label><input type="checkbox" value="all-tipe" checked="true">Semua</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-4">
-							<div class="checkbox">
-								<label><input type="checkbox" value="dharmawangsa69">Dharmawangsa 69</label>
-							</div>
-						</div>
-						<div class="col-xs-6 col-sm-4">
-							<div class="checkbox">
-								<label><input type="checkbox" value="jenggolo60">Jenggolo 60</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="clearfix"></div>
-				</div>
-				<div class="modal-footer">
-					<a class="btn btn-warning" class="close" data-dismiss="modal">Batal</a>
-					<a class="btn btn-info" type="submit" href="#">Ok</a>
-				</div>
-			</div>
-		</div>
-	</div>
 </section>
 <div class="fullscreen" ng-show="loading">
   <div class="sk-fading-circle">

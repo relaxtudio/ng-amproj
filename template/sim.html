@@ -1,8 +1,8 @@
 <section class="simkred">
 	<div id="sim-title">
 		<div class="jumbotron" align="center">
-			<h1 style="color: #f2f2f2;">Mau Hitung Kredit Mobil?</h1>
-			<h2 style="color: #f2f2f2;">Simulasikan Aja</h2>
+			<h1 style="color: #fff;">Mau Hitung Kredit Mobil?</h1>
+			<h2 style="color: #fff;">Simulasikan Aja</h2>
 		</div>
 	</div>
 <!--
@@ -36,7 +36,7 @@
 							<label for="brand_id" class="control-label col-md-4 col-xs-2">Brand</label>
 							<div class="col-md-5 col-xs-9 col-xs-offset-1">
 								<select id="brand_id" class="form-control" ng-model="brandSelect" ng-change="selectBrand()">
-									<option ng-repeat="brand in brand" ng-value="{{brand}}"> {{brand.name}} </option>
+									<option ng-repeat="brand in brand | orderBy: 'name'" ng-value="{{brand}}"> {{brand.name}} </option>
 								</select>
 							</div>
 						</div>
@@ -138,7 +138,7 @@
 							<tr>
 								<td width="20%">Mobil</td>
 								<td width="3%">:</td>
-								<td width="77%">{{car.select.brand}} {{car.select.model}} {{car.select.warna}}</td>
+								<td width="77%">{{car.select.brand}} {{car.select.name}}</td>
 							</tr>
 							<tr>
 								<td>Tahun</td>
@@ -230,12 +230,12 @@
 								<td width="60%" style="vertical-align: middle;">Rp {{sim.tahun5.total | number}}</td>
 							</tr>
 							<tr ng-show="sim.tahun5">
-								<td>Angsuran (1-3th)</td>
+								<td>Angsuran 1-3th</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun5.bunga.term1 | number}}</td>
 							</tr>
 							<tr ng-show="sim.tahun5">
-								<td>Angsuran (4-5th)</td>
+								<td>Angsuran 4-5th</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun5.bunga.term2 | number}}</td>
 							</tr>
@@ -250,12 +250,12 @@
 								<td width="60%" style="vertical-align: middle;">Rp {{sim.tahun6.total | number}}</td>
 							</tr>
 							<tr ng-show="sim.tahun6">
-								<td>Angsuran (1-4th)</td>
+								<td>Angsuran 1-4th</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun6.bunga.term1 | number}}</td>
 							</tr>
 							<tr ng-show="sim.tahun6">
-								<td>Angsuran (5-6th)</td>
+								<td>Angsuran 5-6th</td>
 								<td style="vertical-align: middle;">:</td>
 								<td style="vertical-align: middle;">Rp {{sim.tahun6.bunga.term2 | number}}</td>
 							</tr>

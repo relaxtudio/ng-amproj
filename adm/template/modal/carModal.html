@@ -35,7 +35,7 @@
 										<label class="control-label col-xs-4" for="brand_id">Brand</label>
 										<div class="col-xs-8">
 											<select id="brand_id" class="form-control" ng-model="newCar.add.brand_id" required="true">
-												<option ng-repeat="brand in brand" ng-value="brand.id"> {{brand.name}} </option>
+												<option ng-repeat="brand in brand | orderBy: 'name'" ng-value="brand.id"> {{brand.name}} </option>
 											</select>
 										</div>
 									</div>

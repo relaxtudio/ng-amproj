@@ -34,7 +34,7 @@
       </div>
 
       <div class="brands-lg">
-        <div ng-repeat="brand in brand" class="col-md-2 col-xs-4">
+        <div ng-repeat="brand in brand | orderBy: 'name'" class="col-md-2 col-xs-4">
           <img ng-src="assets/car-brands/{{brand.name}}.png" class="img-responsive">
         </div>
       </div>

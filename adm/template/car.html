@@ -18,7 +18,7 @@
 						</div>
 						<table id="list-mobil" width="100%" class="table table-striped">
 							<tr>
-								<th width="5%">ID <a id="sort-mobil" href="#"> <i class="fa fa-sort"></i></a></th>
+								<th width="5%">ID</th>
 								<th width="12%">Brand</th>
 								<th width="25%">Mobil</th>
 								<th width="7%">Tahun</th>
@@ -66,13 +66,11 @@
 						<br><br>
 						<table id="brand-list" class="table table-striped" width="100%">
 							<tr>
-								<td><b>No.</b></td>
 								<td><b>Nama Brand</b></td>
 								<td><b>Logo</b></td>
 								<td><b>Aksi</b></td>
 							</tr>
-							<tr ng-repeat="brand in brand">
-								<td style="vertical-align: middle;">{{brand.id}}</td>
+							<tr ng-repeat="brand in brand | orderBy: 'name'">
 								<td style="vertical-align: middle;">{{brand.name}}</td>
 								<td><img ng-src="../assets/car-brands/{{brand.name}}.png" style="width: 50px;"></td>
 								<td style="vertical-align: middle;"><a class="btn btn-danger" ng-click="modalBrandDelete(this)"><i class="fa fa-trash"></i></a></td>
