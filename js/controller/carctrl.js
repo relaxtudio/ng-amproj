@@ -11,11 +11,13 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 			currentPage: 1,
 			maxpage: 1,
 			search: '',
-			showroom: null
+			showroom: null,
+			delSold: 3
 		};
 		$scope.status = {
 			isLoading: false,
-			contentLoading: false
+			contentLoading: false,
+			showroom: null
 		};
 		if ($state.params.showroom) {
 			$scope.filter.showroom = $state.params.showroom;
@@ -28,7 +30,6 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 		$ws.getCar({filter: $scope.filter}, function(respon) {
 			$scope.car = respon.data;
 			$ws.getCarSum({filter: $scope.filter}, function(respon) {
-				console.log(respon.data);
 				var total = 0;
 				for (i in respon.data) {
 					total += parseInt(respon.data[i].total);
@@ -36,7 +37,10 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 				$scope.carTotal.total = total;
 				var maxpage = Math.ceil(total / $scope.filter.limit);
 				$scope.filter.maxpage = maxpage;
-				$scope.status.isLoading = false;
+				$ws.getShowroom({filter: $scope.filter}, function(respon) {
+					$scope.status.showroom = respon.data[0].name;
+					$scope.status.isLoading = false;
+				}, error)
 			}, error);
 		}, error)
 	}
@@ -54,7 +58,6 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 	}
 
 	$scope.search = function() {
-		console.log($scope.filter);
 		$scope.loading = true;
 		$ws.getCar({filter: $scope.filter}, function(respon) {
 			$scope.car = respon.data;

@@ -68,6 +68,9 @@ am.factory('$ws', function($ls, $http, CONFIG) {
             },
             getSocmed: function(data, success, error) {
                 return $http.post(C_WS + 'getSocmed', data).then(success, error);
+            },
+            getShowroom: function(data, success, error) {
+                return $http.post(C_WS + 'getShowroom', data).then(success, error);
             }
         }
 })
