@@ -27,6 +27,9 @@ am.config(function($locationProvider, $stateProvider, $urlRouterProvider, $qProv
 
 		.state('car', {
 			url: '/car',
+			params: {
+				showroom: null
+			},
 			views: {
 				'content': {
 					templateUrl: 'template/car.html',

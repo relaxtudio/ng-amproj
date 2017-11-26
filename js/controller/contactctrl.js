@@ -57,6 +57,11 @@ am.controller('ContactCtrl', function($scope, $state, $ws, NgMap, $timeout){
         $scope.map.tlp = map.kota;
     };
 
+    $scope.carShowroom = function(state, param) {
+        console.log(state, param);
+        $state.go(state, {showroom: param});
+    };
+
     $scope.init();
     $scope.$on('$viewContentLoaded', function() {
         $scope.initWs();

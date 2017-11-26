@@ -1,5 +1,6 @@
 am.controller('CarCtrl', function($scope, $state, $ws) {
 	$scope.init = function() {
+		
 		$scope.car = [];
 		$scope.carTotal = {
 			total: 0
@@ -9,12 +10,16 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 			page: 1,
 			currentPage: 1,
 			maxpage: 1,
-			search: ''
+			search: '',
+			showroom: null
 		};
 		$scope.status = {
 			isLoading: false,
 			contentLoading: false
 		};
+		if ($state.params.showroom) {
+			$scope.filter.showroom = $state.params.showroom;
+		}
 		$scope.initWs();
 	}
 
@@ -22,12 +27,13 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 		$scope.status.isLoading = true;
 		$ws.getCar({filter: $scope.filter}, function(respon) {
 			$scope.car = respon.data;
-			$ws.getCarSum(null, function(respon) {
+			$ws.getCarSum({filter: $scope.filter}, function(respon) {
 				console.log(respon.data);
 				var total = 0;
 				for (i in respon.data) {
 					total += parseInt(respon.data[i].total);
 				}
+				$scope.carTotal.total = total;
 				var maxpage = Math.ceil(total / $scope.filter.limit);
 				$scope.filter.maxpage = maxpage;
 				$scope.status.isLoading = false;
