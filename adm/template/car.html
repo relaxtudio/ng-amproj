@@ -70,12 +70,17 @@
 								<td><b>Logo</b></td>
 								<td><b>Aksi</b></td>
 							</tr>
-							<tr ng-repeat="brand in brand | orderBy: 'name'">
+							<tr ng-repeat="brand in brandSlice.show | orderBy: 'name'">
 								<td style="vertical-align: middle;">{{brand.name}}</td>
 								<td><img ng-src="../assets/car-brands/{{brand.name}}.png" style="width: 50px;"></td>
 								<td style="vertical-align: middle;"><a class="btn btn-danger" ng-click="modalBrandDelete(this)"><i class="fa fa-trash"></i></a></td>
 							</tr>
 						</table>
+						<ul class="pagination pagination-sm">
+							<li ng-class="(n == brandSlice.currentPage) ? 'active' : ''" ng-repeat="n in [] | range: brandSlice.page">
+								<a ng-click="loadBrand(n)">{{n}}</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
