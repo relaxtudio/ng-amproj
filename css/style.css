@@ -278,6 +278,7 @@ body {
 #c-total {
 	margin-top: 12px;
 	padding-left: 0;
+	display: inline-block;
 }
 
 #sort-dt {
@@ -747,7 +748,7 @@ select.form-control:focus, #c_harga:focus {
 
 	#s-btn {
 		height: 33px;
-		top: 4px;
+		top: 1px;
 	}
 
 	.home-content {

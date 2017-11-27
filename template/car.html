@@ -1,6 +1,6 @@
 <section class="cars-content">
 	<div class="c-head">
-		<div id="bt-fil" class="col-md-4 col-xs-6">
+		<div id="bt-fil" class="col-md-4">
 			<form role="search">
 	          <div class="search-container" style="padding: 0">
 	            <input type="text" id="s-mobil" class="form-control" placeholder="Cari mobil" ng-model="filter.search" ng-enter="search()">
@@ -10,9 +10,9 @@
 	          </div>
 	        </form>
 		</div>
-		<div id="c-total" class="col-xs-6 col-md-8">
-			<div ng-show="status.showroom">{{status.showroom}}</div>
-			<div class="pull-right">
+		<div id="c-total" class="col-md-8">
+			<div ng-show="status.showroom" class="col-md-5 pull-left"><i class="fa fa-building-o"></i> {{status.showroom}}</div>
+			<div class="pull-right col-md-3">
 				Total : <b> {{carTotal.total | number}} </b> Mobil
 			</div>
 		</div>
