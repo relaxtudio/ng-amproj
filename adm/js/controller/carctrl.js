@@ -32,6 +32,11 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			currentTab: 'dt-mobil'
 		};
 		$scope.brand = [];
+		$scope.brandSlice = {
+			page: 0,
+			show: [],
+			currentPage: 1
+		};
 		$scope.model = [];
 		$scope.showroom = [];
 		$scope.trans = [];
@@ -63,6 +68,24 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			$scope.carTotal.page = Math.ceil($scope.carTotal.all / $scope.filter.limit);
 			$ws.getBrand(null, function(respon) {
 				$scope.brand = respon.data;
+				var sliceTotal = Math.ceil($scope.brand.length / 6);
+				var counter = 0;
+				var counterAll = 0;
+				var tempArray = [];
+				var page = 0;
+				$scope.brandSlice.page = sliceTotal;
+				$scope.brand.forEach(function(value, key) {
+					tempArray.push(value);
+					counter++;
+					counterAll++;
+					if (counter >= 6 || counterAll == ($scope.brand.length)) {
+						page++;
+						counter = 0;
+						$scope.brandSlice['page'+page] = tempArray;
+						tempArray = [];
+					}
+				});
+				$scope.brandSlice.show = $scope.brandSlice.page1;
 				$ws.getModel(null, function(respon) {
 					$scope.model = respon.data;
 					$ws.getShowroom(null, function(respon) {
@@ -306,6 +329,11 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		$scope.filter.page = data;
 		$scope.getCar({filter: $scope.filter});
 		$scope.current.page = data;
+	}
+
+	$scope.loadBrand = function(data) {
+		$scope.brandSlice.show = $scope.brandSlice['page' + data];
+		$scope.brandSlice.currentPage = data;
 	}
 
 	$scope.addBrand = function(data) {
