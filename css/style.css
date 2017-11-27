@@ -233,8 +233,9 @@ body {
 
 .rc-price {
 	text-align: center;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	padding-bottom: 8px;
+	font-weight: 700;
 }
 
 #btn-cars {
@@ -359,6 +360,10 @@ body {
 	width: 100%;
 	position: absolute;
 	display: block;
+}
+
+.threesixty_images img {
+	margin-top: -60px;
 }
 
 #cars-info > div {
@@ -593,6 +598,10 @@ select.form-control:focus, #c_harga:focus {
 		height: 360px !important;
 	}
 
+	.threesixty_images img {
+		margin-top: -30px;
+	}
+
 	.spinner {
 		margin-top: 150px !important;
 	}
@@ -670,6 +679,10 @@ select.form-control:focus, #c_harga:focus {
 		width: 50%;
 		display: inline-block;
 	}
+
+	.threesixty_images img {
+		margin-top: -30px;
+	}
 }
 
 @media screen and (max-width: 568px){
@@ -704,6 +717,10 @@ select.form-control:focus, #c_harga:focus {
 	.list-lk > .col-md-4 {
 		width: 50%;
 		display: inline-block;
+	}
+
+	.threesixty_images img {
+		margin-top: -35px;
 	}
 }
 
@@ -810,6 +827,10 @@ select.form-control:focus, #c_harga:focus {
 		height: 235px !important;
 	}
 
+	.threesixty_images img {
+		margin-top: -25px;
+	}
+
 	.spinner {
 		margin-top: 50px !important;
 	}
@@ -850,6 +871,10 @@ select.form-control:focus, #c_harga:focus {
 
 	.cardetail {
 		margin-bottom: 0;
+	}
+
+	.threesixty_images img {
+		margin-top: -25px;
 	}
 
  	.kshow {

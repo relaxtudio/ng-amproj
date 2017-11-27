@@ -53,7 +53,7 @@
                     <div class="rc-nama">
                       <legend>{{car.brand}} {{car.name}}</legend>
                     </div>
-                    <div class="rc-info">
+                    <div class="rc-info row">
                       <div class="col-md-6">
                         <i class="fa fa-calendar"></i> Tahun {{car.tahun}}
                       </div>
@@ -64,6 +64,9 @@
                     <div class="rc-loc">
                       <i class="fa fa-map-marker"></i> {{car.showroom}}
                     </div>
+                    <div class="rc-price">
+                        <i class="fa fa-tag"></i> Rp {{car.harga | number}},-
+                      </div>
                   </div>
                 </div>
               </div>
