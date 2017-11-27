@@ -13,10 +13,10 @@
 								<th width="20%"><i class="fa fa-user"></i> <b>Oleh</b></th>
 								<th width="20%"><i class="fa fa-calendar"></i> <b>Tanggal</b></th>
 							</tr>
-							<tr ng-repeat="car in car | limitTo: -8 | orderBy:'-id*1'">
+							<tr ng-repeat="car in car | limitTo: 8 | orderBy:'-id*1'">
 								<td>{{car.brand}} {{car.name}} {{car.warna}} Tahun {{car.tahun}} {{car.trans}}</td>
 								<td>{{car.addby}}</td>
-								<td> - </td>
+								<td> {{car.updated | date: 'dd-MM-yyyy' }} </td>
 							</tr>
 						</table>
 					</div>
