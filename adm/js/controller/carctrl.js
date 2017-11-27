@@ -136,7 +136,6 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 
 	$scope.addCar = function(data) {
 		// checking
-		console.log($scope.newCar);
 		var car = $scope.newCar;
 		if (!car.add.brand_id) {
 			return window.alert('Brand Mobil wajib diisi');
@@ -180,6 +179,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		if (!car.interior) {
 			return window.alert('Interior Mobil wajib diisi');
 		}
+
 		var token = $scope.$parent.user.token;
 		$scope.$parent.loading = true;
 		$ws.addCar({
@@ -217,33 +217,17 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 							type: 'interior'
 						}, function(respon) {
 							console.log('interior', respon.data);
-						}, error);
-						$ws.uploadCar({
-							token: token,
-							image: $scope.newCar.exterior,
-							dir: dir,
-							type: 'exterior'
-						}, function(respon) {
-							console.log('exterior',respon.data);
-							$scope.cancel();
-							$scope.$parent.loading = false;
-							// $ws.uploadCar({
-							// 	token: token,
-							// 	image: $scope.newCar.interior,
-							// 	dir: dir,
-							// 	type: 'interior'
-							// }, function(respon) {
-							// 	console.log('interior',respon.data, $scope.newCar.interior);
-							// 	$scope.newCar = {
-							// 		add: {add_by: $scope.$parent.user.id},
-							// 		detail: {add_by: $scope.$parent.user.id},
-							// 		preview: '',
-							// 		exterior: [],
-							// 		interior: ''
-							// 	};
-							// 	$scope.cancel();
-							// 	$scope.$parent.loading = false;
-							// }, error);
+							$ws.uploadCar({
+								token: token,
+								image: $scope.newCar.exterior,
+								dir: dir,
+								type: 'exterior'
+							}, function(respon) {
+								console.log('exterior',respon.data);
+								$scope.cancel();
+								// $scope.$parent.loading = false;
+								$scope.initWs()
+							}, error);
 						}, error);
 					}, error);
 				}, error);
@@ -418,9 +402,6 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			templateUrl: "template/modal/carEdit.html",
 			scope: scope
 		});
-		$scope.close = function() {
-			modal.close();
-		};
 	}
 
 	$scope.openModalDelete = function(scope) {
