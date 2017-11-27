@@ -76,11 +76,13 @@
 								<td style="vertical-align: middle;"><a class="btn btn-danger" ng-click="modalBrandDelete(this)"><i class="fa fa-trash"></i></a></td>
 							</tr>
 						</table>
-						<ul class="pagination pagination-sm">
-							<li ng-class="(n == brandSlice.currentPage) ? 'active' : ''" ng-repeat="n in [] | range: brandSlice.page">
-								<a ng-click="loadBrand(n)">{{n}}</a>
-							</li>
-						</ul>
+						<div style="text-align: center;">
+							<ul class="pagination pagination-sm">
+								<li ng-class="(n == brandSlice.currentPage) ? 'active' : ''" ng-repeat="n in [] | range: brandSlice.page">
+									<a ng-click="loadBrand(n)">{{n}}</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
