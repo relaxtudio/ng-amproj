@@ -390,6 +390,9 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			templateUrl: "template/modal/carEdit.html",
 			scope: scope
 		});
+		$scope.close = function() {
+			modal.close();
+		};
 	}
 
 	$scope.openModalDelete = function(scope) {
