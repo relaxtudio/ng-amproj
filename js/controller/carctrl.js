@@ -37,10 +37,12 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 				$scope.carTotal.total = total;
 				var maxpage = Math.ceil(total / $scope.filter.limit);
 				$scope.filter.maxpage = maxpage;
-				$ws.getShowroom({filter: $scope.filter}, function(respon) {
-					$scope.status.showroom = respon.data[0].name;
-					$scope.status.isLoading = false;
-				}, error)
+				if ($state.params.showroom) {
+					$ws.getShowroom({filter: $scope.filter}, function(respon) {
+						$scope.status.showroom = respon.data[0].name;
+						$scope.status.isLoading = false;
+					}, error)
+				}
 			}, error);
 		}, error)
 	}
@@ -73,7 +75,33 @@ am.controller('CarCtrl', function($scope, $state, $ws) {
 				$scope.loading = false;
 			}, error);
 		}, error);
-		
+	}
+
+	$scope.refresh = function() {
+		$scope.filter = {
+			limit: 8,
+			page: 1,
+			currentPage: 1,
+			maxpage: 1,
+			search: '',
+			showroom: null,
+			delSold: 3
+		};
+		$scope.status.showroom = null;
+		$ws.getCar({filter: $scope.filter}, function(respon) {
+			$scope.car = respon.data;
+			$ws.getCarSum({filter: $scope.filter}, function(respon) {
+				var total = 0;
+				for (i in respon.data) {
+					total += parseInt(respon.data[i].total);
+				}
+				$scope.carTotal.total = total;
+				var maxpage = Math.ceil(total / $scope.filter.limit);
+				$scope.filter.maxpage = maxpage;
+				$scope.status.isLoading = false;
+				$scope.loading = false;
+			}, error);
+		}, error);
 	}
 
 	$scope.testLoading = function() {
