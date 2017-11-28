@@ -38,7 +38,8 @@ am.controller('CarDetCtrl', function($scope, $state, $stateParams, $ws, NgMap, $
 		        ext: '.jpg', // extention for the assets
 		        height: '465',
 		        width: '100%',
-		        navigation: false
+		        navigation: false,
+		        playSpeed: 150
 		    });
 			
 			$scope.$custom_previous = $('.custom_previous').bind('click', function(e) {
