@@ -51,6 +51,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 			name: '',
 			file: ''
 		};
+		$scope.newModel = {};
 		$scope.dump = {};
 		$scope.initWs();
 	}
@@ -362,6 +363,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 	}
 
 	$scope.addModel = function(data) {
+		// console.log($scope.newModel);
 		var token = $scope.$parent.user.token;
 		var model = $scope.newModel;
 		if (!model.name) {
