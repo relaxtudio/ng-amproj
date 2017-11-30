@@ -226,8 +226,14 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 							}, function(respon) {
 								console.log('exterior',respon.data);
 								$scope.cancel();
-								// $scope.$parent.loading = false;
-								$scope.initWs()
+								$scope.newCar = {
+									add: {add_by: $scope.$parent.user.id},
+									detail: {add_by: $scope.$parent.user.id},
+									preview: '',
+									exterior: [],
+									interior: ''
+								};
+								$scope.initWs();
 							}, error);
 						}, error);
 					}, error);
