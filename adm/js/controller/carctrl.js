@@ -150,15 +150,15 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 		if (!car.detail.tahun) {
 			return window.alert('Tahun Mobil wajib diisi');
 		}
-		if (!car.detail.nopol) {
-			return window.alert('Nopol Mobil wajib diisi');
-		}
+		//if (!car.detail.nopol) {
+		//	return window.alert('Nopol Mobil wajib diisi');
+		//}
 		if (!car.detail.bbm) {
 			return window.alert('BBM Mobil wajib diisi');
 		}
-		if (!car.detail.km) {
-			return window.alert('Kilometer Mobil wajib diisi');
-		}
+		//if (!car.detail.km) {
+		//	return window.alert('Kilometer Mobil wajib diisi');
+		//}
 		if (!car.detail.trans_id) {
 			return window.alert('Tranmisi Mobil wajib diisi');
 		}
@@ -233,7 +233,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 									exterior: [],
 									interior: ''
 								};
-								$scope.initWs();
+								$scope.init();
 							}, error);
 						}, error);
 					}, error);

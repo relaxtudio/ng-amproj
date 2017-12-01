@@ -1,5 +1,5 @@
 am.constant('CONFIG', {
-	SERVER: 'http://localhost/anugerahmotor/',
+	SERVER: 'http://localhost/ng-amproj/',
 	API_PHP: 'api/',
 
 	APP_ID: 'relaxtudio.anugerah.adm'
