@@ -94,6 +94,60 @@ class Login {
 		$model->close();
 	}
 
+	function delUser($data) {
+		$status = new stdClass();
+		$status->data = false;
+		$status->token = false;
+
+		$check = checkToken($data['token']);
+
+		if ($check) {
+			$status->token = true;
+			$data = $data['data'];
+		} else {
+			return $status;
+		}
+
+		$model = new Model;
+		$model->connect();
+
+		$sql = "DELETE FROM usr_lgn WHERE usr_id = " . $data['id'];
+		$q = mysqli_query($model->conn, $sql);
+		if ($q) {
+			$status->data = true;
+		}
+
+		echo json_encode($status);
+
+		$model->close();
+	}
+
+	function listUser($data) {
+		$status = new stdClass();
+		$status->data = false;
+		$status->token = false;
+
+		$check = checkToken($data['token']);
+
+		if ($check) {
+			$status->token = true;
+			$data = $data['data'];
+		} else {
+			return $status;
+		}
+
+		$model = new Model;
+		$model->connect();
+
+		$sql = "SELECT usr_id as id, usr_nm as name FROM usr_lgn";
+		$q = mysqli_query($model->conn, $sql);
+		$result = mysqli_fetch_all($q, MYSQLI_ASSOC);
+
+		echo json_encode($result);
+		
+		$model->close();
+	}
+
 	function changePass($data) {
 		$model = new Model;
 		$model->connect();
