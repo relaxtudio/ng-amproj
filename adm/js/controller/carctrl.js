@@ -260,6 +260,7 @@ am.controller('CarCtrl', function($scope, $state, $ws, $uibModal, $uibModalStack
 						type: 'exterior'
 					}, function(respon) {
 						console.log('uploadCar');
+						$scope.cancel();
 					}, error);
 				}, error);
 			}
