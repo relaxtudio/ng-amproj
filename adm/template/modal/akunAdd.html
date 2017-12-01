@@ -6,28 +6,28 @@
 		<h4 class="modal-title">Form Akun Baru</h4>
 	</div>
 	<div class="modal-body">
-		<form id="newakun-form" class="form-horizontal" method="POST">
+		<form id="newakun-form" class="form-horizontal" method="POST" name="akun">
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="uname">Username</label>
 				<div class="col-xs-6">
-					<input type="text" name="uname" id="uname" class="form-control" required>
+					<input type="text" name="uname" id="uname" class="form-control" ng-model="newUser.username" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="upass1">Password</label>
 				<div class="col-xs-6">
-					<input type="password" name="upass1" id="upass1" class="form-control" required>
+					<input type="password" name="upass1" id="upass1" class="form-control" ng-model="newUser.password" required>
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-xs-4" for="upass2">Ulangi Password</label>
 				<div class="col-xs-6">
-					<input type="password" name="upass2" id="upass2" class="form-control" required>
+					<input type="password" name="upass2" id="upass2" class="form-control" ng-model="newUser.password_confirm" required>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button class="btn btn-warning" class="close" ng-click="cancel()"> Batal</button>
-				<button id="newakun-sub" type="submit" class="btn btn-success">Simpan</button>
+				<button id="newakun-sub" type="submit" class="btn btn-success" ng-click="addUser(akun)">Simpan</button>
 			</div>
 		</form>
 	</div>

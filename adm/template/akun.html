@@ -15,10 +15,10 @@
 							<th width="85%">Username</th>
 							<th width="15%">Action</th>
 						</tr>
-						<tr>
-							<td></td>
+						<tr ng-repeat="user in userList">
+							<td>{{user.name}}</td>
 							<td>
-								<a class="btn btn-danger" ng-click="deleteAkun()">
+								<a class="btn btn-danger" ng-click="deleteAkun(this)">
 									<i class="fa fa-trash" title="Hapus"></i>
 								</a>
 							</td>

@@ -76,11 +76,17 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		logout: function() {
 			$ls.remove(C_SESSION);
 		},
+		testData: function(data, success, error) {
+			return $http.post(C_WS + 'testData', data).then(success, error);
+		},
 		changePass: function(data, success, error) {
 			return $http.post(C_WS + 'changePass', data).then(success, error);
 		},
-		listUser: function(data, success, error) {
-			return $http.post(C_WS + 'listUser', data).then(success, error);
+		getUsr: function(data, success, error) {
+			return $http.post(C_WS + 'getUsr', data).then(success, error);
+		},
+		addUser: function(data, success, error) {
+			return $http.post(C_WS + 'createUser', data).then(success, error);
 		},
 		delUser: function(data, success, error) {
 			return $http.post(C_WS + 'delUser', data).then(success, error);

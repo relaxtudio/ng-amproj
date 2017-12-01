@@ -3,7 +3,6 @@ am.controller('ProfilCtrl', function($scope, $state, $ws) {
 		$scope.user = $ws.loginUser();
 		$scope.loading = false;
 		$scope.user.username = $scope.user.name;
-		console.log($scope.user);
 	}
 
 	$scope.changePass = function(data) {

@@ -1,10 +1,8 @@
 <?php
 
 class Login {
-	function testData() {
-		$model = new Model;
-		$model->connect();
-		$model->close();
+	function testData($data) {
+		return $data;
 	}
 
 	function checkToken($data) {
@@ -30,7 +28,9 @@ class Login {
 
 		if ($check) {
 			$status->token = true;
-			$data = $data['data'];
+			if (!isset($data['data'])) {
+				return $status;
+			}
 		} else {
 			return $status;
 		}
@@ -38,16 +38,16 @@ class Login {
 		$model = new Model;
 		$model->connect();
 		$salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
-		$password = hash('sha256', $data['password'] . $salt);
+		$password = hash('sha256', $data['data']['password'] . $salt);
 	    for($i = 0; $i < 65536; $i++) {
 	        $password = hash('sha256', $password . $salt);
 	    }
-	    $check = "SELECT * FROM usr_lgn WHERE usr_nm = '" . $data['username'] . "'";
+	    $check = "SELECT * FROM usr_lgn WHERE usr_nm = '" . $data['data']['username'] . "'";
 	    $q = mysqli_query($model->conn, $check);
 	    $result = mysqli_fetch_all($q,MYSQLI_ASSOC);
 	    if (empty($result)) {
 	    	$result = true;
-	    	$sql = "INSERT INTO usr_lgn (usr_nm, usr_pass, usr_salt, uid_cred_fk) VALUES ('" . $data['username'] . "', '" . $password . "', '" . $salt . "', '1')";
+	    	$sql = "INSERT INTO usr_lgn (usr_nm, usr_pass, usr_salt, uid_cred_fk) VALUES ('" . $data['data']['username'] . "', '" . $password . "', '" . $salt . "', '1')";
 	    	mysqli_query($model->conn, $sql);
 	    } else {
 	    	$result = false;
@@ -122,16 +122,15 @@ class Login {
 		$model->close();
 	}
 
-	function listUser($data) {
+	function getUsr($data) {
 		$status = new stdClass();
-		$status->data = false;
+		$status->data = array();
 		$status->token = false;
 
 		$check = checkToken($data['token']);
 
 		if ($check) {
 			$status->token = true;
-			$data = $data['data'];
 		} else {
 			return $status;
 		}

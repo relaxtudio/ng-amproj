@@ -19,8 +19,9 @@ function test() {
 }
 
 function testData() {
+	$data = getData();
 	$login = new Login;
-	$login->testData();
+	echo json_encode($login->testData($data));
 }
 
 function checkToken($data) {
@@ -46,10 +47,10 @@ function editUser() {
 	$login->editUser($data);
 }
 
-function listUser() {
+function getUsr() {
 	$data = getData();
 	$login = new Login;
-	$login->listUser($data);
+	$login->getUsr($data);
 }
 
 function delUser() {

@@ -6,10 +6,10 @@
 		<h4 class="modal-title" align="center">Konfirmasi Hapus Data</h4>
 	</div>
 	<div class="modal-body">
-		<p>Anda yakin akan menghapus data ini?</p>
+		<p>Anda yakin akan menghapus data <b>{{user.name}}</b>?</p>
 	</div>
 	<div class="modal-footer">
 		<a class="btn btn-default" class="close" ng-click="cancel()">Batal</a>
-		<a id="hapusakun" class="btn btn-danger">Ya</a>
+		<a id="hapusakun" class="btn btn-danger" ng-click="delUser(user)">Ya</a>
 	</div>
 </div>
