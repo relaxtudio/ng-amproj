@@ -79,6 +79,12 @@ am.factory('$ws', function($ls, $http, CONFIG) {
 		changePass: function(data, success, error) {
 			return $http.post(C_WS + 'changePass', data).then(success, error);
 		},
+		listUser: function(data, success, error) {
+			return $http.post(C_WS + 'listUser', data).then(success, error);
+		},
+		delUser: function(data, success, error) {
+			return $http.post(C_WS + 'delUser', data).then(success, error);
+		},
 		testUpload: function(data, success, error) {
 			return $http.post(C_WS + 'testUpload', data).then(success, error);
 		},

@@ -46,6 +46,18 @@ function editUser() {
 	$login->editUser($data);
 }
 
+function listUser() {
+	$data = getData();
+	$login = new Login;
+	$login->listUser($data);
+}
+
+function delUser() {
+	$data = getData();
+	$login = new Login;
+	$login->delUser($data);
+}
+
 function changePass() {
 	$data = getData();
 	$login = new Login;
