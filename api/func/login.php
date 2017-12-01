@@ -115,6 +115,8 @@ class Login {
 		$q = mysqli_query($model->conn, $sql);
 		if ($q) {
 			$status->data = true;
+			$deltok = "DELETE FROM token WHERE usr_id = " . $data['id'];
+			mysqli_query($model->conn, $sql);
 		}
 
 		echo json_encode($status);
