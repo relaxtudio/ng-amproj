@@ -1,0 +1,34 @@
+<div class="modal-content">
+	<div class="modal-header custbg-hd">
+		<button type="button" class="close" ng-click="cancel()" style="color: #9effff;">
+			&times;
+		</button>
+		<h4 class="modal-title">Form Akun Baru</h4>
+	</div>
+	<div class="modal-body">
+		<form id="newakun-form" class="form-horizontal" method="POST">
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="uname">Username</label>
+				<div class="col-xs-6">
+					<input type="text" name="uname" id="uname" class="form-control" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="upass1">Password</label>
+				<div class="col-xs-6">
+					<input type="password" name="upass1" id="upass1" class="form-control" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-xs-4" for="upass2">Ulangi Password</label>
+				<div class="col-xs-6">
+					<input type="password" name="upass2" id="upass2" class="form-control" required>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-warning" class="close" ng-click="cancel()"> Batal</button>
+				<button id="newakun-sub" type="submit" class="btn btn-success">Simpan</button>
+			</div>
+		</form>
+	</div>
+</div>
