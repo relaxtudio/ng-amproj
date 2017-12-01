@@ -46,6 +46,12 @@ function editUser() {
 	$login->editUser($data);
 }
 
+function changePass() {
+	$data = getData();
+	$login = new Login;
+	$login->changePass($data);
+}
+
 function insertProduct() {
 	$data = getData();
 	$crud = new Crud;

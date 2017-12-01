@@ -3,7 +3,7 @@ var error = function(value) {
 	return window.alert(value);
 }
 
-am.controller('LoginCtrl', ['$scope', '$state', '$ws', function($scope, $state, $ws) {
+am.controller('LoginCtrl', function($scope, $state, $ws) {
 	$scope.login = function(form) {
 		if (form.$valid) {
 			$ws.login($scope.user, function(respon) {
@@ -13,4 +13,4 @@ am.controller('LoginCtrl', ['$scope', '$state', '$ws', function($scope, $state, 
 			}, error);
 		}
 	}
-}])
+})

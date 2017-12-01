@@ -21,6 +21,20 @@ class Login {
 	}
 
 	function createUser($data) {
+
+		$status = new stdClass();
+		$status->data = false;
+		$status->token = false;
+
+		$check = checkToken($data['token']);
+
+		if ($check) {
+			$status->token = true;
+			$data = $data['data'];
+		} else {
+			return $status;
+		}
+
 		$model = new Model;
 		$model->connect();
 		$salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
@@ -84,6 +98,32 @@ class Login {
 		$model = new Model;
 		$model->connect();
 
+		$get = "SELECT usr_id, usr_nm, usr_pass, usr_salt
+				FROM usr_lgn WHERE usr_nm = '" . $data['username'] . "'";
+		$result = mysqli_fetch_array(mysqli_query($model->conn, $get));
+		$salt = $result['usr_salt'];
+		$usrid = $result['usr_id'];
+		$usrname = $result['usr_nm'];
+    	$check = hash('sha256', $data['password'] . $salt);
+    	for ($i = 0; $i < 65536; $i++) { 
+    		$check = hash('sha256', $check . $salt);
+    	}
+    	$status = false;
+    	if ($check == $result['usr_pass']) {
+    		$user = new stdClass();
+    		$salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647));
+			$password = hash('sha256', $data['password_new'] . $salt);
+		    for($i = 0; $i < 65536; $i++) {
+		        $password = hash('sha256', $password . $salt);
+		    }
+    		$sql = "UPDATE usr_lgn SET usr_pass = '" . $password . "',
+    									usr_salt = '" . $salt . "'
+    				WHERE usr_id = " . $usrid;
+    		mysqli_query($model->conn, $sql);
+    		$status = true;
+    	}
+
+    	echo json_encode($status);
 		$model->close();
 	}
 }
